@@ -1,0 +1,142 @@
+html {
+	font-size: 20px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 2000px;
+	position: relative;
+}
+
+
+
+.add-item {
+	background-color: blueviolet;
+	position: fixed;
+	top: 250px;
+	width: 300px;
+	/* height: 300px; */
+	left: calc(50% - 300px/2);
+	padding: 20px;
+}
+
+.add-item * {
+	display: block;
+	width: 100%;
+	font-size: inherit;
+}
+
+.add-item input[type="text"] {
+	height: 2rem;
+	padding: 5px;
+}
+
+.add-item input[type="submit"] {
+	margin-top: 20px;
+}
+
+.add-item input[type="button"] {
+	margin-top: 20px;
+}
+
+
+
+
+.header {
+	background-color: aqua;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.header .add-item-btn {
+	background-color: yellowgreen;
+	padding: 11px 5px;
+}
+
+
+
+.list-title {
+	background-color: antiquewhite;
+	height: 50px;
+	position: fixed;
+	top: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.list-title div:nth-child(1) {
+	margin-left: 100px;
+}
+
+.list-title div:nth-child(2) {
+	margin-right: 25px;
+}
+
+
+
+.list {
+	/* background-color: antiquewhite; */
+	margin-top: 110px;
+}
+
+.list .item {
+	background-color: aquamarine;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	margin: 10px 0;
+}
+
+.list .item div {
+	width: 250px;
+	height: 1rem;
+	line-height: 1;
+	text-align: center;
+	text-wrap-mode: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list .item input {
+	appearance: none;
+	background-color: white;
+	width: 40px;
+	height: 40px;
+	margin-right: 5px;
+	border: 6px solid white;
+	border-radius: 25%;
+}
+
+.list .item input:checked {
+	background-color: black;
+}
+
+
+
+
+
+
+
+
+
+.footer {
+	background-color: aqua;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+}
