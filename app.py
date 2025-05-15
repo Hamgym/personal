@@ -17,6 +17,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/", include_in_schema=False)
 async def index(request: Request):
   return FileResponse("./static/index.html", media_type="text/html")
+@app.get("/list", include_in_schema=False)
+async def index(request: Request):
+  return FileResponse("./static/list.html", media_type="text/html")
 
 
 @app.exception_handler(PoolError)
@@ -30,5 +33,4 @@ async def auth_error(request, exc):
   return JSONResponse({"error":True, "message":"未登入系統，拒絕存取"}, 403)
 
 
-app.include_router(attractions.router)
 app.include_router(users.router)
