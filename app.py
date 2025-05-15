@@ -1,15 +1,34 @@
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import FileResponse
+from dotenv import load_dotenv
+load_dotenv()
+
+
+from fastapi import *
+from fastapi.responses import FileResponse, JSONResponse
+from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
-app = FastAPI()
+from utils.auth import *
+from models.rdb import *
+from routers import attractions, bookings, orders, users
+app=FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
-@app.get("/")
-async def index():
-  return FileResponse("./static/index.html")
+# Static Pages (Never Modify Code in this Block)
+@app.get("/", include_in_schema=False)
+async def index(request: Request):
+  return FileResponse("./static/index.html", media_type="text/html")
 
 
-@app.post("/add-item")
-async def add_item(description=Form()):
-  return description
+@app.exception_handler(PoolError)
+async def pool_error(request:Request, exc:PoolError):
+  return JSONResponse({"error":True, "message":"資料庫忙線中"}, 500)
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request, exc):
+  return JSONResponse({"error":True, "message":"資料格式不符，請重新輸入"}, 400)
+@app.exception_handler(AuthError)
+async def auth_error(request, exc):
+  return JSONResponse({"error":True, "message":"未登入系統，拒絕存取"}, 403)
+
+
+app.include_router(attractions.router)
+app.include_router(users.router)

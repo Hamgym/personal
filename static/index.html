@@ -1,37 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="/static/style.css">
-	<script src="/static/main.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&family=LXGW+WenKai+TC&family=Noto+Sans+TC:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles/index.css">
+  <script type="module" src="/static/scripts/index.js"></script>
 </head>
 
 <body>
-	<form class="add-item" style="display: none;">
-		<input type="text" name="description" placeholder="商品名稱及相關描述">
-		<input type="submit" value="新增">
-		<input type="button" value="取消" class="cancel">
-	</form>
+  <div class="mask"></div>
+  <div class="signin-dialog">
+    <div class="decorator-bar"></div>
+    <div class="close"></div>
+    <div class="signin-main">
+      <h3>登入會員帳號</h3>
+      <form action="" method="post">
+        <input required type="email" name="email" placeholder="輸入電子信箱">
+        <input required type="password" name="password" placeholder="輸入密碼"
+          minlength="3">
+        <input type="submit" value="登入帳戶">
+        <p class="message" style="display:none">回應訊息</p>
+        <div class="signup">還沒有帳戶？點此註冊</div>
+      </form>
+    </div>
+  </div>
+  <div class="signup-dialog">
+    <div class="decorator-bar"></div>
+    <div class="close"></div>
+    <div class="signup-main">
+      <h3>註冊會員帳號</h3>
+      <form action="" method="post">
+        <input required type="text" name="name" placeholder="輸入姓名"
+          maxlength="20">
+        <input required type="email" name="email" placeholder="輸入電子郵件">
+        <input required type="password" name="password" placeholder="輸入密碼"
+          minlength="3">
+        <input type="submit" value="註冊新帳戶">
+        <p class="message" style="display:none">回應訊息</p>
+        <div class="signin">已經有帳戶了？點此登入</div>
+      </form>
+    </div>
+  </div>
 
-	<div class="header">
-		<div class="add-item-btn">+</div>
-	</div>
+  <div class="header">
+    <!-- <div class="sign-btn">登入/註冊</div> -->
+    <div class="sign-btn"></div>
+  </div>
 
-	<div class="list-title">
-		<div>商品描述</div>
-		<div>已買</div>
-	</div>
+  <div class="main">
+    <div class="hero">
+      <div class="inner">
+        <h1>一次買夠</h1>
+        <h2>便利的購物清單及評價留言板</h2>
+      </div>
+    </div>
+    <div class="story">您是否遇過以下狀況？</div>
+    <div class="scenario">
+      <img src="/static/images/secnario-1.jpg" alt="">
+      <p>日用品的種類及品項繁多，採買時總是會忘東忘西。</p>
+    </div>
+    <div class="scenario">
+      <img src="/static/images/secnario-2.jpg" alt="">
+      <p>偶爾買到不喜歡的商品，想要留下紀錄避免重複採坑。</p>
+    </div>
+    <div class="scenario">
+      <img src="/static/images/secnario-3.jpg" alt="">
+      <p>買到了滿意的商品想要留下使用心得，方便下次回購。</p>
+    </div>
+    <div class="story">快來試試一次買夠吧！</div>
+    <div class="scenario">
+      <img src="/static/images/secnario-4.jpg" alt="">
+      <p>輸入商品名稱以建立購物清單，並在實際體驗過後紀錄使用心得！</p>
+    </div>
+  </div>
 
-	<div class="list"></div>
-
-	<div class="remove-bought">
-		移除已買項目
-	</div>
-
-	<div class="footer"></div>
+  <div class="footer">
+    <div class="home-btn">首頁</div>
+    <div class="list-btn">清單</div>
+    <div class="review-btn">評價</div>
+    <div class="member-btn">會員</div>
+  </div>
 </body>
 
 </html>
