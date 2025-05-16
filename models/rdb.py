@@ -7,7 +7,7 @@ dbconfig = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),
   "host": "localhost",
-  "database": "taipei_day_trip"
+  "database": "mygo"
 }
 cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
@@ -40,11 +40,11 @@ class CRUD:
       insert = "INSERT INTO user(name, email, password) VALUE(%s, %s, %s)"
       cursor.execute(insert, (user.name, user.email, user.password))
       cnx.commit()
-  def create_book(payload, body):
+  def create_lists(payload, body):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      insert = "INSERT INTO booking(user_id, attraction_id, date, time, price) VALUES(%s, %s, %s, %s, %s)"
-      cursor.execute(insert, (payload["id"], body.attractionId, body.date, body.time, body.price))
+      insert = "INSERT INTO lists(user_id, item, specs) VALUES(%s, %s, %s)"
+      cursor.execute(insert, (payload["id"], body.item, body.specs))
       cnx.commit()
   def create_order(order_id, payload, body):
     with cnxpool.get_connection() as cnx:

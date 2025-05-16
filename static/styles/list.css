@@ -38,7 +38,7 @@ body {
 
 
 
-.signin-dialog {
+.add-item-dialog {
 	background-color: #FFFFFF;
 	border-radius: 5px;
 	position: fixed;
@@ -50,14 +50,14 @@ body {
 	display: none;
 }
 
-.signin-dialog .decorator-bar {
+.add-item-dialog .decorator-bar {
 	background-image: linear-gradient(to left, #337788, #66AABB);
 	border-radius: 5px 5px 0 0;
 	width: 100%;
 	height: 10px;
 }
 
-.signin-dialog .close {
+.add-item-dialog .close-btn {
 	width: 30px;
 	height: 30px;
 	position: absolute;
@@ -69,16 +69,16 @@ body {
 	z-index: 40;
 }
 
-.signin-dialog .close:hover {
+.add-item-dialog .close-btn:hover {
 	cursor: pointer;
 }
 
-.signin-dialog .signin-main {
+.dialog-main {
 	width: 310px;
 	margin: 15px 0 16px 15px;
 }
 
-.signin-main h3 {
+.dialog-main h3 {
 	font-size: 24px;
 	font-weight: 700;
 	height: 27px;
@@ -87,7 +87,7 @@ body {
 	margin-bottom: 15px;
 }
 
-.signin-main input {
+.dialog-main input {
 	width: 100%;
 	height: 47px;
 	border-radius: 5px;
@@ -96,7 +96,7 @@ body {
 	margin-bottom: 10px;
 }
 
-.signin-main input[type="submit"] {
+.dialog-main input[type="submit"] {
 	background-color: #448899;
 	color: #FFFFFF;
 	font-size: 19px;
@@ -106,17 +106,17 @@ body {
 	border: none;
 }
 
-.signin-main input[type="submit"]:hover {
+.dialog-main input[type="submit"]:hover {
 	cursor: pointer;
 }
 
-.signin-main .message {
+.dialog-main .message {
 	text-align: center;
 	margin-bottom: 10px;
 	color: red;
 }
 
-.signin-main .signup {
+.dialog-main .signup {
 	height: 22px;
 	line-height: 22px;
 	text-align: center;
@@ -124,99 +124,7 @@ body {
 	margin: auto;
 }
 
-.signin-main .signup:hover {
-	cursor: pointer;
-}
-
-
-
-.signup-dialog {
-	background-color: #FFFFFF;
-	border-radius: 5px;
-	position: fixed;
-	top: 80px;
-	left: calc(50% - 340px / 2);
-	width: 340px;
-	z-index: 30;
-	box-shadow: 0 4px 60px #AAAAAA;
-	display: none;
-}
-
-.signup-dialog .decorator-bar {
-	background-image: linear-gradient(to left, #337788, #66AABB);
-	border-radius: 5px 5px 0 0;
-	width: 100%;
-	height: 10px;
-}
-
-.signup-dialog .close {
-	width: 30px;
-	height: 30px;
-	position: absolute;
-	top: 20px;
-	left: 300px;
-	background-image: url(/static/images/icon-close.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	z-index: 40;
-}
-
-.signup-dialog .close:hover {
-	cursor: pointer;
-}
-
-.signup-dialog .signup-main {
-	width: 310px;
-	margin: 15px 0 16px 15px;
-}
-
-.signup-main h3 {
-	font-size: 24px;
-	font-weight: 700;
-	height: 27px;
-	line-height: 27px;
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-.signup-main input {
-	width: 100%;
-	height: 47px;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
-	padding: 0px 14px 2px 14px;
-	margin-bottom: 10px;
-}
-
-.signup-main input[type="submit"] {
-	background-color: #448899;
-	color: #FFFFFF;
-	font-size: 19px;
-	font-weight: 400;
-	height: 46px;
-	line-height: 46px;
-	border: none;
-}
-
-.signup-main input[type="submit"]:hover {
-	cursor: pointer;
-}
-
-.signup-main .message {
-	text-align: center;
-	margin-bottom: 10px;
-	color: red;
-}
-
-.signup-main .signin {
-	height: 22px;
-	line-height: 22px;
-	text-align: center;
-	max-width: fit-content;
-	margin: auto;
-}
-
-.signup-main .signin:hover {
+.dialog-main .signup:hover {
 	cursor: pointer;
 }
 
@@ -240,61 +148,45 @@ body {
 
 
 
-.main {
+.list {
+	height: 2000px;
+	padding: 10px;
 	margin: 50px 0;
-	padding: 20px;
 }
 
-.main .hero {
-	background-color: #f45e60;
-	aspect-ratio: 1;
-	width: 100%;
+.row {
+	background-color: #CCCCCC;
+	border-radius: 5px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	height: 50px;
+	padding: 7.5px;
+	margin-bottom: 10px;
 }
 
-.hero .inner {
-	aspect-ratio: 1;
-	width: 85%;
-	border: 3px solid white;
-}
-
-.hero .inner * {
-	width: fit-content;
-	margin: auto;
-}
-
-.hero .inner h1 {
-	font-size: 30px;
-	font-weight: bold;
-	color: white;
-	margin-top: 40%;
-}
-
-.hero .inner h2 {
-	color: white;
-	margin-top: 35%;
-}
-
-.main .story {
-	color: #f45e60;
-	font-size: 25px;
+.row .description {
+	flex-grow: 1;
 	text-align: center;
-	margin-top: 30px;
-}
-
-.scenario {
-	margin-top: 30px;
-}
-
-.scenario img {
-	width: 100%;
-}
-
-.scenario p {
+	text-wrap-mode: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	font-size: 20px;
-	line-height: 1.5;
+}
+
+.row input[type="checkbox"] {
+	appearance: none;
+	background-color: white;
+	width: 35px;
+	height: 35px;
+	margin-left: 7.5px;
+	border-radius: 25%;
+	flex-shrink: 0;
+}
+
+.row input[type="checkbox"]:checked {
+	background-image: url(/static/images/checked.svg);
+	background-size: contain;
+	border: 2px solid #f45e60;
 }
 
 
@@ -313,4 +205,9 @@ body {
 
 .footer a {
 	padding: 10px;
+}
+
+.footer a:nth-child(2) {
+	background-color: lightgray;
+	border-radius: 5px;
 }

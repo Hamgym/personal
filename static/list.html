@@ -16,41 +16,29 @@
 
 <body>
   <div class="mask"></div>
-  <div class="signin-dialog">
+  <div class="add-item-dialog">
     <div class="decorator-bar"></div>
-    <div class="close"></div>
-    <div class="signin-main">
-      <h3>登入會員帳號</h3>
-      <form action="" method="post">
-        <input required type="email" name="email" placeholder="輸入電子信箱">
-        <input required type="password" name="password" placeholder="輸入密碼"
-          minlength="3">
-        <input type="submit" value="登入帳戶">
+    <div class="close-btn"></div>
+    <div class="dialog-main">
+      <h3>新增商品</h3>
+      <form>
+        <input type="text" name="item" placeholder="輸入商品名稱" required>
+        <input type="text" name="specs" placeholder="輸入備註說明">
+        <input type="submit" value="加入清單">
         <p class="message" style="display:none">回應訊息</p>
-        <div class="signup">還沒有帳戶？點此註冊</div>
-      </form>
-    </div>
-  </div>
-  <div class="signup-dialog">
-    <div class="decorator-bar"></div>
-    <div class="close"></div>
-    <div class="signup-main">
-      <h3>註冊會員帳號</h3>
-      <form action="" method="post">
-        <input required type="text" name="name" placeholder="輸入姓名"
-          maxlength="20">
-        <input required type="email" name="email" placeholder="輸入電子郵件">
-        <input required type="password" name="password" placeholder="輸入密碼"
-          minlength="3">
-        <input type="submit" value="註冊新帳戶">
-        <p class="message" style="display:none">回應訊息</p>
-        <div class="signin">已經有帳戶了？點此登入</div>
       </form>
     </div>
   </div>
 
   <div class="header">
     <div class="add-item-btn">新增</div>
+  </div>
+
+  <div class="list">
+    <!-- <div class="row">
+      <p class="description">麥香綠茶 300ml * 24 有多少買多少啦！</p>
+      <input type="checkbox" name="bought">
+    </div> -->
   </div>
 
   <div class="footer">

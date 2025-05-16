@@ -5,12 +5,14 @@ from models.rdb import *
 from models.data import *
 router = APIRouter()
 
-@router.post("/api/booking")
-async def post_booking(payload=Depends(jwt_auth), body:Booking=Body()):
+@router.post("/api/lists")
+async def post_lists(payload=Depends(jwt_auth), body:ShopList=Body()):
   try:
-    CRUD.delete_book(payload)
-    CRUD.create_book(payload, body)
-    return {"ok": True}
+    CRUD.create_lists(payload, body)
+    return {
+      "ok": True,
+      "message": body
+    }
   except:
     return JSONResponse({
       "error": True,

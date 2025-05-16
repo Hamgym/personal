@@ -10,11 +10,9 @@ class SignIn(BaseModel):
   password: str = Field(min_length=3)
 class SignUp(SignIn):
   name: str = Field(min_length=1)
-class Booking(BaseModel):
-  attractionId: int = Field(ge=1)
-  date: date
-  time: Literal["morning", "afternoon"]
-  price: Literal[2000, 2500]
+class ShopList(BaseModel):
+  item: str
+  specs: str
 class Attraction(BaseModel):
   id: int = Field(ge=1)
   name: str
