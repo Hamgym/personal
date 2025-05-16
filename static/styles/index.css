@@ -314,3 +314,8 @@ body {
 .footer a {
 	padding: 10px;
 }
+
+.footer a:nth-child(1) {
+	background-color: lightgray;
+	border-radius: 5px;
+}

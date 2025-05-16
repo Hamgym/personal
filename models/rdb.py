@@ -46,6 +46,7 @@ class CRUD:
       insert = "INSERT INTO lists(user_id, item, specs) VALUES(%s, %s, %s)"
       cursor.execute(insert, (payload["id"], body.item, body.specs))
       cnx.commit()
+      return cursor.lastrowid
   def create_order(order_id, payload, body):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -99,11 +100,18 @@ class CRUD:
       if not verified:
         return None
       return row
-  def read_book(payload):
+  def read_list(payload):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      select = "SELECT attraction.id, attraction.name, attraction.address, attraction.images, booking.date, booking.time, booking.price FROM booking JOIN attraction ON booking.attraction_id=attraction.id WHERE booking.user_id=%s"
+      select = "SELECT * FROM lists WHERE user_id=%s"
       cursor.execute(select, (payload["id"],))
+      rows = cursor.fetchall()
+      return rows
+  def read_list_item(payload, item_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = "SELECT * FROM lists WHERE user_id=%s AND id=%s"
+      cursor.execute(select, (payload["id"],item_id))
       row = cursor.fetchone()
       return row
   def read_order(orderNumber, payload):

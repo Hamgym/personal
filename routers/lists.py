@@ -8,23 +8,32 @@ router = APIRouter()
 @router.post("/api/lists")
 async def post_lists(payload=Depends(jwt_auth), body:ShopList=Body()):
   try:
-    CRUD.create_lists(payload, body)
+    id = CRUD.create_lists(payload, body)
     return {
       "ok": True,
-      "message": body
+      "message": body,
+      "id": id
     }
   except:
     return JSONResponse({
       "error": True,
       "message": "建立失敗，輸入不正確或其他原因"
     }, 400)
-@router.get("/api/booking")
-async def get_booking(payload=Depends(jwt_auth)):
-  row = CRUD.read_book(payload)
+@router.get("/api/lists")
+async def get_list(payload=Depends(jwt_auth)):
+  rows = CRUD.read_list(payload)
+  if rows==None:
+    return {"data": None}
+  data = get_list_data(rows)
+  return {"data": data}
+@router.get("/api/lists/{itemId}")
+async def get_list(itemId:int, payload=Depends(jwt_auth)):
+  row = CRUD.read_list_item(payload, itemId)
   if row==None:
     return {"data": None}
-  data = get_book_data(row)
-  return {"data": data}
+  row = list(row)
+  row.pop(1)
+  return {"data": row}
 @router.delete("/api/booking")
 async def delete_booking(payload=Depends(jwt_auth)):
   CRUD.delete_book(payload)

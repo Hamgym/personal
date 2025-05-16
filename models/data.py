@@ -70,18 +70,12 @@ def get_mrts_data(rows):
   for row in rows:
     data.append(row[0])
   return data
-def get_book_data(row):
-  data = {
-    "attraction": {
-      "id": row[0],
-      "name": row[1],
-      "address": row[2],
-      "image": json.loads(row[3])[0]
-    },
-    "date": row[4],
-    "time": row[5],
-    "price": row[6]
-  }
+def get_list_data(rows):
+  data = []
+  for row in rows:
+    tmp = list(row)
+    tmp.pop(1)
+    data.append(tmp)
   return data
 def get_order_data(row):
   order = json.loads(row[3])["order"]
