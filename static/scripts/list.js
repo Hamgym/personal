@@ -61,22 +61,23 @@ async function init() {
       location.href = "/";
     }
   }
-}
-function formToBody(form) {
-  let submitter = form.querySelector("[type='submit']");
-  let formData = new FormData(form, submitter);
-  let body = {};
-  for (let [key, value] of formData) {
-    body[key] = value;
+  function formToBody(form) {
+    let submitter = form.querySelector("[type='submit']");
+    let formData = new FormData(form, submitter);
+    let body = {};
+    for (let [key, value] of formData) {
+      body[key] = value;
+    }
+    return body;
   }
-  return body;
 }
 async function postList(token, body) {
   let url = "/api/lists";
   let request = new Request(url, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json", "Authorization": `Bearer ${token}`
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
     },
     body: JSON.stringify(body),
   });
@@ -108,30 +109,86 @@ async function getListItem(token, itemId) {
   let item = resData.data;
   return item;
 }
+async function delListItem(token, itemId) {
+  let url = `/api/lists/${itemId}`;
+  let request = new Request(url, {
+    method: "DELETE",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+  });
+  let res = await fetch(request);
+  let resData = await res.json();
+  return resData;
+}
+async function updateListItem(token, itemId, bought) {
+  let url = `/api/lists/${itemId}`;
+  let body = { "bought": bought };
+  let request = new Request(url, {
+    method: "PATCH",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
+  let res = await fetch(request);
+  let resData = await res.json();
+  return resData;
+}
 function addRow(item) {
   let para = document.createElement("p");
   let box = document.createElement("input");
   let row = document.createElement("div");
   let list = document.querySelector(".list");
+  let rmv = document.querySelector(".rmv-bought");
   para.className = "description";
   para.textContent = `${item[1]} ${item[2]}`;
   para.addEventListener("click", function () {
     if (confirm(`${para.textContent}\n\n要刪除此項目嗎？`)) {
+      delListItem(token, item[0]);
       this.parentElement.remove();
+      showRmvBtn();
     }
   });
   box.setAttribute("type", "checkbox");
   box.setAttribute("name", "bought");
+  box.checked = item[3];
   box.addEventListener("click", function () {
     if (box.checked) {
       list.appendChild(this.parentElement);
+      updateListItem(token, item[0], true);
+      rmv.style.display = "block";
     } else {
       list.prepend(this.parentElement);
+      updateListItem(token, item[0], false);
+      showRmvBtn();
     }
   });
   row.className = "row";
   row.id = item[0];
   row.appendChild(para);
   row.appendChild(box);
-  list.appendChild(row);
+  if (box.checked) {
+    list.appendChild(row);
+    rmv.style.display = "block";
+  } else {
+    list.prepend(row);
+  }
+  function showRmvBtn() {
+    let rows = document.querySelectorAll(".row");
+    let flag = false;
+    for (let row of rows) {
+      let checked = row.querySelector("input").checked;
+      if (checked) {
+        flag = true;
+        break;
+      }
+    }
+    if (flag) {
+      rmv.style.display = "block";
+    } else {
+      rmv.style.display = "none";
+    }
+  }
 }

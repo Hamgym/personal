@@ -34,7 +34,11 @@ async def get_list(itemId:int, payload=Depends(jwt_auth)):
   row = list(row)
   row.pop(1)
   return {"data": row}
-@router.delete("/api/booking")
-async def delete_booking(payload=Depends(jwt_auth)):
-  CRUD.delete_book(payload)
+@router.delete("/api/lists/{itemId}")
+async def delete_list(itemId:int, payload=Depends(jwt_auth)):
+  CRUD.delete_list_item(payload, itemId)
+  return JSONResponse({"ok": True})
+@router.patch("/api/lists/{itemId}")
+async def patch_list(itemId:int, body=Body(), payload=Depends(jwt_auth)):
+  CRUD.update_list_item(itemId, body["bought"])
   return JSONResponse({"ok": True})

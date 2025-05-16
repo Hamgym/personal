@@ -121,15 +121,15 @@ class CRUD:
       cursor.execute(select, (orderNumber, payload["id"]))
       row = cursor.fetchone()
       return row
-  def update_order(order_id):
+  def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      update = "UPDATE orders SET status=1 WHERE id=%s"
-      cursor.execute(update, (order_id,))
+      update = "UPDATE lists SET bought=%s WHERE id=%s"
+      cursor.execute(update, (bought,id))
       cnx.commit()
-  def delete_book(payload):
+  def delete_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      delete = "DELETE FROM booking WHERE user_id=%s"
-      cursor.execute(delete, (payload["id"],))
+      delete = "DELETE FROM lists WHERE user_id=%s AND id=%s"
+      cursor.execute(delete, (payload["id"],item_id))
       cnx.commit()
