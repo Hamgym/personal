@@ -9,9 +9,11 @@ async function init() {
   let addBtn = document.querySelector(".add-item-btn");
   let closeBtn = document.querySelector(".close-btn");
   let itemForm = document.querySelector(".dialog-main form");
+  let rmvBtn = document.querySelector(".rmv-bought");
 
 
   signinCheck(user);
+  // addSomeItems();
   loadList(token);
   addBtn.addEventListener("click", () => dialog("block"));
   closeBtn.addEventListener("click", () => dialog("none"));
@@ -31,6 +33,19 @@ async function init() {
       dialog("none");
       this.querySelector('[name="item"]').value = "";
       this.querySelector('[name="specs"]').value = "";
+    }
+  });
+  rmvBtn.addEventListener("click", async function () {
+    if (!confirm("要清除已買項目嗎？")) {
+      return;
+    }
+    let boxes = document.querySelectorAll('[type="checkbox"]');
+    for (let box of boxes) {
+      if (box.checked) {
+        let itemId = box.parentElement.id;
+        delListItem(token, itemId);
+        location.href = "/list";
+      }
     }
   });
 
@@ -69,6 +84,20 @@ async function init() {
       body[key] = value;
     }
     return body;
+  }
+  function addSomeItems() {
+    let list = [];
+    list.push(["牙周適", "經典配方"]);
+    list.push(["橄欖油", "奧利塔"]);
+    list.push(["棉花棒", "盒裝"]);
+    list.push(["純喫茶紅茶", "650ml * 2"]);
+    list.push(["大豆沙拉油", "2L 台糖"]);
+    for (const [item, specs] of list) {
+      let body = {};
+      body.item = item;
+      body.specs = specs;
+      postList(token, body);
+    }
   }
 }
 async function postList(token, body) {
@@ -148,7 +177,7 @@ function addRow(item) {
     if (confirm(`${para.textContent}\n\n要刪除此項目嗎？`)) {
       delListItem(token, item[0]);
       this.parentElement.remove();
-      showRmvBtn();
+      displayRmvBtn();
     }
   });
   box.setAttribute("type", "checkbox");
@@ -157,12 +186,12 @@ function addRow(item) {
   box.addEventListener("click", function () {
     if (box.checked) {
       list.appendChild(this.parentElement);
-      updateListItem(token, item[0], true);
+      updateListItem(token, item[0], box.checked);
       rmv.style.display = "block";
     } else {
       list.prepend(this.parentElement);
-      updateListItem(token, item[0], false);
-      showRmvBtn();
+      updateListItem(token, item[0], box.checked);
+      displayRmvBtn();
     }
   });
   row.className = "row";
@@ -175,7 +204,7 @@ function addRow(item) {
   } else {
     list.prepend(row);
   }
-  function showRmvBtn() {
+  function displayRmvBtn() {
     let rows = document.querySelectorAll(".row");
     let flag = false;
     for (let row of rows) {
