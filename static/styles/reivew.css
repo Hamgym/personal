@@ -1,0 +1,146 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	font-optical-sizing: inherit;
+	text-decoration: none;
+	/* scrollbar-width: none; */
+}
+
+html {
+	color: #666666;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: "Noto Sans TC", sans-serif;
+	font-optical-sizing: auto;
+	line-height: 1;
+}
+
+body {
+	position: relative;
+	padding: 90px 0 50px 0;
+}
+
+
+
+.header {
+	background-color: whitesmoke;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.header .add-product {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	font-size: 30px;
+	padding: 0 10px;
+}
+
+.header form {
+	width: fit-content;
+	margin: auto;
+}
+
+.header form input {
+	border: none;
+	padding: 0 20px;
+	width: 250px;
+	height: 30px;
+	border-radius: 15px;
+}
+
+.header form [type="submit"] {
+	position: absolute;
+	height: 30px;
+	top: 10px;
+	right: 12px;
+	border: none;
+	background-color: inherit;
+}
+
+.header .row {
+	margin-top: 10px;
+	padding: 0 45px;
+	display: flex;
+}
+
+.dropdown {
+	margin-right: 20px;
+}
+
+.dropdown .dropdown-btn {
+	padding: 0 10px;
+	border: none;
+	border-radius: 15px;
+	height: 30px;
+	background-color: lightgray;
+}
+
+.dropdown .dropdown-content {
+	background-color: white;
+	box-shadow: 0 1px 5px lightgray;
+	position: absolute;
+	left: 0;
+	top: 90px;
+	width: 100%;
+	min-height: 200px;
+	padding: 10px;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.dropdown .item {
+	margin: 10px;
+}
+
+
+
+.main {
+	padding: 10px;
+	/* height: 2000px; */
+}
+
+.main .product {
+	/* background-color: aqua; */
+	height: 60px;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px lightgray;
+	padding: 20px 10px;
+	font-size: 20px;
+	text-wrap: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 15px;
+}
+
+
+
+
+.footer {
+	background-color: whitesmoke;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer a {
+	padding: 10px;
+}
+
+.footer a:nth-child(3) {
+	background-color: lightgray;
+	border-radius: 5px;
+}

@@ -13,41 +13,11 @@ async function init() {
 
 
   signinCheck(user);
-  // addSomeItems();
   loadList(token);
   addBtn.addEventListener("click", () => dialog("block"));
   closeBtn.addEventListener("click", () => dialog("none"));
-  itemForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
-    let body = formToBody(this);
-    let resData = await postList(token, body);
-    if (resData.error) {
-      let p = this.querySelector("p.message");
-      p.innerText = resData.message;
-      p.setAttribute("style", "display:block");
-    }
-    if (resData.ok) {
-      let id = resData.id;
-      let item = await getListItem(token, id);
-      addRow(item);
-      dialog("none");
-      this.querySelector('[name="item"]').value = "";
-      this.querySelector('[name="specs"]').value = "";
-    }
-  });
-  rmvBtn.addEventListener("click", async function () {
-    if (!confirm("要清除已買項目嗎？")) {
-      return;
-    }
-    let boxes = document.querySelectorAll('[type="checkbox"]');
-    for (let box of boxes) {
-      if (box.checked) {
-        let itemId = box.parentElement.id;
-        delListItem(token, itemId);
-        location.href = "/list";
-      }
-    }
-  });
+  itemForm.addEventListener("submit", submitItemForm);
+  rmvBtn.addEventListener("click", rmvItems);
 
 
   async function getUser(token) {
@@ -64,6 +34,37 @@ async function init() {
     let items = await getList(token);
     for (let item of items) {
       addRow(item);
+    }
+  }
+  async function submitItemForm(event) {
+    event.preventDefault();
+    let body = formToBody(this);
+    let resData = await postList(token, body);
+    if (resData.error) {
+      let p = this.querySelector("p.message");
+      p.innerText = resData.message;
+      p.setAttribute("style", "display:block");
+    }
+    if (resData.ok) {
+      let id = resData.id;
+      let item = await getListItem(token, id);
+      addRow(item);
+      dialog("none");
+      this.querySelector('[name="item"]').value = "";
+      this.querySelector('[name="specs"]').value = "";
+    }
+  }
+  async function rmvItems() {
+    if (!confirm("要清除已買項目嗎？")) {
+      return;
+    }
+    let boxes = document.querySelectorAll('[type="checkbox"]');
+    for (let box of boxes) {
+      if (box.checked) {
+        let itemId = box.parentElement.id;
+        delListItem(token, itemId);
+        location.href = "/list";
+      }
     }
   }
   function dialog(display) {
