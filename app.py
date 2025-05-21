@@ -8,7 +8,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
 from utils.auth import *
 from models.rdb import *
-from routers import attractions, lists, orders, users
+from routers import attractions, lists, product, users
 app=FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -41,3 +41,4 @@ async def auth_error(request, exc):
 
 app.include_router(users.router)
 app.include_router(lists.router)
+app.include_router(product.router)

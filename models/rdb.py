@@ -47,12 +47,40 @@ class CRUD:
       cursor.execute(insert, (payload["id"], body.item, body.specs))
       cnx.commit()
       return cursor.lastrowid
-  def create_order(order_id, payload, body):
+  def create_category(category):
     with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      insert = "INSERT INTO orders VALUES(%s, %s, %s, %s)"
-      cursor.execute(insert, (order_id, payload["id"], 0, json.dumps(body)))
-      cnx.commit()
+      try:
+        cursor = cnx.cursor()
+        insert = "INSERT INTO category(name) VALUES(%s)"
+        cursor.execute(insert, (category,))
+        cnx.commit()
+        return cursor.lastrowid
+      except:
+        select = "SELECT * FROM category WHERE name=%s"
+        cursor.execute(select, (category,))
+        row = cursor.fetchone()
+        return row[0]
+  def create_brand(brand):
+    with cnxpool.get_connection() as cnx:
+      try:
+        cursor = cnx.cursor()
+        insert = "INSERT INTO brand(name) VALUES(%s)"
+        cursor.execute(insert, (brand,))
+        cnx.commit()
+        return cursor.lastrowid
+      except:
+        select = "SELECT * FROM brand WHERE name=%s"
+        cursor.execute(select, (brand,))
+        row = cursor.fetchone()
+        return row[0]
+  def create_product(category, brand, product):
+    with cnxpool.get_connection() as cnx:
+      try:
+        cursor = cnx.cursor()
+
+        return True
+      except:
+        return False
   def create_payment(order_id, res_data):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

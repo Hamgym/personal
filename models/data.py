@@ -30,9 +30,10 @@ class Order(BaseModel):
   price: Literal[2000, 2500]
   trip: Trip
   contact: Contact
-class OrderBody(BaseModel):
-  prime: str
-  order: Order
+class ProductForm(BaseModel):
+  category: str
+  brand: str
+  name: str
 
 
 def get_attractions_data(rows):
