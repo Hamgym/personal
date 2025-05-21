@@ -5,11 +5,23 @@ init();
 
 
 async function init() {
-  let dropdowns = document.querySelectorAll("div.dropdown");
+  let addProductBtn = document.querySelector("div.add-product-btn");
+  let cancelBtn = document.querySelector(".add-product-dialog .cancel");
 
 
   signinCheck();
   dropdownClick();
+
+
+  addProductBtn.addEventListener("click", function () {
+    let dialog = document.querySelector("div.add-product-dialog");
+    dialog.style.display = "block";
+  });
+  cancelBtn.addEventListener("click", function () {
+    let dialog = document.querySelector("div.add-product-dialog");
+    dialog.style.display = "none";
+  });
+
 
 
 
@@ -31,6 +43,7 @@ async function init() {
     return user;
   }
   function dropdownClick() {
+    let dropdowns = document.querySelectorAll("div.dropdown");
     for (let dropdown of dropdowns) {
       dropdown.addEventListener("click", function () {
         let content = dropdown.querySelector(".dropdown-content");

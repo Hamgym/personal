@@ -15,8 +15,33 @@
 </head>
 
 <body>
+  <div class="add-product-dialog" style="display: none;">
+    <!-- <div class="add-product-dialog"> -->
+    <form action="">
+      <h2>建立商品</h2>
+      <div class="row">
+        <label for="category">類別</label>
+        <input type="text" id="category" name="category" placeholder="輸入商品類別"
+          required>
+      </div>
+      <div class="row">
+        <label for="brand">品牌</label>
+        <input type="text" id="brand" name="brand" placeholder="輸入品牌名稱"
+          required>
+      </div>
+      <div class="row">
+        <label for="name">名稱</label>
+        <input type="text" id="name" name="name" placeholder="輸入商品名稱" required>
+      </div>
+      <div class="row">
+        <button type="submit">提交</button>
+        <button type="button" class="cancel">取消</button>
+      </div>
+    </form>
+  </div>
+
   <div class="header">
-    <div class="add-product">+</div>
+    <!-- <div class="add-product-btn">+</div> -->
     <form action="#">
       <input type="text" name="" id="" placeholder="請輸入商品名稱">
       <button type="submit">搜尋</button>
@@ -46,6 +71,8 @@
     <div class="product">【舒跑】運動飲料</div>
     <div class="product">【麥香】阿薩姆紅茶</div>
   </div>
+
+  <div class="add-product-btn">新增一個商品</div>
 
   <div class="footer">
     <a href="/">首頁</a>

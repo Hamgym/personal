@@ -27,21 +27,63 @@ body {
 
 
 
+.add-product-dialog {
+	background-color: white;
+	width: 100%;
+	height: calc(100% - 90px - 50px);
+	position: fixed;
+	z-index: 1;
+	top: 90px;
+}
+
+.add-product-dialog h2 {
+	font-size: 30px;
+	padding: 10px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.add-product-dialog .row {
+	width: fit-content;
+	margin: 5px auto;
+}
+
+.add-product-dialog label {
+	display: block;
+	padding: 5px 0;
+	font-size: 20px;
+}
+
+.add-product-dialog input {
+	font-size: 20px;
+	padding: 5px;
+}
+
+.add-product-dialog button {
+	font-size: 20px;
+	padding: 0 5px;
+	margin: 10px;
+}
+
+
+
 .header {
 	background-color: whitesmoke;
 	padding: 10px;
 	position: fixed;
 	top: 0;
 	width: 100%;
+	z-index: 2;
 }
 
-.header .add-product {
+/* .header .add-product-btn {
 	position: absolute;
 	top: 10px;
 	left: 10px;
 	font-size: 30px;
 	padding: 0 10px;
-}
+	line-height: 30px;
+} */
 
 .header form {
 	width: fit-content;
@@ -84,8 +126,9 @@ body {
 }
 
 .dropdown .dropdown-content {
-	background-color: white;
-	box-shadow: 0 1px 5px lightgray;
+	background-color: whitesmoke;
+	box-shadow: 0 4px 4px lightgray;
+	border-radius: 10px;
 	position: absolute;
 	left: 0;
 	top: 90px;
@@ -119,6 +162,26 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-bottom: 15px;
+}
+
+
+
+.add-product-btn {
+	background-color: #f45e60;
+	color: white;
+	height: 60px;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px lightgray;
+	padding: 20px 10px;
+	margin: 0 10px;
+	font-size: 20px;
+	text-wrap: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	margin-bottom: 15px;
+	position: relative;
+	top: -10px;
 }
 
 
