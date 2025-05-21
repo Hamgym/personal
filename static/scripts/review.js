@@ -6,8 +6,23 @@ init();
 
 async function init() {
   checkSignin();
+  loadProducts();
   setDropdown();
   setAddProductDialog();
+  setSearchForm();
+
+
+  let url = "/api/product/category"
+  let request = new Request(url, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+  });
+  let res = await fetch(request);
+  let resData = await res.json();
+  console.log(resData);
+
+
 
 
   async function checkSignin() {
@@ -26,6 +41,33 @@ async function init() {
       let user = resData.data;
       return user;
     }
+  }
+  async function loadProducts(keyword) {
+    let url = "/api/product";
+    if (!(keyword === undefined)) {
+      url += `?keyword=${keyword}`;
+    }
+    let request = new Request(url, {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+    });
+    let res = await fetch(request);
+    let resData = await res.json();
+    let data = resData.data;
+    let main = document.querySelector(".main");
+    while (main.firstChild) {
+      main.firstChild.remove();
+    }
+    for (let item of data) {
+      let product = document.createElement("div");
+      product.id = item[0];
+      product.className = "product";
+      product.textContent = `【${item[2]}】${item[3]}`;
+      main.appendChild(product);
+    }
+
   }
   function setDropdown() {
     let dropdowns = document.querySelectorAll("div.dropdown");
@@ -68,6 +110,24 @@ async function init() {
       let res = await fetch(request);
       let resData = await res.json();
       console.log(resData);
+      let newProduct = resData.newProduct;
+      if (newProduct) {
+        // 將資訊代入搜尋欄位並搜尋
+        alert("成功建立新產品！");
+        location.href = "/review";
+      } else {
+        // 將資訊代入搜尋欄位並搜尋
+        alert("該商品已經存在！");
+      }
     });
+  }
+  function setSearchForm() {
+    let searchForm = document.querySelector(".header form");
+    searchForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      let input = document.querySelector(".header input");
+      let keyword = input.value;
+      loadProducts(keyword);
+    })
   }
 }

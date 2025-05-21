@@ -11,12 +11,17 @@ async def post_prod(payload=Depends(jwt_auth), form:ProductForm=Form()):
   category_id = CRUD.create_category(form.category)
   brand_id = CRUD.create_brand(form.brand)
   new_product = CRUD.create_product(category_id, brand_id, form.name)
-  return new_product
+  return {
+    "newProduct": new_product,
+    "product": form
+  }
 
-@router.get("/api/order/{orderNumber}")
-async def get_order(payload=Depends(jwt_auth), orderNumber:str=Path()):
-  row = CRUD.read_order(orderNumber, payload)
-  if row==None:
-    return {"data": None}
-  data = get_order_data(row)
-  return {"data": data}
+@router.get("/api/product")
+async def get_order(payload=Depends(jwt_auth), keyword:str=Query(None)):
+  rows = CRUD.read_products(keyword)
+  return {"data": rows}
+
+@router.get("/api/product/category")
+async def get_order(payload=Depends(jwt_auth)):
+  rows = CRUD.read_category()
+  return {"data": rows}

@@ -133,11 +133,13 @@ body {
 	left: 0;
 	top: 90px;
 	width: 100%;
-	min-height: 200px;
+	max-height: 230px;
 	padding: 10px;
 	display: flex;
 	align-items: flex-start;
+	align-content: flex-start;
 	flex-wrap: wrap;
+	overflow-y: scroll;
 }
 
 .dropdown .item {

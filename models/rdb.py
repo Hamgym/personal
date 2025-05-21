@@ -73,11 +73,13 @@ class CRUD:
         cursor.execute(select, (brand,))
         row = cursor.fetchone()
         return row[0]
-  def create_product(category, brand, product):
+  def create_product(category, brand, name):
     with cnxpool.get_connection() as cnx:
       try:
         cursor = cnx.cursor()
-
+        insert = "INSERT INTO product(category, brand, name) VALUES(%s, %s, %s)"
+        cursor.execute(insert, (category,brand,name))
+        cnx.commit()
         return True
       except:
         return False
@@ -142,13 +144,35 @@ class CRUD:
       cursor.execute(select, (payload["id"],item_id))
       row = cursor.fetchone()
       return row
-  def read_order(orderNumber, payload):
+  def read_products(keyword):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      select = "SELECT * FROM orders WHERE id=%s AND user_id=%s"
-      cursor.execute(select, (orderNumber, payload["id"]))
-      row = cursor.fetchone()
-      return row
+      select = "SELECT product.id, category.name as category, brand.name as brand, product.name FROM product JOIN category JOIN brand ON product.category=category.id AND product.brand=brand.id"
+      if keyword!=None and keyword!="":
+        keyword = f"%{keyword}%"
+        where = " WHERE product.name LIKE %s"
+        order = " ORDER BY product.id DESC"
+        select += where+order
+        cursor.execute(select, (keyword,))
+      else:
+        order = " ORDER BY product.id DESC"
+        select += order
+        cursor.execute(select)
+      rows = cursor.fetchall()
+      return rows
+  def read_category():
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT category.name as category, COUNT(product.id) as count
+        FROM category JOIN product
+        ON category.id=product.category
+        GROUP BY category.name
+        ORDER BY count DESC;
+      """
+      cursor.execute(select)
+      rows = cursor.fetchall()
+      return rows
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
