@@ -17,8 +17,8 @@ async def post_prod(payload=Depends(jwt_auth), form:ProductForm=Form()):
   }
 
 @router.get("/api/product")
-async def get_order(payload=Depends(jwt_auth), keyword:str=Query(None)):
-  rows = CRUD.read_products(keyword)
+async def get_order(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query("")):
+  rows = CRUD.read_products(keyword, category, brand)
   return {"data": rows}
 
 @router.get("/api/product/category")

@@ -20,7 +20,30 @@ async function init() {
   });
   let res = await fetch(request);
   let resData = await res.json();
-  console.log(resData);
+  let data = resData.data;
+  let categoryList = document.querySelector(".dropdown-content.category");
+  while (categoryList.firstChild) {
+    categoryList.firstChild.remove();
+  }
+  for (const category of data) {
+    let item = document.createElement("div");
+    let span = document.createElement("span");
+    let text = document.createTextNode(`(${category[1]})`);
+    item.className = "item";
+    span.textContent = category[0];
+    item.appendChild(span);
+    item.appendChild(text);
+    categoryList.appendChild(item);
+    item.addEventListener("click", function () {
+      let category = item.querySelector("span").textContent;
+      let btn = document.querySelector(".dropdown-btn.category");
+      let keyword = document.querySelector(".header input").value;
+      btn.textContent = `${category} ▼`;
+      loadProducts(keyword, category);
+    });
+  }
+
+
 
 
 
@@ -42,11 +65,8 @@ async function init() {
       return user;
     }
   }
-  async function loadProducts(keyword) {
-    let url = "/api/product";
-    if (!(keyword === undefined)) {
-      url += `?keyword=${keyword}`;
-    }
+  async function loadProducts(keyword = "", category = "", brand = "") {
+    let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}`;
     let request = new Request(url, {
       headers: {
         "Content-Type": "application/json",

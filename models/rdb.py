@@ -144,20 +144,24 @@ class CRUD:
       cursor.execute(select, (payload["id"],item_id))
       row = cursor.fetchone()
       return row
-  def read_products(keyword):
+  def read_products(keyword, category, brand):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = "SELECT product.id, category.name as category, brand.name as brand, product.name FROM product JOIN category JOIN brand ON product.category=category.id AND product.brand=brand.id"
-      if keyword!=None and keyword!="":
-        keyword = f"%{keyword}%"
-        where = " WHERE product.name LIKE %s"
-        order = " ORDER BY product.id DESC"
-        select += where+order
-        cursor.execute(select, (keyword,))
-      else:
-        order = " ORDER BY product.id DESC"
-        select += order
-        cursor.execute(select)
+      where = ""
+      value = []
+      if keyword!="":
+        where += " WHERE product.name LIKE %s"
+        value.append(f"%{keyword}%")
+      if category!="":
+        where += " AND category.name=%s"
+        value.append(category)
+      if brand!="":
+        where += " AND brand.name=%s"
+        value.append(brand)
+      order = " ORDER BY product.id DESC"
+      select += where+order
+      cursor.execute(select, value)
       rows = cursor.fetchall()
       return rows
   def read_category():
