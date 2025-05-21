@@ -6,43 +6,10 @@ init();
 
 async function init() {
   checkSignin();
-  loadProducts();
+  loadProduct();
   setDropdown();
-  setAddProductDialog();
+  setAddProduct();
   setSearchForm();
-
-
-  let url = "/api/product/category"
-  let request = new Request(url, {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    },
-  });
-  let res = await fetch(request);
-  let resData = await res.json();
-  let data = resData.data;
-  let categoryList = document.querySelector(".dropdown-content.category");
-  while (categoryList.firstChild) {
-    categoryList.firstChild.remove();
-  }
-  for (const category of data) {
-    let item = document.createElement("div");
-    let span = document.createElement("span");
-    let text = document.createTextNode(`(${category[1]})`);
-    item.className = "item";
-    span.textContent = category[0];
-    item.appendChild(span);
-    item.appendChild(text);
-    categoryList.appendChild(item);
-    item.addEventListener("click", function () {
-      let category = item.querySelector("span").textContent;
-      let btn = document.querySelector(".dropdown-btn.category");
-      let keyword = document.querySelector(".header input").value;
-      btn.textContent = `${category} ▼`;
-      loadProducts(keyword, category);
-    });
-  }
-
 
 
 
@@ -65,7 +32,7 @@ async function init() {
       return user;
     }
   }
-  async function loadProducts(keyword = "", category = "", brand = "") {
+  async function loadProduct(keyword = "", category = "", brand = "") {
     let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}`;
     let request = new Request(url, {
       headers: {
@@ -87,24 +54,61 @@ async function init() {
       product.textContent = `【${item[2]}】${item[3]}`;
       main.appendChild(product);
     }
-
   }
-  function setDropdown() {
-    let dropdowns = document.querySelectorAll("div.dropdown");
-    for (let dropdown of dropdowns) {
-      dropdown.addEventListener("click", function () {
-        let content = dropdown.querySelector(".dropdown-content");
-        if (content.style.display == "none") {
-          content.style.display = "flex";
-        } else {
-          content.style.display = "none";
-        }
+  async function setDropdown() {
+    display();
+    categoryFilter();
+
+    function display() {
+      let dropdowns = document.querySelectorAll("div.dropdown");
+      for (let dropdown of dropdowns) {
+        dropdown.addEventListener("click", function () {
+          let content = dropdown.querySelector(".dropdown-content");
+          if (content.style.display == "none") {
+            content.style.display = "flex";
+          } else {
+            content.style.display = "none";
+          }
+        });
+      }
+    }
+    async function categoryFilter() {
+      let url = "/api/product/category"
+      let request = new Request(url, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
       });
+      let res = await fetch(request);
+      let resData = await res.json();
+      let data = resData.data;
+      let categoryList = document.querySelector(".dropdown-content.category");
+      while (categoryList.firstChild) {
+        categoryList.firstChild.remove();
+      }
+      for (const category of data) {
+        let item = document.createElement("div");
+        let span = document.createElement("span");
+        let text = document.createTextNode(`(${category[1]})`);
+        item.className = "item";
+        span.textContent = category[0];
+        item.appendChild(span);
+        item.appendChild(text);
+        categoryList.appendChild(item);
+        item.addEventListener("click", function () {
+          let category = item.querySelector("span").textContent;
+          let btn = document.querySelector(".dropdown-btn.category");
+          let keyword = document.querySelector(".header input").value;
+          btn.textContent = `${category} ▼`;
+          loadProduct(keyword, category);
+        });
+      }
     }
   }
-  function setAddProductDialog() {
+  function setAddProduct() {
     let addProductBtn = document.querySelector("div.add-product-btn");
     let cancelBtn = document.querySelector(".add-product-dialog .cancel");
+    let form = document.querySelector(".add-product-dialog form");
 
     addProductBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
@@ -114,8 +118,6 @@ async function init() {
       let dialog = document.querySelector("div.add-product-dialog");
       dialog.style.display = "none";
     });
-
-    let form = document.querySelector(".add-product-dialog form");
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
       let submitter = form.querySelector('button[type="submit"]');
@@ -147,7 +149,7 @@ async function init() {
       event.preventDefault();
       let input = document.querySelector(".header input");
       let keyword = input.value;
-      loadProducts(keyword);
+      loadProduct(keyword);
     })
   }
 }

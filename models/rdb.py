@@ -83,12 +83,6 @@ class CRUD:
         return True
       except:
         return False
-  def create_payment(order_id, res_data):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      insert = "INSERT INTO payment VALUES(%s, %s)"
-      cursor.execute(insert, (order_id, json.dumps(res_data)))
-      cnx.commit()
   def read_attractions(page, keyword):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -112,12 +106,6 @@ class CRUD:
       cursor.execute(select, (attractionId,))
       row = cursor.fetchone()
       return row
-  def read_mrts():
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      cursor.execute("SELECT name FROM mrt")
-      rows = cursor.fetchall()
-      return rows
   def read_user(user):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -147,11 +135,15 @@ class CRUD:
   def read_products(keyword, category, brand):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      select = "SELECT product.id, category.name as category, brand.name as brand, product.name FROM product JOIN category JOIN brand ON product.category=category.id AND product.brand=brand.id"
-      where = ""
+      select = """
+        SELECT product.id, category.name, brand.name, product.name
+        FROM product JOIN category JOIN brand
+        ON product.category=category.id AND product.brand=brand.id
+      """
+      where = " WHERE TRUE"
       value = []
       if keyword!="":
-        where += " WHERE product.name LIKE %s"
+        where += " AND product.name LIKE %s"
         value.append(f"%{keyword}%")
       if category!="":
         where += " AND category.name=%s"
@@ -160,8 +152,7 @@ class CRUD:
         where += " AND brand.name=%s"
         value.append(brand)
       order = " ORDER BY product.id DESC"
-      select += where+order
-      cursor.execute(select, value)
+      cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
   def read_category():
