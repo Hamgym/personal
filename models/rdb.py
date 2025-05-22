@@ -155,17 +155,23 @@ class CRUD:
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_category():
+  def read_category(keyword):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
         SELECT category.name as category, COUNT(product.id) as count
         FROM category JOIN product
         ON category.id=product.category
-        GROUP BY category.name
-        ORDER BY count DESC;
       """
-      cursor.execute(select)
+      where = " WHERE TRUE"
+      value = []
+      if keyword!="":
+        print(keyword)
+        where += " AND product.name LIKE %s"
+        value.append(f"%{keyword}%")
+      group = " GROUP BY category.name"
+      order = " ORDER BY count DESC;"
+      cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       return rows
   def update_list_item(id, bought):

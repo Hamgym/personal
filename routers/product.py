@@ -22,6 +22,6 @@ async def get_order(payload=Depends(jwt_auth), keyword:str=Query(""), category:s
   return {"data": rows}
 
 @router.get("/api/product/category")
-async def get_order(payload=Depends(jwt_auth)):
-  rows = CRUD.read_category()
+async def get_order(payload=Depends(jwt_auth), keyword:str=Query("")):
+  rows = CRUD.read_category(keyword)
   return {"data": rows}

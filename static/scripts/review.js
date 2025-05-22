@@ -1,4 +1,5 @@
 const token = localStorage.getItem("token");
+let initialized = false;
 
 
 init();
@@ -10,17 +11,19 @@ async function init() {
   setDropdown();
   setAddProduct();
   setSearchForm();
-
+  initialized = true;
 
 
 
 
   async function checkSignin() {
     let user = await getUser(token);
+
     if (user == null) {
       alert("請先登入系統");
       location.href = "/";
     }
+
     async function getUser(token) {
       let url = "/api/user/auth";
       let request = new Request(url, {
@@ -44,6 +47,7 @@ async function init() {
     let resData = await res.json();
     let data = resData.data;
     let main = document.querySelector(".main");
+
     while (main.firstChild) {
       main.firstChild.remove();
     }
@@ -55,12 +59,22 @@ async function init() {
       main.appendChild(product);
     }
   }
-  async function setDropdown() {
-    display();
-    categoryFilter();
+  async function setDropdown(keyword = "") {
+    resetBtns();
+    displayContent();
+    categoryFilter(keyword);
 
-    function display() {
+    function resetBtns() {
+      let categoryTitle = document.querySelector(".category span");
+      // let brandTitle = document.querySelector("")
+      categoryTitle.textContent = "類別";
+
+    }
+    function displayContent() {
       let dropdowns = document.querySelectorAll("div.dropdown");
+      if (initialized) {
+        return;
+      }
       for (let dropdown of dropdowns) {
         dropdown.addEventListener("click", function () {
           let content = dropdown.querySelector(".dropdown-content");
@@ -72,8 +86,8 @@ async function init() {
         });
       }
     }
-    async function categoryFilter() {
-      let url = "/api/product/category"
+    async function categoryFilter(keyword = "") {
+      let url = `/api/product/category?keyword=${keyword}`
       let request = new Request(url, {
         headers: {
           "Authorization": `Bearer ${token}`
@@ -97,9 +111,9 @@ async function init() {
         categoryList.appendChild(item);
         item.addEventListener("click", function () {
           let category = item.querySelector("span").textContent;
-          let btn = document.querySelector(".dropdown-btn.category");
           let keyword = document.querySelector(".header input").value;
-          btn.textContent = `${category} ▼`;
+          let title = document.querySelector(".category span");
+          title.textContent = category;
           loadProduct(keyword, category);
         });
       }
@@ -145,11 +159,13 @@ async function init() {
   }
   function setSearchForm() {
     let searchForm = document.querySelector(".header form");
+
     searchForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       let input = document.querySelector(".header input");
       let keyword = input.value;
       loadProduct(keyword);
+      setDropdown(keyword);
     })
   }
 }
