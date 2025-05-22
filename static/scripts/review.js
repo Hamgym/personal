@@ -63,12 +63,13 @@ async function init() {
     resetBtns();
     displayContent();
     categoryFilter(keyword);
+    brandFilter(keyword);
 
     function resetBtns() {
       let categoryTitle = document.querySelector(".category span");
-      // let brandTitle = document.querySelector("")
+      let brandTitle = document.querySelector(".brand span");
       categoryTitle.textContent = "類別";
-
+      brandTitle.textContent = "品牌";
     }
     function displayContent() {
       let dropdowns = document.querySelectorAll("div.dropdown");
@@ -115,6 +116,38 @@ async function init() {
           let title = document.querySelector(".category span");
           title.textContent = category;
           loadProduct(keyword, category);
+        });
+      }
+    }
+    async function brandFilter(keyword = "") {
+      let url = `/api/product/brand?keyword=${keyword}`
+      let request = new Request(url, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
+      });
+      let res = await fetch(request);
+      let resData = await res.json();
+      let data = resData.data;
+      let brandList = document.querySelector(".dropdown-content.brand");
+      while (brandList.firstChild) {
+        brandList.firstChild.remove();
+      }
+      for (const brand of data) {
+        let item = document.createElement("div");
+        let span = document.createElement("span");
+        let text = document.createTextNode(`(${brand[1]})`);
+        item.className = "item";
+        span.textContent = brand[0];
+        item.appendChild(span);
+        item.appendChild(text);
+        brandList.appendChild(item);
+        item.addEventListener("click", function () {
+          let brand = item.querySelector("span").textContent;
+          let keyword = document.querySelector(".header input").value;
+          let title = document.querySelector(".brand span");
+          title.textContent = brand;
+          loadProduct(keyword, "", brand);
         });
       }
     }

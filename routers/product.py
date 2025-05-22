@@ -17,11 +17,16 @@ async def post_prod(payload=Depends(jwt_auth), form:ProductForm=Form()):
   }
 
 @router.get("/api/product")
-async def get_order(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query("")):
+async def get_product(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query("")):
   rows = CRUD.read_products(keyword, category, brand)
   return {"data": rows}
 
 @router.get("/api/product/category")
-async def get_order(payload=Depends(jwt_auth), keyword:str=Query("")):
+async def get_category(payload=Depends(jwt_auth), keyword:str=Query("")):
   rows = CRUD.read_category(keyword)
+  return {"data": rows}
+
+@router.get("/api/product/brand")
+async def get_brand(payload=Depends(jwt_auth), keyword:str=Query("")):
+  rows = CRUD.read_brand(keyword)
   return {"data": rows}

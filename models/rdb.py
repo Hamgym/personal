@@ -166,10 +166,27 @@ class CRUD:
       where = " WHERE TRUE"
       value = []
       if keyword!="":
-        print(keyword)
         where += " AND product.name LIKE %s"
         value.append(f"%{keyword}%")
       group = " GROUP BY category.name"
+      order = " ORDER BY count DESC;"
+      cursor.execute(select+where+group+order, value)
+      rows = cursor.fetchall()
+      return rows
+  def read_brand(keyword):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT brand.name, COUNT(product.id) as count
+        FROM brand JOIN product
+        ON brand.id=product.brand
+      """
+      where = " WHERE TRUE"
+      value = []
+      if keyword!="":
+        where += " AND product.name LIKE %s"
+        value.append(f"%{keyword}%")
+      group = " GROUP BY brand.name"
       order = " ORDER BY count DESC;"
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
