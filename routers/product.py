@@ -22,11 +22,11 @@ async def get_product(payload=Depends(jwt_auth), keyword:str=Query(""), category
   return {"data": rows}
 
 @router.get("/api/product/category")
-async def get_category(payload=Depends(jwt_auth), keyword:str=Query("")):
-  rows = CRUD.read_category(keyword)
+async def get_category(payload=Depends(jwt_auth), keyword:str=Query(""), brand:str=Query("")):
+  rows = CRUD.read_category(keyword, brand)
   return {"data": rows}
 
 @router.get("/api/product/brand")
-async def get_brand(payload=Depends(jwt_auth), keyword:str=Query("")):
-  rows = CRUD.read_brand(keyword)
+async def get_brand(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query("")):
+  rows = CRUD.read_brand(keyword, category)
   return {"data": rows}

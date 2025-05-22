@@ -145,47 +145,53 @@ class CRUD:
       if keyword!="":
         where += " AND product.name LIKE %s"
         value.append(f"%{keyword}%")
-      if category!="":
+      if category!="" and category!="類別":
         where += " AND category.name=%s"
         value.append(category)
-      if brand!="":
+      if brand!="" and brand!="品牌":
         where += " AND brand.name=%s"
         value.append(brand)
       order = " ORDER BY product.id DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_category(keyword):
+  def read_category(keyword, brand):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
         SELECT category.name as category, COUNT(product.id) as count
-        FROM category JOIN product
-        ON category.id=product.category
+        FROM product JOIN category JOIN brand
+        ON product.category=category.id AND product.brand=brand.id
       """
       where = " WHERE TRUE"
       value = []
       if keyword!="":
         where += " AND product.name LIKE %s"
         value.append(f"%{keyword}%")
+      if brand!="" and brand!="品牌" and False: # banned
+        where += " AND brand.name=%s"
+        value.append(brand)
       group = " GROUP BY category.name"
       order = " ORDER BY count DESC;"
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_brand(keyword):
+  def read_brand(keyword, category):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
         SELECT brand.name, COUNT(product.id) as count
-        FROM brand JOIN product
-        ON brand.id=product.brand
+        FROM product JOIN category JOIN brand
+        ON product.category=category.id AND product.brand=brand.id
       """
       where = " WHERE TRUE"
       value = []
       if keyword!="":
         where += " AND product.name LIKE %s"
         value.append(f"%{keyword}%")
+      if category!="" and category!="類別":
+        where += " AND category.name=%s"
+        value.append(category)
       group = " GROUP BY brand.name"
       order = " ORDER BY count DESC;"
       cursor.execute(select+where+group+order, value)

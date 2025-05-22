@@ -1,29 +1,20 @@
 const token = localStorage.getItem("token");
-let initialized = false;
-
 
 init();
-
 
 async function init() {
   checkSignin();
   loadProduct();
-  setDropdown();
-  setAddProduct();
   setSearchForm();
-  initialized = true;
-
-
-
-
+  setDropdownSwitch();
+  setDropdownContent();
+  setAddProductBtn();
   async function checkSignin() {
     let user = await getUser(token);
-
     if (user == null) {
       alert("請先登入系統");
       location.href = "/";
     }
-
     async function getUser(token) {
       let url = "/api/user/auth";
       let request = new Request(url, {
@@ -47,7 +38,6 @@ async function init() {
     let resData = await res.json();
     let data = resData.data;
     let main = document.querySelector(".main");
-
     while (main.firstChild) {
       main.firstChild.remove();
     }
@@ -59,36 +49,52 @@ async function init() {
       main.appendChild(product);
     }
   }
-  async function setDropdown(keyword = "") {
-    resetBtns();
-    displayContent();
-    categoryFilter(keyword);
-    brandFilter(keyword);
-
-    function resetBtns() {
-      let categoryTitle = document.querySelector(".category span");
-      let brandTitle = document.querySelector(".brand span");
-      categoryTitle.textContent = "類別";
-      brandTitle.textContent = "品牌";
-    }
-    function displayContent() {
-      let dropdowns = document.querySelectorAll("div.dropdown");
-      if (initialized) {
-        return;
+  function setSearchForm() {
+    let searchForm = document.querySelector(".header form");
+    searchForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      let input = document.querySelector(".header input");
+      let keyword = input.value;
+      loadProduct(keyword);
+      resetBtns()
+      setDropdownContent();
+      function resetBtns() {
+        let categoryTitle = document.querySelector(".category span");
+        let brandTitle = document.querySelector(".brand span");
+        categoryTitle.textContent = "類別";
+        brandTitle.textContent = "品牌";
       }
-      for (let dropdown of dropdowns) {
-        dropdown.addEventListener("click", function () {
-          let content = dropdown.querySelector(".dropdown-content");
-          if (content.style.display == "none") {
-            content.style.display = "flex";
-          } else {
-            content.style.display = "none";
-          }
-        });
+    });
+  }
+  function setDropdownSwitch() {
+    let categoryDropdown = document.querySelector("div.category");
+    let categoryContent = categoryDropdown.querySelector("div.category");
+    let brandDropdown = document.querySelector("div.brand");
+    let brandContent = brandDropdown.querySelector("div.brand");
+    categoryDropdown.addEventListener("click", function () {
+      if (categoryContent.style.display == "none") {
+        categoryContent.style.display = "flex";
+        brandContent.style.display = "none";
+      } else {
+        categoryContent.style.display = "none";
       }
-    }
-    async function categoryFilter(keyword = "") {
-      let url = `/api/product/category?keyword=${keyword}`
+    });
+    brandDropdown.addEventListener("click", function () {
+      if (brandContent.style.display == "none") {
+        brandContent.style.display = "flex";
+        categoryContent.style.display = "none";
+      } else {
+        brandContent.style.display = "none";
+      }
+    });
+  }
+  function setDropdownContent() {
+    categoryFilter();
+    brandFilter();
+    async function categoryFilter() {
+      let keyword = document.querySelector(".header input").value;
+      let brand = document.querySelector(".brand span").textContent;
+      let url = `/api/product/category?keyword=${keyword}&brand=${brand}`;
       let request = new Request(url, {
         headers: {
           "Authorization": `Bearer ${token}`
@@ -116,11 +122,18 @@ async function init() {
           let title = document.querySelector(".category span");
           title.textContent = category;
           loadProduct(keyword, category);
+          setDropdownContent();
+          resetBrandTitle();
+          function resetBrandTitle() {
+            document.querySelector(".brand span").textContent = "品牌";
+          }
         });
       }
     }
-    async function brandFilter(keyword = "") {
-      let url = `/api/product/brand?keyword=${keyword}`
+    async function brandFilter() {
+      let keyword = document.querySelector(".header input").value;
+      let category = document.querySelector(".category span").textContent;
+      let url = `/api/product/brand?keyword=${keyword}&category=${category}`;
       let request = new Request(url, {
         headers: {
           "Authorization": `Bearer ${token}`
@@ -143,20 +156,21 @@ async function init() {
         item.appendChild(text);
         brandList.appendChild(item);
         item.addEventListener("click", function () {
+          let category = document.querySelector(".category span").textContent;
           let brand = item.querySelector("span").textContent;
           let keyword = document.querySelector(".header input").value;
           let title = document.querySelector(".brand span");
           title.textContent = brand;
-          loadProduct(keyword, "", brand);
+          loadProduct(keyword, category, brand);
+          setDropdownContent();
         });
       }
     }
   }
-  function setAddProduct() {
+  function setAddProductBtn() {
     let addProductBtn = document.querySelector("div.add-product-btn");
     let cancelBtn = document.querySelector(".add-product-dialog .cancel");
     let form = document.querySelector(".add-product-dialog form");
-
     addProductBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
       dialog.style.display = "block";
@@ -189,16 +203,5 @@ async function init() {
         alert("該商品已經存在！");
       }
     });
-  }
-  function setSearchForm() {
-    let searchForm = document.querySelector(".header form");
-
-    searchForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      let input = document.querySelector(".header input");
-      let keyword = input.value;
-      loadProduct(keyword);
-      setDropdown(keyword);
-    })
   }
 }
