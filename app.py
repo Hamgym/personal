@@ -20,9 +20,9 @@ async def index(request: Request):
 @app.get("/list", include_in_schema=False)
 async def index(request: Request):
   return FileResponse("./static/list.html", media_type="text/html")
-@app.get("/review", include_in_schema=False)
+@app.get("/product", include_in_schema=False)
 async def index(request: Request):
-  return FileResponse("./static/review.html", media_type="text/html")
+  return FileResponse("./static/product.html", media_type="text/html")
 @app.get("/member", include_in_schema=False)
 async def index(request: Request):
   return FileResponse("./static/list.html", media_type="text/html")
