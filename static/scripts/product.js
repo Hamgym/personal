@@ -47,6 +47,9 @@ async function init() {
       product.className = "product";
       product.textContent = `【${item[2]}】${item[3]}`;
       main.appendChild(product);
+      product.addEventListener("click", function () {
+        location.href = `/review/${product.id}`;
+      });
     }
   }
   function setSearchForm() {

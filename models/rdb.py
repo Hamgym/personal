@@ -132,6 +132,19 @@ class CRUD:
       cursor.execute(select, (payload["id"],item_id))
       row = cursor.fetchone()
       return row
+  def read_product(id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT product.id, brand.name, product.name
+        FROM product JOIN brand
+        ON product.brand=brand.id
+      """
+      where = "WHERE product.id=%s"
+      value = [id]
+      cursor.execute(select+where, value)
+      row = cursor.fetchone()
+      return row
   def read_products(keyword, category, brand):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

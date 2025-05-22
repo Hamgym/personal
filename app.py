@@ -23,6 +23,9 @@ async def index(request: Request):
 @app.get("/product", include_in_schema=False)
 async def index(request: Request):
   return FileResponse("./static/product.html", media_type="text/html")
+@app.get("/review/{id}", include_in_schema=False)
+async def index(request: Request, id: int):
+  return FileResponse("./static/review.html", media_type="text/html")
 @app.get("/member", include_in_schema=False)
 async def index(request: Request):
   return FileResponse("./static/list.html", media_type="text/html")
