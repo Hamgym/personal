@@ -6,6 +6,8 @@ async function init() {
   checkSignin();
   setBackArrow();
   setTitle();
+  setPostBtn();
+  setPostDialog();
 
   async function checkSignin() {
     let user = await getUser(token);
@@ -43,5 +45,19 @@ async function init() {
     let data = resData.data;
     let title = document.querySelector(".header .title");
     title.textContent = `【${data[1]}】${data[2]}`;
+  }
+  function setPostBtn() {
+    let btn = document.querySelector(".post-btn");
+    btn.addEventListener("click", function () {
+      let dialog = document.querySelector(".post-dialog");
+      dialog.style.display = "block";
+    });
+  }
+  function setPostDialog() {
+    let closeBtn = document.querySelector(".close-btn");
+    closeBtn.addEventListener("click", function () {
+      let dialog = document.querySelector(".post-dialog");
+      dialog.style.display = "none";
+    });
   }
 }
