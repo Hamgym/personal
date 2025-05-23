@@ -59,6 +59,51 @@ body {
 
 
 
+.summary {
+	background-color: aqua;
+	height: 250px;
+	padding: 10px;
+	display: flex;
+}
+
+.summary .bar-area {
+	background-color: white;
+	width: 60%;
+	height: 100%;
+}
+
+.bar-area .row {
+	display: flex;
+	align-items: baseline;
+}
+
+.bar-area .row span {
+	padding-right: 20px;
+	width: 15%;
+}
+
+.bar-area .bar {
+	background-color: whitesmoke;
+	width: 85%;
+	height: 10px;
+	border-radius: 5px;
+}
+
+.bar-area .value {
+	background-color: #fbbc04;
+	width: 0%;
+	height: 100%;
+	border-radius: inherit;
+}
+
+.bar-area .five {
+	width: 80%;
+}
+
+.bar-area .four {
+	width: 20%;
+}
+
 
 
 .footer {
