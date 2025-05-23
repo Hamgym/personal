@@ -141,15 +141,9 @@ body {
 
 
 
-.main {
-	background-color: aqua;
-	padding: 10px;
-	height: 2000px;
-}
-
 .main .item {
 	background-color: white;
-	height: 200px;
+	border-bottom: 1px solid hsl(0, 0%, 90%);
 }
 
 .main .user {
@@ -173,33 +167,39 @@ body {
 	position: relative;
 }
 
-.user .date {
-	width: 90px;
-}
-
-.user .like {
-	width: 35px;
-}
-
 .user .stars .value {
 	position: absolute;
 	top: 0;
 	left: 0;
 	color: #fbbc04;
-	width: calc(4 / 5 * 100%);
+	/* width: calc(4 / 5 * 100%); */
 	overflow: hidden;
+}
+
+div[id="1"] .stars .value {
+	width: calc(5 / 5 * 100%);
+}
+
+div[id="2"] .stars .value {
+	width: calc(4 / 5 * 100%);
+}
+
+.user .date {
+	width: 90px;
 }
 
 .user .like {
 	display: flex;
 	align-items: center;
-	/* width: 50px; */
+	width: 45px;
 	height: 50px;
+	/* justify-content: space-between; */
 }
 
 .user .like-btn {
 	width: 20px;
 	aspect-ratio: 1;
+	flex-shrink: 0;
 }
 
 .user .like-btn img {
@@ -211,10 +211,42 @@ body {
 	margin-left: 5px;
 }
 
-.item .image {
+.content .text {
+	/* padding: 10px 0; */
+	line-height: 1.5;
+	padding: 0 10px;
+}
+
+.content .image {
 	background-color: aliceblue;
-	height: 150px;
-	aspect-ratio: 1;
+	width: fit-content;
+	max-width: 100%;
+	height: 300px;
+	margin: auto;
+	margin-top: 10px;
+	/* aspect-ratio: 1; */
+}
+
+.content .image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+
+.post-btn {
+	background-color: #f45e60;
+	color: white;
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 20px;
+	box-shadow: 0 1px 5px lightgray;
+	margin: 40px auto;
+	margin-bottom: 150px;
+	font-size: 20px;
+	text-align: center;
 }
 
 
