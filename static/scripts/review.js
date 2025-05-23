@@ -55,9 +55,34 @@ async function init() {
   }
   function setPostDialog() {
     let closeBtn = document.querySelector(".close-btn");
+
+    let form = document.querySelector(".post-dialog form");
     closeBtn.addEventListener("click", function () {
       let dialog = document.querySelector(".post-dialog");
       dialog.style.display = "none";
+    });
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      let submitter = this.querySelector("button");
+      let formData = new FormData(this, submitter);
+      let id = location.pathname.split("/")[2];
+      id = id.toString()
+      formData.append("product_id", id);
+      // for (let [key, value] of formData) {
+      //   console.log(`${key}: ${value}`);
+      // }
+      let url = "/api/review";
+      let init = {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
+        body: formData,
+      };
+      let request = new Request(url, init);
+      let res = await fetch(request);
+      let resData = await res.json();
+      console.log(resData);
     });
   }
 }
