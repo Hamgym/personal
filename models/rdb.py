@@ -30,7 +30,43 @@ def generate_order_number(payload) -> str:
       appended = f"-{payload["id"]%1000:03}"
       order_id += appended
     return order_id
-
+def get_rating(rows):
+  if not rows:
+    return [0,0,0,0,0,0,0,0]
+  result = [0,0,0,0,0]
+  for row in rows:
+    if row[0]==1:
+      result[0] += 1
+      continue
+    if row[0]==2:
+      result[1] += 1
+      continue
+    if row[0]==3:
+      result[2] += 1
+      continue
+    if row[0]==4:
+      result[3] += 1
+      continue
+    if row[0]==5:
+      result[4] += 1
+      continue
+  total = 0
+  count = 0
+  for i in range(5):
+    total += result[i]*(i+1)
+    count += result[i]
+  avg_rating = total/count
+  percent = avg_rating/5*100
+  avg_rating = f"{avg_rating:.2}"
+  for i in range(5):
+    result[i] = result[i]/count*100
+  max_value = max(result)
+  for i in range(5):
+    result[i] = result[i]/max_value*100
+  result.append(avg_rating)
+  result.append(percent)
+  result.append(count)
+  return result
 
 class CRUD:
   def create_user(user):
@@ -288,6 +324,19 @@ class CRUD:
       cursor.execute(select+where, value)
       row = cursor.fetchone()
       return row
+  def read_rating(product_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT rating
+        FROM review
+      """
+      where = " WHERE product_id=%s"
+      value = [product_id]
+      cursor.execute(select+where, value)
+      rows = cursor.fetchall()
+      result = get_rating(rows)
+      return result
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

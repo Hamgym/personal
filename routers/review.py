@@ -32,3 +32,8 @@ async def get_mylike(payload=Depends(jwt_auth), reviewID:int=Path()):
   user_id = payload["id"]
   row = CRUD.read_mylike(reviewID, user_id)
   return row
+
+@router.get("/api/review/rating/{product_id}")
+async def get_rating(product_id:int=Path()):
+  result = CRUD.read_rating(product_id)
+  return result

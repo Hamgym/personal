@@ -6,6 +6,7 @@ async function init() {
   checkSignin();
   setBackArrow();
   setTitle();
+  loadRating();
   loadReview();
   setPostBtn();
   setPostDialog();
@@ -45,6 +46,25 @@ async function init() {
     let data = resData.data;
     let title = document.querySelector(".header .title");
     title.textContent = `【${data[1]}】${data[2]}`;
+  }
+  async function loadRating() {
+    let id = location.pathname.split("/")[2];
+    let url = `/api/review/rating/${id}`;
+    let request = new Request(url, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      },
+    });
+    let res = await fetch(request);
+    let result = await res.json();
+    document.querySelector(".value.one").style.width = `${result[0]}%`;
+    document.querySelector(".value.two").style.width = `${result[1]}%`;
+    document.querySelector(".value.three").style.width = `${result[2]}%`;
+    document.querySelector(".value.four").style.width = `${result[3]}%`;
+    document.querySelector(".value.five").style.width = `${result[4]}%`;
+    document.querySelector(".avg .score").textContent = result[5];
+    document.querySelector(".stars .value").style.width = `calc(${result[6]}%)`;
+    document.querySelector(".caption span").textContent = result[7];
   }
   async function loadReview() {
     let data = await loadData();

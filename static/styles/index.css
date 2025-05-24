@@ -23,6 +23,8 @@ html {
 body {
 	position: relative;
 	padding: 50px 0;
+	/* width: 360px;
+	margin: 0 auto; */
 }
 
 .mask {
