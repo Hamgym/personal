@@ -1,6 +1,5 @@
 from pydantic import BaseModel, EmailStr, Field
 from fastapi import UploadFile
-from typing import Optional
 from datetime import date
 from typing import Literal
 import json
@@ -41,7 +40,7 @@ class ReviewCreate(BaseModel):
   rating: int = Field(ge=1, le=5)
   comment: str
   photo: UploadFile
-  is_anonymous: str|None = None
+  is_anonymous: str = "off"
 
 
 def get_attractions_data(rows):

@@ -195,15 +195,13 @@ async function init() {
       let request = new Request(url, init);
       let res = await fetch(request);
       let resData = await res.json();
-      console.log(resData);
       let newProduct = resData.newProduct;
       if (newProduct) {
-        // 將資訊代入搜尋欄位並搜尋
         alert("成功建立新產品！");
-        location.href = "/review";
+        location.href = "/product";
       } else {
-        // 將資訊代入搜尋欄位並搜尋
         alert("該商品已經存在！");
+        // 代入資料並搜尋
       }
     });
   }

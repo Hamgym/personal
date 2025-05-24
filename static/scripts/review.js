@@ -55,7 +55,6 @@ async function init() {
   }
   function setPostDialog() {
     let closeBtn = document.querySelector(".close-btn");
-
     let form = document.querySelector(".post-dialog form");
     closeBtn.addEventListener("click", function () {
       let dialog = document.querySelector(".post-dialog");
