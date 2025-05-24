@@ -9,7 +9,6 @@ async function init() {
   loadReview();
   setPostBtn();
   setPostDialog();
-
   async function checkSignin() {
     let user = await getUser(token);
     if (user == null) {
@@ -67,7 +66,8 @@ async function init() {
       for (const item of data) {
         appendReview(item);
       }
-      function appendReview(data) {
+      async function appendReview(data) {
+        let isMyLike = await checkMyLike();
         let main = document.querySelector("div.main");
         let item = document.createElement("div");
         let user = document.createElement("div");
@@ -100,7 +100,11 @@ async function init() {
         user.appendChild(date);
         like.className = "like";
         likeBtn.className = "like-btn";
-        img.setAttribute("src", "/static/images/like-unfilled.png")
+        if (isMyLike) {
+          img.setAttribute("src", "/static/images/like-filled.png");
+        } else {
+          img.setAttribute("src", "/static/images/like-unfilled.png");
+        }
         likeBtn.appendChild(img);
         like.appendChild(likeBtn);
         span.textContent = data[4];
@@ -118,7 +122,8 @@ async function init() {
         item.appendChild(content);
         main.appendChild(item);
         likeBtn.addEventListener("click", async function () {
-          let reviewID = this.parentElement.parentElement.parentElement.id;
+          // let reviewID = this.parentElement.parentElement.parentElement.id;
+          let reviewID = data[0];
           let url = "/api/review/like";
           let init = {
             method: "POST",
@@ -131,8 +136,33 @@ async function init() {
           let request = new Request(url, init);
           let res = await fetch(request);
           let resData = await res.json();
-          console.log(resData);
+          if (resData) {
+            let span = document.querySelector(".like span");
+            let count = span.textContent;
+            let icon = document.querySelector(".like-btn img");
+            count = Number(count);
+            count += 1;
+            span.textContent = count;
+            icon.setAttribute("src", "/static/images/like-filled.png");
+          }
         })
+        async function checkMyLike() {
+          let reviewID = data[0];
+          let url = `/api/review/mylike/${reviewID}`;
+          let init = {
+            headers: {
+              "Authorization": `Bearer ${token}`,
+            },
+          };
+          let request = new Request(url, init);
+          let res = await fetch(request);
+          let resData = await res.json();
+          if (resData !== null) {
+            return true;
+          } else {
+            return false
+          }
+        }
       }
     }
   }

@@ -263,11 +263,49 @@ class CRUD:
         tmp.pop()
         result.append(tmp)
       return result
+  def read_like(review_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT COUNT(user_id)
+        FROM review_likes
+      """
+      where = " WHERE review_id=%s"
+      group = " GROUP BY review_id"
+      value = [review_id]
+      cursor.execute(select+where+group, value)
+      row = cursor.fetchone()
+      return row
+  def read_mylike(review_id, user_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT *
+        FROM review_likes
+      """
+      where = " WHERE review_id=%s AND user_id=%s;"
+      value = [review_id, user_id]
+      cursor.execute(select+where, value)
+      row = cursor.fetchone()
+      return row
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       update = "UPDATE lists SET bought=%s WHERE id=%s"
       cursor.execute(update, (bought,id))
+      cnx.commit()
+  def update_review_like(review_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      update = """
+        UPDATE review
+        SET likes=%s
+        WHERE id=%s
+      """
+      row = CRUD.read_like(review_id)
+      likes = row[0]
+      values = [likes, review_id]
+      cursor.execute(update, values)
       cnx.commit()
   def delete_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:

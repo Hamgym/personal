@@ -19,8 +19,16 @@ async def get_review(product_id: int):
   return {"data": rows}
 
 @router.post("/api/review/like")
-async def post_review(payload=Depends(jwt_auth), body=Body()):
+async def post_like(payload=Depends(jwt_auth), body=Body()):
   user_id = payload["id"]
   review_id = body["reviewID"]
   isLiked = CRUD.create_like(user_id, review_id)
+  if isLiked:
+    CRUD.update_review_like(review_id)
   return isLiked
+
+@router.get("/api/review/mylike/{reviewID}")
+async def get_mylike(payload=Depends(jwt_auth), reviewID:int=Path()):
+  user_id = payload["id"]
+  row = CRUD.read_mylike(reviewID, user_id)
+  return row
