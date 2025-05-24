@@ -12,6 +12,8 @@ s3 = boto3.client(
 BUCKET_NAME = "hamgym"
 
 def upload(image):
+  if image.size==0 or image.filename=="":
+    return None
   rnd_name = uuid.uuid4().hex[:8]
   image.filename = rnd_name
   s3.upload_fileobj(

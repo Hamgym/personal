@@ -9,8 +9,11 @@ router = APIRouter()
 
 @router.post("/api/review")
 async def post_review(payload=Depends(jwt_auth),form:ReviewCreate=Form()):
-  photo = form.photo
-  if photo.size==0 or photo.filename=="":
-    return "No Photo"
-  image_url = upload(photo)
-  return image_url
+  image_url = upload(form.photo)
+  new_review = CRUD.create_review(payload, form, image_url)
+  return new_review
+
+@router.get("/api/review/{product_id}")
+async def get_review(product_id: int):
+  rows = CRUD.read_review(product_id)
+  return {"data": rows}

@@ -83,6 +83,24 @@ class CRUD:
         return True
       except:
         return False
+  def create_review(payload, form, image_url):
+    with cnxpool.get_connection() as cnx:
+      try:
+        cursor = cnx.cursor()
+        insert = """
+          INSERT INTO review(product_id, user_id, rating, comment, image_url, is_anonymous)
+          VALUES(%s, %s, %s, %s, %s, %s);
+        """
+        if form.is_anonymous=="on":
+          form.is_anonymous = True
+        else:
+          form.is_anonymous = False
+        values = [form.product_id, payload["id"], form.rating, form.comment, image_url, form.is_anonymous]
+        cursor.execute(insert, values)
+        cnx.commit()
+        return True
+      except:
+        return False
   def read_attractions(page, keyword):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -210,6 +228,27 @@ class CRUD:
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       return rows
+  def read_review(product_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT user.name, review.rating, review.likes, review.comment, review.image_url, review.is_anonymous, review.created_at
+        FROM review JOIN user
+        ON review.user_id=user.id
+      """
+      where = " WHERE review.product_id=%s"
+      value = [product_id]
+      cursor.execute(select+where, value)
+      rows = cursor.fetchall()
+      # 匿名處理
+      result = []
+      for row in rows:
+        tmp = list(row)
+        if tmp[5]:
+          tmp[0] = "匿名"
+        tmp.pop(5)
+        result.append(tmp)
+      return result
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

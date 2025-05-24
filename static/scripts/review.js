@@ -6,6 +6,7 @@ async function init() {
   checkSignin();
   setBackArrow();
   setTitle();
+  loadReview();
   setPostBtn();
   setPostDialog();
 
@@ -45,6 +46,19 @@ async function init() {
     let data = resData.data;
     let title = document.querySelector(".header .title");
     title.textContent = `【${data[1]}】${data[2]}`;
+  }
+  async function loadReview() {
+    let id = location.pathname.split("/")[2];
+    let url = `/api/review/${id}`;
+    let request = new Request(url, {
+      headers: {
+        "Authorization": `Bearer ${token}`
+      },
+    });
+    let res = await fetch(request);
+    let resData = await res.json();
+    let data = resData.data;
+    console.log(data);
   }
   function setPostBtn() {
     let btn = document.querySelector(".post-btn");
