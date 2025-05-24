@@ -17,3 +17,10 @@ async def post_review(payload=Depends(jwt_auth),form:ReviewCreate=Form()):
 async def get_review(product_id: int):
   rows = CRUD.read_review(product_id)
   return {"data": rows}
+
+@router.post("/api/review/like")
+async def post_review(payload=Depends(jwt_auth), body=Body()):
+  user_id = payload["id"]
+  review_id = body["reviewID"]
+  isLiked = CRUD.create_like(user_id, review_id)
+  return isLiked

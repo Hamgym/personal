@@ -49,7 +49,7 @@ async function init() {
   }
   async function loadReview() {
     let data = await loadData();
-    renderData(data);
+    renderPage(data);
     async function loadData() {
       let id = location.pathname.split("/")[2];
       let url = `/api/review/${id}`;
@@ -63,13 +63,10 @@ async function init() {
       let data = resData.data;
       return data
     }
-    function renderData(data) {
-      console.log(data);
-
+    function renderPage(data) {
       for (const item of data) {
         appendReview(item);
       }
-
       function appendReview(data) {
         let main = document.querySelector("div.main");
         let item = document.createElement("div");
@@ -120,6 +117,22 @@ async function init() {
         content.appendChild(img2);
         item.appendChild(content);
         main.appendChild(item);
+        likeBtn.addEventListener("click", async function () {
+          let reviewID = this.parentElement.parentElement.parentElement.id;
+          let url = "/api/review/like";
+          let init = {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ reviewID: reviewID }),
+          };
+          let request = new Request(url, init);
+          let res = await fetch(request);
+          let resData = await res.json();
+          console.log(resData);
+        })
       }
     }
   }
@@ -158,7 +171,12 @@ async function init() {
       let request = new Request(url, init);
       let res = await fetch(request);
       let resData = await res.json();
-      console.log(resData);
+      if (resData) {
+        alert("成功新增評論！");
+      } else {
+        alert("您已經給過評論了！")
+      }
+      location.reload();
     });
   }
 }

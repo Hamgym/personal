@@ -101,6 +101,20 @@ class CRUD:
         return True
       except:
         return False
+  def create_like(user_id, review_id):
+    with cnxpool.get_connection() as cnx:
+      try:
+        cursor = cnx.cursor()
+        insert = """
+          INSERT INTO review_likes(review_id, user_id)
+          VALUES(%s, %s);
+        """
+        values = [review_id, user_id]
+        cursor.execute(insert, values)
+        cnx.commit()
+        return True
+      except:
+        return False
   def read_attractions(page, keyword):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

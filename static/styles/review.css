@@ -162,7 +162,6 @@ body {
 
 .user .stars {
 	width: fit-content;
-	/* margin: 5px auto; */
 	color: rgb(240, 240, 240);
 	position: relative;
 }
@@ -172,17 +171,16 @@ body {
 	top: 0;
 	left: 0;
 	color: #fbbc04;
-	/* width: calc(4 / 5 * 100%); */
 	overflow: hidden;
 }
 
-div[id="1"] .stars .value {
+/* div[id="1"] .stars .value {
 	width: calc(5 / 5 * 100%);
 }
 
 div[id="2"] .stars .value {
 	width: calc(4 / 5 * 100%);
-}
+} */
 
 .user .date {
 	width: 90px;
@@ -217,7 +215,7 @@ div[id="2"] .stars .value {
 
 .content .text {
 	line-height: 1.5;
-	padding: 0 10px;
+	padding: 0 20px;
 }
 
 .content img {
