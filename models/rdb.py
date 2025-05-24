@@ -232,7 +232,7 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT user.name, review.rating, review.likes, review.comment, review.image_url, review.is_anonymous, review.created_at
+        SELECT review.id, user.name, review.rating, review.created_at, review.likes, review.comment, review.image_url, review.is_anonymous
         FROM review JOIN user
         ON review.user_id=user.id
       """
@@ -244,9 +244,9 @@ class CRUD:
       result = []
       for row in rows:
         tmp = list(row)
-        if tmp[5]:
-          tmp[0] = "匿名"
-        tmp.pop(5)
+        if tmp[-1]:
+          tmp[1] = "匿名"
+        tmp.pop()
         result.append(tmp)
       return result
   def update_list_item(id, bought):
