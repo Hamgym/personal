@@ -3,7 +3,7 @@ const token = localStorage.getItem("token");
 init();
 
 async function init() {
-  checkSignin();
+  await checkSignin();
   loadProduct();
   setSearchForm();
   setDropdownSwitch();

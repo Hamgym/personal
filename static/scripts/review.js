@@ -1,9 +1,7 @@
-const token = localStorage.getItem("token");
-
 init();
-
 async function init() {
-  checkSignin();
+  const token = localStorage.getItem("token");
+  await checkSignin();
   setBackArrow();
   setTitle();
   loadRating();
