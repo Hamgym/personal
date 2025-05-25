@@ -54,19 +54,19 @@ body {
 	display: none;
 }
 
-.signin-dialog .decorator-bar {
+/* .signin-dialog .decorator-bar {
 	background-image: linear-gradient(to left, #337788, #66AABB);
 	border-radius: 5px 5px 0 0;
 	width: 100%;
 	height: 10px;
-}
+} */
 
 .signin-dialog .close {
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	top: 20px;
-	left: 300px;
+	top: 10px;
+	right: 10px;
 	background-image: url(/static/images/icon-close.svg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -88,20 +88,41 @@ body {
 	height: 27px;
 	line-height: 27px;
 	text-align: center;
+	margin: 50px;
+}
+
+.signin-main .row {
+	width: 100%;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
+	padding: 12px;
 	margin-bottom: 15px;
+	display: flex;
+}
+
+.signin-main .row img {
+	width: 24px;
+	height: 24px;
 }
 
 .signin-main input {
 	width: 100%;
-	height: 47px;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	height: 24px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
 	padding: 0px 14px 2px 14px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.signin-main input:focus {
+	outline: none;
 }
 
 .signin-main input[type="submit"] {
-	background-color: #448899;
+	background-color: #f45e60;
 	color: #FFFFFF;
 	font-size: 19px;
 	font-weight: 400;
@@ -146,19 +167,19 @@ body {
 	display: none;
 }
 
-.signup-dialog .decorator-bar {
+/* .signup-dialog .decorator-bar {
 	background-image: linear-gradient(to left, #337788, #66AABB);
 	border-radius: 5px 5px 0 0;
 	width: 100%;
 	height: 10px;
-}
+} */
 
 .signup-dialog .close {
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	top: 20px;
-	left: 300px;
+	top: 10px;
+	right: 10px;
 	background-image: url(/static/images/icon-close.svg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -181,19 +202,41 @@ body {
 	line-height: 27px;
 	text-align: center;
 	margin-bottom: 15px;
+	margin: 50px;
+}
+
+.signup-main .row {
+	width: 100%;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
+	padding: 12px;
+	margin-bottom: 15px;
+	display: flex;
+}
+
+.signup-main .row img {
+	width: 24px;
+	height: 24px;
 }
 
 .signup-main input {
 	width: 100%;
-	height: 47px;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
+	height: 24px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
 	padding: 0px 14px 2px 14px;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.signup-main input:focus {
+	outline: none;
 }
 
 .signup-main input[type="submit"] {
-	background-color: #448899;
+	background-color: #f45e60;
 	color: #FFFFFF;
 	font-size: 19px;
 	font-weight: 400;

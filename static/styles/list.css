@@ -51,22 +51,16 @@ body {
 	width: 340px;
 	z-index: 30;
 	box-shadow: 0 4px 60px #AAAAAA;
+	padding-bottom: 10px;
 	display: none;
-}
-
-.add-item-dialog .decorator-bar {
-	background-image: linear-gradient(to left, #337788, #66AABB);
-	border-radius: 5px 5px 0 0;
-	width: 100%;
-	height: 10px;
 }
 
 .add-item-dialog .close-btn {
 	width: 30px;
 	height: 30px;
 	position: absolute;
-	top: 20px;
-	left: 300px;
+	top: 10px;
+	right: 10px;
 	background-image: url(/static/images/icon-close.svg);
 	background-repeat: no-repeat;
 	background-position: center;
@@ -79,7 +73,7 @@ body {
 
 .dialog-main {
 	width: 310px;
-	margin: 15px 0 16px 15px;
+	margin: 15px auto;
 }
 
 .dialog-main h3 {
@@ -89,24 +83,28 @@ body {
 	line-height: 27px;
 	text-align: center;
 	margin-bottom: 15px;
+	margin: 50px;
 }
 
 .dialog-main input {
 	width: 100%;
-	height: 47px;
-	border-radius: 5px;
-	border: 1px solid #CCCCCC;
-	padding: 0px 14px 2px 14px;
-	margin-bottom: 10px;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
+	padding: 12px 20px;
+	margin-bottom: 15px;
+}
+
+.dialog-main input:focus {
+	outline: none;
 }
 
 .dialog-main input[type="submit"] {
-	background-color: #448899;
+	background-color: #f45e60;
 	color: #FFFFFF;
-	font-size: 19px;
+	font-size: 18px;
 	font-weight: 400;
-	height: 46px;
-	line-height: 46px;
 	border: none;
 }
 
@@ -118,18 +116,6 @@ body {
 	text-align: center;
 	margin-bottom: 10px;
 	color: red;
-}
-
-.dialog-main .signup {
-	height: 22px;
-	line-height: 22px;
-	text-align: center;
-	max-width: fit-content;
-	margin: auto;
-}
-
-.dialog-main .signup:hover {
-	cursor: pointer;
 }
 
 
