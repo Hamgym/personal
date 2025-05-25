@@ -23,17 +23,39 @@ html {
 body {
 	position: relative;
 	padding: 90px 0 50px 0;
+	max-width: 400px;
+	margin: auto;
+	box-shadow: 0 0 4px lightgray;
+}
+
+.mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	opacity: 25%;
+	z-index: 1;
+	/* display: none; */
 }
 
 
 
 .add-product-dialog {
 	background-color: white;
-	width: 100%;
-	height: calc(100% - 90px - 50px);
+	/* width: 100%; */
+	width: 340px;
+	/* height: calc(100% - 90px - 50px); */
 	position: fixed;
-	z-index: 1;
-	top: 90px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+	z-index: 2;
+	border-radius: 5px;
+	/* border: 2px solid #f45e60; */
+	box-shadow: inset 0 0 1px lightgray;
+	/* padding-bottom: 10px; */
 }
 
 .add-product-dialog h2 {
@@ -45,24 +67,30 @@ body {
 
 .add-product-dialog .row {
 	width: fit-content;
-	margin: 5px auto;
+	margin: 10px auto;
 }
 
 .add-product-dialog label {
-	display: block;
+	/* display: block; */
+	display: none;
 	padding: 5px 0;
 	font-size: 20px;
 }
 
 .add-product-dialog input {
-	font-size: 20px;
-	padding: 5px;
+	font-size: 16px;
+	/* font-weight: 400; */
+	padding: 10px;
 }
 
 .add-product-dialog button {
 	font-size: 20px;
-	padding: 0 5px;
+	padding: 5px 15px;
 	margin: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #f45e60;
+	color: white;
 }
 
 
@@ -72,8 +100,10 @@ body {
 	padding: 10px;
 	position: fixed;
 	top: 0;
+	/* left: 0; */
 	width: 100%;
-	z-index: 2;
+	max-width: 400px;
+	z-index: 3;
 }
 
 /* .header .add-product-btn {
@@ -198,7 +228,11 @@ body {
 	padding: 10px;
 	position: fixed;
 	bottom: 0;
+	/* left: 0; */
+	/* width: 100%; */
 	width: 100%;
+	max-width: 400px;
+	z-index: 3;
 }
 
 .footer a {

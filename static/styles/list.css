@@ -23,6 +23,9 @@ html {
 body {
 	position: relative;
 	padding: 50px 0;
+	max-width: 400px;
+	margin: auto;
+	box-shadow: 0 0 4px lightgray;
 }
 
 .mask {
@@ -141,6 +144,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
+	max-width: 400px;
 }
 
 .header .add-item-btn {
@@ -219,6 +223,7 @@ body {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
+	max-width: 400px;
 }
 
 .footer a {

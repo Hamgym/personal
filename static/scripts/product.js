@@ -174,13 +174,16 @@ async function init() {
     let addProductBtn = document.querySelector("div.add-product-btn");
     let cancelBtn = document.querySelector(".add-product-dialog .cancel");
     let form = document.querySelector(".add-product-dialog form");
+    let mask = document.querySelector(".mask");
     addProductBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
       dialog.style.display = "block";
+      mask.style.display = "block";
     });
     cancelBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
       dialog.style.display = "none";
+      mask.style.display = "none";
     });
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
