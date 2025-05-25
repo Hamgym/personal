@@ -1,0 +1,4247 @@
+{
+  "rtnData": {
+    "searchResult": {
+      "rtnSearchData": {
+        "startRow": 1,
+        "goodsInfoList": [
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(471)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_OL.webp",
+            "imgUrlArray": [
+              "https://i3.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_OR.webp",
+              "https://i2.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L.webp",
+              "https://i4.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L1.webp",
+              "https://i4.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L2.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i3.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_OR.webp",
+              "https://i2.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L.webp",
+              "https://i4.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L1.webp",
+              "https://i4.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_L2.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i3.momoshop.com.tw/1732770264/goodsimg/0013/490/206/13490206_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img4.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】義美天然取向蘇打餅225g(鮮蔥 紫菜 蘇打餅)",
+            "goodsSubName": "下單85折 滿1000再折100",
+            "operator": "1732770264",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "57",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "57",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$79",
+            "SALE_PRICE": "57",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "79",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1692",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "13490206",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "13490206",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=13490206&timeStamp=1732770264",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>5,000",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(1,217)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i1.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_OR.webp",
+              "https://i4.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_L.webp",
+              "https://i1.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_L1.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_OR.webp",
+              "https://i4.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_L.webp",
+              "https://i1.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_L1.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1698919007/goodsimg/0004/176/549/4176549_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img1.momoshop.com.tw/ecm/img/online/341/2025/05/22/155418407/2025052215541840701.png?t=20250522155415",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【Enaak】韓式小雞麵(16gx30入)",
+            "goodsSubName": "韓國超夯小雞麵!!",
+            "operator": "1698919007",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "199",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "199",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$219",
+            "SALE_PRICE": "199",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "219",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "0",
+            "goodsStock": "529",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "4176549",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "4176549",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=4176549&timeStamp=1698919007",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>10萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(2,396)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_OL.webp",
+            "imgUrlArray": [
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_OR.webp",
+              "https://i4.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L.webp",
+              "https://i1.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L1.webp",
+              "https://i1.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L2.webp",
+              "https://i2.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L3.webp",
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L4.webp",
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_OR.webp",
+              "https://i4.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L.webp",
+              "https://i1.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L1.webp",
+              "https://i1.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L2.webp",
+              "https://i2.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L3.webp",
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L4.webp",
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i3.momoshop.com.tw/1747973056/goodsimg/0011/332/601/11332601_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": false,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【青鳥旅行】蒲光漫舞-16入經典蛋捲禮盒｜肉鬆蛋捲、芝麻沙沙、花生粒粒(送禮推薦 端午禮盒)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1747973056",
+            "TvYn": "0",
+            "ArdYN": "0",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "629",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "629",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$760",
+            "SALE_PRICE": "629",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "760",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "564",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "11332601",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "11332601",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=11332601&timeStamp=1747973056",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(1,230)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_OR.webp",
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L.webp",
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L1.webp",
+              "https://i1.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L2.webp",
+              "https://i2.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L3.webp",
+              "https://i2.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L4.webp",
+              "https://i3.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_OR.webp",
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L.webp",
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L1.webp",
+              "https://i1.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L2.webp",
+              "https://i2.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L3.webp",
+              "https://i2.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L4.webp",
+              "https://i3.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1706850283/goodsimg/0012/511/368/12511368_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img1.momoshop.com.tw/ecm/img/online/341/2025/05/22/155418407/2025052215541840701.png?t=20250522155415",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【KID-O】三明治餅乾綜合風味歡樂包/奶油風味歡喜包(612g)",
+            "goodsSubName": "下單85折 滿1000再折100",
+            "operator": "1706850283",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "135",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "135",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$229",
+            "SALE_PRICE": "135",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "229",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "3783",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "12511368",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "12511368",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=12511368&timeStamp=1706850283",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(846)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i1.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_OL.webp",
+            "imgUrlArray": [
+              "https://i3.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_OR.webp",
+              "https://i1.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i3.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_OR.webp",
+              "https://i1.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i3.momoshop.com.tw/1693068653/goodsimg/0008/850/144/8850144_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img2.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】義美清香檸檬夾心酥400g",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1693068653",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "81",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "81",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$110",
+            "SALE_PRICE": "81",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "110",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1205",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "8850144",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "8850144",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=8850144&timeStamp=1693068653",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(805)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_OR.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L1.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L2.webp",
+              "https://i2.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L3.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L4.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_OR.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L1.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L2.webp",
+              "https://i2.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L3.webp",
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_L4.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1738895285/goodsimg/0009/917/310/9917310_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【旺旺】仙貝經濟包 350g/包(米果 全素 仙貝)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1738895285",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "101",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "101",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$135",
+            "SALE_PRICE": "101",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "135",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1529",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "9917310",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "9917310",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=9917310&timeStamp=1738895285",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(830)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_OR.webp",
+              "https://i4.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_OR.webp",
+              "https://i4.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_L.webp",
+              "https://i3.momoshop.com.tw/1720574762/goodsimg/0002/743/997/spec/2743997_01_001_R.webp",
+              "https://i3.momoshop.com.tw/1720574762/goodsimg/0002/743/997/spec/2743997_01_002_R.webp",
+              "https://i1.momoshop.com.tw/1720574762/goodsimg/0002/743/997/spec/2743997_01_003_R.webp",
+              "https://i3.momoshop.com.tw/1720574762/goodsimg/0002/743/997/spec/2743997_01_004_R.webp",
+              "https://i3.momoshop.com.tw/1720574762/goodsimg/0002/743/997/spec/2743997_01_005_R.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1720574762/goodsimg/0002/743/997/2743997_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img4.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【盛香珍】餅乾量販包500g/包-斯娜普蛋酥/脆捲/蘇打餅/煎餅(內有獨立小包裝)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1720574762",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "134",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "134",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$160",
+            "SALE_PRICE": "134",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "160",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1610",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "2743997",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "2743997",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=2743997&timeStamp=1720574762",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(1,033)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_OR.webp",
+              "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_OR.webp",
+              "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1692976545/goodsimg/0008/448/012/8448012_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img1.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】起司取向蘇打餅乾袋裝(300公克)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1692976545",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "57",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "57",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$78",
+            "SALE_PRICE": "57",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "78",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1082",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "8448012",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "8448012",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=8448012&timeStamp=1692976545",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(537)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_OR.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L1.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L2.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L3.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_OR.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L1.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L2.webp",
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_L3.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1692636979/goodsimg/0005/690/554/5690554_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img1.momoshop.com.tw/ecm/img/online/341/2025/05/22/155418407/2025052215541840701.png?t=20250522155415",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": true,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【Julies 茱蒂絲】手提餅乾系列272g-300g(花生醬三明治/檸檬夾心/乳酪夾心)",
+            "goodsSubName": "滿1000折100",
+            "operator": "1692636979",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "99",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "99",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$129",
+            "SALE_PRICE": "99",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "129",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "0",
+            "goodsStock": "211",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "5690554",
+            "vodUrl": "https://www.youtube.com/watch?v=pOqfDOUcxfE",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "5690554",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=5690554&timeStamp=1692636979",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(763)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_OL.webp",
+            "imgUrlArray": [
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_OR.webp",
+              "https://i2.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L.webp",
+              "https://i1.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L1.webp",
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L2.webp",
+              "https://i1.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L3.webp",
+              "https://i4.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L4.webp",
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_OR.webp",
+              "https://i2.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L.webp",
+              "https://i1.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L1.webp",
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L2.webp",
+              "https://i1.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L3.webp",
+              "https://i4.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L4.webp",
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i3.momoshop.com.tw/1693174620/goodsimg/0009/978/633/9978633_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【旺旺】厚燒海苔經濟包 350g/包(米果 經典餅乾)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1693174620",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "101",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "101",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$135",
+            "SALE_PRICE": "101",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "135",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "2040",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "9978633",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "9978633",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=9978633&timeStamp=1693174620",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(666)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_OL.webp",
+            "imgUrlArray": [
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_OR.webp",
+              "https://i4.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L.webp",
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L1.webp",
+              "https://i4.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L2.webp",
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L3.webp",
+              "https://i3.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L4.webp",
+              "https://i3.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_OR.webp",
+              "https://i4.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L.webp",
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L1.webp",
+              "https://i4.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L2.webp",
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L3.webp",
+              "https://i3.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L4.webp",
+              "https://i3.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i2.momoshop.com.tw/1692637915/goodsimg/0005/742/278/5742278_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【旺旺】米豆米果經濟包 350g/包(全素)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1692637915",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "101",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "101",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$135",
+            "SALE_PRICE": "101",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "135",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "736",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "5742278",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "5742278",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=5742278&timeStamp=1692637915",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(432)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i3.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_OR.webp",
+              "https://i2.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L.webp",
+              "https://i3.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L1.webp",
+              "https://i2.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L2.webp",
+              "https://i1.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L3.webp",
+              "https://i1.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L4.webp",
+              "https://i4.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_OR.webp",
+              "https://i2.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L.webp",
+              "https://i3.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L1.webp",
+              "https://i2.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L2.webp",
+              "https://i1.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L3.webp",
+              "https://i1.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L4.webp",
+              "https://i4.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1692200828/goodsimg/0010/072/806/10072806_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【旺旺】旺仔雪餅經濟包 350g/包(仙貝 米果 經典懷舊餅乾)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1692200828",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "101",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "101",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$135",
+            "SALE_PRICE": "101",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "135",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "1960",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "10072806",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "10072806",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=10072806&timeStamp=1692200828",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.8",
+            "ratingTimes": "(367)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_OR.webp",
+              "https://i3.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L.webp",
+              "https://i2.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L1.webp",
+              "https://i3.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L2.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_OR.webp",
+              "https://i3.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L.webp",
+              "https://i2.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L1.webp",
+              "https://i3.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_L2.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1732856598/goodsimg/0004/323/153/4323153_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img3.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】美味蘇打餅(原味192g/芝麻燕麥192g)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1732856598",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "55",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "55",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$65",
+            "SALE_PRICE": "55",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "65",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "860",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "4323153",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "4323153",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=4323153&timeStamp=1732856598",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "5.0",
+            "ratingTimes": "(246)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_OL.webp",
+            "imgUrlArray": [
+              "https://i3.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_OR.webp",
+              "https://i4.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L1.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L2.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L3.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i3.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_OR.webp",
+              "https://i4.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L1.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L2.webp",
+              "https://i1.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_L3.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i3.momoshop.com.tw/1741755666/goodsimg/0012/955/755/12955755_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgBottomTagUrl": "https://img4.momoshop.com.tw/ecm/img/online/341/2025/05/06/135905051/2025050613590505103.png?t=20250509170151",
+            "imgLongTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": false,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【多力多滋】多力多滋組合包系列(200g/袋)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1741755666",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "72",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "72",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$100",
+            "SALE_PRICE": "72",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "100",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "345",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "12955755",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "12955755",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=12955755&timeStamp=1741755666",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3,000",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(594)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_OR.webp",
+              "https://i2.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_OR.webp",
+              "https://i2.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1721473443/goodsimg/0008/850/143/8850143_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img3.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】香濃花生夾心酥經濟包(400g)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1721473443",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "81",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "81",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$110",
+            "SALE_PRICE": "81",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "110",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "866",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "8850143",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "8850143",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=8850143&timeStamp=1721473443",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.8",
+            "ratingTimes": "(897)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_OR.webp",
+              "https://i2.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L.webp",
+              "https://i3.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L2.webp",
+              "https://i3.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L3.webp",
+              "https://i2.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L4.webp",
+              "https://i1.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_OR.webp",
+              "https://i2.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L.webp",
+              "https://i3.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L2.webp",
+              "https://i3.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L3.webp",
+              "https://i2.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L4.webp",
+              "https://i1.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1744595294/goodsimg/0012/964/918/12964918_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": false,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【青鳥旅行】灌餡蛋捲旅行盒8入兩盒組(經典口味任選)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1744595294",
+            "TvYn": "0",
+            "ArdYN": "0",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "527",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "527",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$800",
+            "SALE_PRICE": "527",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "800",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "160",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "12964918",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "12964918",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=12964918&timeStamp=1744595294",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(1,029)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_OR.webp",
+              "https://i3.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L1.webp",
+              "https://i3.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L2.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L3.webp",
+              "https://i2.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L4.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_OR.webp",
+              "https://i3.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L1.webp",
+              "https://i3.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L2.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L3.webp",
+              "https://i2.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L4.webp",
+              "https://i1.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1747980077/goodsimg/0010/107/945/10107945_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【天六】14袋綜合豆果子餅乾3包組(341g/包)",
+            "goodsSubName": "日本原裝進口，超人氣熱銷!!",
+            "operator": "1747980077",
+            "TvYn": "0",
+            "ArdYN": "0",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "799",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "799",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$1,080",
+            "SALE_PRICE": "799",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "1,080",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "0",
+            "goodsStock": "499",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "10107945",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "10107945",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=10107945&timeStamp=1747980077",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>20萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "5.0",
+            "ratingTimes": "(38)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i1.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_OR.webp",
+              "https://i2.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L.webp",
+              "https://i4.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L1.webp",
+              "https://i2.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L2.webp",
+              "https://i4.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L3.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_OR.webp",
+              "https://i2.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L.webp",
+              "https://i4.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L1.webp",
+              "https://i2.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L2.webp",
+              "https://i4.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_L3.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1744707719/goodsimg/0013/907/050/13907050_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "",
+            "isRegister": false,
+            "useCounpon": false,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【青鳥旅行】12入輕享禮盒-人氣經典蛋捲禮盒(原味肉鬆、花生粒粒)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1744707719",
+            "TvYn": "0",
+            "ArdYN": "0",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "20",
+            "delyTemp": "01",
+            "goodsPrice": "450",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "450",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$580",
+            "SALE_PRICE": "450",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "580",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "0",
+            "canTipStock": "5",
+            "norestAllotMonth": "1",
+            "shopWay": "1##0",
+            "isTracked": false,
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "13907050",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "13907050",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=13907050&timeStamp=1744707719",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>500",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "可訂購時通知我",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.8",
+            "ratingTimes": "(1,429)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_OR.webp",
+              "https://i3.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L2.webp",
+              "https://i3.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L3.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L4.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_OR.webp",
+              "https://i3.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L2.webp",
+              "https://i3.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L3.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L4.webp",
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1746430650/goodsimg/0011/892/968/11892968_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgBottomTagUrl": "https://img3.momoshop.com.tw/ecm/img/online/341/2025/05/21/175518529/2025052117551852903.png?t=20250521175516",
+            "imgLongTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【品客 Pringles】品客洋芋片任選口味(九入組)",
+            "goodsSubName": "滿1件折92",
+            "operator": "1746430650",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "439",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "439",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$585",
+            "SALE_PRICE": "439",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "585",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "545",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "11892968",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "11892968",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=11892968&timeStamp=1746430650",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>10萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(291)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i1.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_OR.webp",
+              "https://i2.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_OR.webp",
+              "https://i2.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1717218351/goodsimg/0011/461/763/11461763_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【77】綜合享樂包_迷你新貴派/迷你巧菲斯(291.4g *包裝隨機出貨*)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1717218351",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "114",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "114",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$159",
+            "SALE_PRICE": "114",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "159",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "43",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "11461763",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "11461763",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=11461763&timeStamp=1717218351",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>8,000",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(561)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_OL.webp",
+            "imgUrlArray": [
+              "https://i2.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_OR.webp",
+              "https://i1.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i2.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_OR.webp",
+              "https://i1.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i2.momoshop.com.tw/1692721533/goodsimg/0006/519/989/6519989_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img2.momoshop.com.tw/ecm/img/online/341/2025/05/22/155418407/2025052215541840701.png?t=20250522155415",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": true,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【Gemez Enaak】韓式小雞麵辣味672g(28gx24包/盒)",
+            "goodsSubName": "滿1000折100",
+            "operator": "1692721533",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "249",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "249",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$329",
+            "SALE_PRICE": "249",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "329",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "0",
+            "goodsStock": "788",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "6519989",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "6519989",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=6519989&timeStamp=1692721533",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(488)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i2.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_OR.webp",
+              "https://i1.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_OR.webp",
+              "https://i1.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_L.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1692549395/goodsimg/0004/286/165/4286165_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img3.momoshop.com.tw/ecm/img/online/341/2025/04/28/192823538/2025042819282353801.png?t=20250428192905",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【義美】狀元煎餅-花生(224公克)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1692549395",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "66",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "66",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$85",
+            "SALE_PRICE": "66",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "85",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "747",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "4286165",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "4286165",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=4286165&timeStamp=1692549395",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(1,189)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_OR.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L1.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L2.webp",
+              "https://i1.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L3.webp",
+              "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L4.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_OR.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L1.webp",
+              "https://i3.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L2.webp",
+              "https://i1.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L3.webp",
+              "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_L4.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1711083738/goodsimg/0004/958/798/4958798_OR_m.webp"
+            ],
+            "imgTagUrl": "https://img2.momoshop.com.tw/ecm/img/online/341/2025/05/22/155418407/2025052215541840701.png?t=20250522155415",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【Enaak】香辣小雞麵(14gx30包)",
+            "goodsSubName": "超人氣唰嘴小零嘴，強勢登場!",
+            "operator": "1711083738",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "199",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "199",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$219",
+            "SALE_PRICE": "199",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "219",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "0",
+            "goodsStock": "1207",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "4958798",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "4958798",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=4958798&timeStamp=1711083738",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(546)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_OR.webp",
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_L.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_OR.webp",
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_L.webp",
+              "https://i3.momoshop.com.tw/1744866132/goodsimg/0011/023/001/spec/11023001_01_001_R.webp",
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/spec/11023001_01_002_R.webp",
+              "https://i2.momoshop.com.tw/1744866132/goodsimg/0011/023/001/spec/11023001_01_003_R.webp",
+              "https://i3.momoshop.com.tw/1744866132/goodsimg/0011/023/001/spec/11023001_01_004_R.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1744866132/goodsimg/0011/023/001/11023001_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": false,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【本味誠現】大包/立袋裝(乳酥餅13入/濃可可酥餅12入/牛奶餅20入/燕麥餅20入/起司燕麥餅13入)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1744866132",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "89",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "89",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$125",
+            "SALE_PRICE": "89",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "125",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "2012",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "11023001",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "11023001",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=11023001&timeStamp=1744866132",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "5.0",
+            "ratingTimes": "(40)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i1.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_OL.webp",
+            "imgUrlArray": [
+              "https://i4.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_OR.webp",
+              "https://i4.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L.webp",
+              "https://i2.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L2.webp",
+              "https://i3.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L3.webp",
+              "https://i2.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L4.webp",
+              "https://i3.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L5.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i4.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_OR.webp",
+              "https://i4.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L.webp",
+              "https://i2.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L2.webp",
+              "https://i3.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L3.webp",
+              "https://i2.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L4.webp",
+              "https://i3.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_L5.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i4.momoshop.com.tw/1745906588/goodsimg/0013/845/337/13845337_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【中祥】蔥向第一餅 文昌帝君聯名版(300gx12包/箱)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1745906588",
+            "TvYn": "0",
+            "ArdYN": "0",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "948 (下單再折)",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": " (下單再折)",
+                "price": "948",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$1,188",
+            "SALE_PRICE": "948",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "1,188",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "2",
+            "goodsStock": "453",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##0",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "13845337",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "13845337",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=13845337&timeStamp=1745906588",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>500",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(259)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_OL.webp",
+            "imgUrlArray": [
+              "https://i2.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_OR.webp",
+              "https://i4.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_L.webp",
+              "https://i2.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_L1.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i2.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_OR.webp",
+              "https://i4.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_L.webp",
+              "https://i2.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_L1.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i2.momoshop.com.tw/1692548777/goodsimg/0004/239/186/4239186_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgLongTagUrl": "",
+            "imgBottomTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": false,
+            "cycleYn": "0",
+            "goodsName": "【北田】蒟蒻糙米捲-綜合口味(320g)",
+            "goodsSubName": "下單85折 滿1000再折100",
+            "operator": "1692548777",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "84",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "84",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$129",
+            "SALE_PRICE": "84",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "129",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "202",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "4239186",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "4239186",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=4239186&timeStamp=1692548777",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>1.5萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "5.0",
+            "ratingTimes": "(162)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_OL.webp",
+            "imgUrlArray": [
+              "https://i2.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_OR.webp",
+              "https://i1.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L.webp",
+              "https://i3.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L1.webp",
+              "https://i3.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L2.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i2.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_OR.webp",
+              "https://i1.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L.webp",
+              "https://i3.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L1.webp",
+              "https://i3.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_L2.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i2.momoshop.com.tw/1740459691/goodsimg/0007/373/730/7373730_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgBottomTagUrl": "https://img4.momoshop.com.tw/ecm/img/online/341/2025/05/06/135905051/2025050613590505103.png?t=20250509170151",
+            "imgLongTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【Lay’s 樂事】樂事洋芋片隨手包(12g/50包)",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1740459691",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "306",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "306",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$400",
+            "SALE_PRICE": "306",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "400",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "247",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "7373730",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "7373730",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=7373730&timeStamp=1740459691",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>5,000",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          },
+          {
+            "insertID": "",
+            "modifyID": "",
+            "rating": "4.9",
+            "ratingTimes": "(515)",
+            "orderqty": "0",
+            "contentType": "0",
+            "imgUrl": "https://i4.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_OL.webp",
+            "imgUrlArray": [
+              "https://i1.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_OR.webp",
+              "https://i2.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_L.webp",
+              "https://i3.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_L1.webp"
+            ],
+            "imgTypeUrlArray": [
+              "https://i1.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_OR.webp",
+              "https://i2.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_L.webp",
+              "https://i3.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_L1.webp"
+            ],
+            "externalImgUrlArray": [
+              "https://i1.momoshop.com.tw/1721610241/goodsimg/0010/025/059/10025059_OR_m.webp"
+            ],
+            "imgTagUrl": "",
+            "imgBottomTagUrl": "https://img2.momoshop.com.tw/ecm/img/online/341/2025/05/06/135905051/2025050613590505103.png?t=20250509170151",
+            "imgLongTagUrl": "",
+            "officialTagImgUrl": "",
+            "isTVGoods": false,
+            "is3CDIYGoods": false,
+            "goodsIconType": "0",
+            "isRegister": true,
+            "useCounpon": true,
+            "isDiscount": false,
+            "haveGift": true,
+            "cycleYn": "0",
+            "goodsName": "【Lay’s 樂事】樂事意合組合包240g/袋",
+            "goodsSubName": "滿1件享85折 ",
+            "operator": "1721610241",
+            "TvYn": "0",
+            "ArdYN": "1",
+            "ArsDiscount": "0",
+            "isSetGoods": "0",
+            "delyType": "10",
+            "delyTemp": "01",
+            "goodsPrice": "98",
+            "goodsPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "98",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "goodsPriceOri": "$116",
+            "SALE_PRICE": "98",
+            "marketPriceModel": {
+              "basePrice": {
+                "goodsStatus": "",
+                "price": "116",
+                "sign": "$",
+                "strPrice": ""
+              }
+            },
+            "discountWoringFlag": "1",
+            "goodsStock": "747",
+            "canTipStock": "",
+            "norestAllotMonth": "1",
+            "shopWay": "2##3",
+            "isTracked": false,
+            "icon": [
+              {
+                "iconBgColor": "#BE0211",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "速"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "折價券",
+                "iconContentType": "isCp"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "登記",
+                "iconContentType": "isRegister"
+              },
+              {
+                "iconBgColor": "#FF4C76",
+                "iconContentColor": "#FFFFFF",
+                "iconContent": "贈品",
+                "iconContentType": "isGift"
+              }
+            ],
+            "categoryCode": "2001200004##2001200000##2000000000##",
+            "categoryName": "餅乾##休閒零食##食品飲料##",
+            "goodsCode": "10025059",
+            "promotUrl": "",
+            "isAdultLimit": false,
+            "edmBackgroundUrl": "",
+            "action": {
+              "actionType": 11,
+              "actionValue": "10025059",
+              "useDefault": false,
+              "extraValue": {
+                "urlParameter": "mdiv=category&cc1=2001200004",
+                "cateType": "",
+                "isWebPage": "0",
+                "categoryCode": "",
+                "mdiv": "category"
+              }
+            },
+            "goodsFeatureUrl": "https://m.momoshop.com.tw/describe.momo?goodsCode=10025059&timeStamp=1721610241",
+            "goodsTag": [],
+            "totalSalesInfo": {
+              "text": "總銷量>3萬",
+              "textColor": "#454545"
+            },
+            "onSaleDescription": "",
+            "snapshotId": "",
+            "filterId": "17481879617881962273467",
+            "itemId": ""
+          }
+        ],
+        "minPage": 1,
+        "endRow": 28,
+        "brandNameList": [
+          {
+            "brandName": "青鳥旅行",
+            "brandCount": 8,
+            "brandNameStr": "青鳥旅行##20210913150725033",
+            "brandNo": "20210913150725033"
+          },
+          {
+            "brandName": "福義軒",
+            "brandCount": 53,
+            "brandNameStr": "福義軒##20160808160123967",
+            "brandNo": "20160808160123967"
+          },
+          {
+            "brandName": "義美",
+            "brandCount": 82,
+            "brandNameStr": "義美##20160808160120410",
+            "brandNo": "20160808160120410"
+          },
+          {
+            "brandName": "美式賣場",
+            "brandCount": 49,
+            "brandNameStr": "美式賣場##20230703102604000",
+            "brandNo": "20230703102604000"
+          },
+          {
+            "brandName": "新竹福源",
+            "brandCount": 20,
+            "brandNameStr": "新竹福源##20190613190639889",
+            "brandNo": "20190613190639889"
+          },
+          {
+            "brandName": "旺旺",
+            "brandCount": 31,
+            "brandNameStr": "旺旺##20160808160044833",
+            "brandNo": "20160808160044833"
+          },
+          {
+            "brandName": "中祥",
+            "brandCount": 6,
+            "brandNameStr": "中祥##20170523161647164",
+            "brandNo": "20170523161647164"
+          },
+          {
+            "brandName": "Pringles 品客",
+            "brandCount": 17,
+            "brandNameStr": "Pringles 品客##20160808160051384",
+            "brandNo": "20160808160051384"
+          },
+          {
+            "brandName": "Lay’s 樂事",
+            "brandCount": 25,
+            "brandNameStr": "Lay’s 樂事##20160808160127901",
+            "brandNo": "20160808160127901"
+          },
+          {
+            "brandName": "enaak 小雞麵",
+            "brandCount": 3,
+            "brandNameStr": "enaak 小雞麵##20180321150250699",
+            "brandNo": "20180321150250699"
+          },
+          {
+            "brandName": "天六",
+            "brandCount": 1,
+            "brandNameStr": "天六##20190613190709648",
+            "brandNo": "20190613190709648"
+          },
+          {
+            "brandName": "monkey mars 火星猴子",
+            "brandCount": 3,
+            "brandNameStr": "monkey mars 火星猴子##20190529133840945",
+            "brandNo": "20190529133840945"
+          },
+          {
+            "brandName": "一品名",
+            "brandCount": 14,
+            "brandNameStr": "一品名##20190627154843172",
+            "brandNo": "20190627154843172"
+          },
+          {
+            "brandName": "盛香珍",
+            "brandCount": 32,
+            "brandNameStr": "盛香珍##20160808160107554",
+            "brandNo": "20160808160107554"
+          },
+          {
+            "brandName": "黑師傅",
+            "brandCount": 21,
+            "brandNameStr": "黑師傅##20160808160117415",
+            "brandNo": "20160808160117415"
+          },
+          {
+            "brandName": "六月初一",
+            "brandCount": 5,
+            "brandNameStr": "六月初一##20211202170849424",
+            "brandNo": "20211202170849424"
+          },
+          {
+            "brandName": "Kid-o",
+            "brandCount": 7,
+            "brandNameStr": "Kid-o##20250409165538667",
+            "brandNo": "20250409165538667"
+          },
+          {
+            "brandName": "SOYJOY",
+            "brandCount": 10,
+            "brandNameStr": "SOYJOY##20170523161638441",
+            "brandNo": "20170523161638441"
+          },
+          {
+            "brandName": "翠果子",
+            "brandCount": 4,
+            "brandNameStr": "翠果子##20190627154901573",
+            "brandNo": "20190627154901573"
+          },
+          {
+            "brandName": "華元",
+            "brandCount": 28,
+            "brandNameStr": "華元##20160808160113856",
+            "brandNo": "20160808160113856"
+          },
+          {
+            "brandName": "77",
+            "brandCount": 9,
+            "brandNameStr": "77##20160808155606160",
+            "brandNo": "20160808155606160"
+          },
+          {
+            "brandName": "Kenji 健司",
+            "brandCount": 18,
+            "brandNameStr": "Kenji 健司##20160808155759241",
+            "brandNo": "20160808155759241"
+          },
+          {
+            "brandName": "喜年來",
+            "brandCount": 14,
+            "brandNameStr": "喜年來##20160808160110424",
+            "brandNo": "20160808160110424"
+          },
+          {
+            "brandName": "KOIKEYA 湖池屋",
+            "brandCount": 12,
+            "brandNameStr": "KOIKEYA 湖池屋##20171227142037996",
+            "brandNo": "20171227142037996"
+          },
+          {
+            "brandName": "Bourbon 北日本",
+            "brandCount": 65,
+            "brandNameStr": "Bourbon 北日本##20160808155635619",
+            "brandNo": "20160808155635619"
+          },
+          {
+            "brandName": "Lotte 樂天",
+            "brandCount": 26,
+            "brandNameStr": "Lotte 樂天##20160808155817417",
+            "brandNo": "20160808155817417"
+          },
+          {
+            "brandName": "鴻鼎菓子",
+            "brandCount": 7,
+            "brandNameStr": "鴻鼎菓子##20190227091541683",
+            "brandNo": "20190227091541683"
+          },
+          {
+            "brandName": "統一",
+            "brandCount": 3,
+            "brandNameStr": "統一##20160808160108053",
+            "brandNo": "20160808160108053"
+          },
+          {
+            "brandName": "多力多滋",
+            "brandCount": 9,
+            "brandNameStr": "多力多滋##20170630152446184",
+            "brandNo": "20170630152446184"
+          },
+          {
+            "brandName": "Julies 茱蒂絲",
+            "brandCount": 12,
+            "brandNameStr": "Julies 茱蒂絲##20170523161622260",
+            "brandNo": "20170523161622260"
+          },
+          {
+            "brandName": "OREO 奧利奧",
+            "brandCount": 29,
+            "brandNameStr": "OREO 奧利奧##20170523161631884",
+            "brandNo": "20170523161631884"
+          },
+          {
+            "brandName": "新東陽",
+            "brandCount": 11,
+            "brandNameStr": "新東陽##20160808160119287",
+            "brandNo": "20160808160119287"
+          },
+          {
+            "brandName": "昇田食品",
+            "brandCount": 30,
+            "brandNameStr": "昇田食品##20190627154851061",
+            "brandNo": "20190627154851061"
+          },
+          {
+            "brandName": "池上鄉農會",
+            "brandCount": 9,
+            "brandNameStr": "池上鄉農會##20240819174033551",
+            "brandNo": "20240819174033551"
+          },
+          {
+            "brandName": "豆之家",
+            "brandCount": 9,
+            "brandNameStr": "豆之家##20190627154849663",
+            "brandNo": "20190627154849663"
+          },
+          {
+            "brandName": "盧琴樹",
+            "brandCount": 9,
+            "brandNameStr": "盧琴樹##20241008094149909",
+            "brandNo": "20241008094149909"
+          },
+          {
+            "brandName": "小林煎餅",
+            "brandCount": 8,
+            "brandNameStr": "小林煎餅##20190627154845531",
+            "brandNo": "20190627154845531"
+          },
+          {
+            "brandName": "台灣優格餅乾學院",
+            "brandCount": 10,
+            "brandNameStr": "台灣優格餅乾學院##20210813182959327",
+            "brandNo": "20210813182959327"
+          },
+          {
+            "brandName": "foodpro 優群",
+            "brandCount": 1,
+            "brandNameStr": "foodpro 優群##20210426174217874",
+            "brandNo": "20210426174217874"
+          },
+          {
+            "brandName": "野菽家",
+            "brandCount": 7,
+            "brandNameStr": "野菽家##20160819173857067",
+            "brandNo": "20160819173857067"
+          },
+          {
+            "brandName": "Tyrrells",
+            "brandCount": 2,
+            "brandNameStr": "Tyrrells##20211208141157024",
+            "brandNo": "20211208141157024"
+          },
+          {
+            "brandName": "正哲生技",
+            "brandCount": 8,
+            "brandNameStr": "正哲生技##20160808160029606",
+            "brandNo": "20160808160029606"
+          },
+          {
+            "brandName": "CRICH 克里奇",
+            "brandCount": 8,
+            "brandNameStr": "CRICH 克里奇##20190627113148899",
+            "brandNo": "20190627113148899"
+          },
+          {
+            "brandName": "福伯",
+            "brandCount": 12,
+            "brandNameStr": "福伯##20190627113146661",
+            "brandNo": "20190627113146661"
+          },
+          {
+            "brandName": "卡迪那",
+            "brandCount": 6,
+            "brandNameStr": "卡迪那##20160901173926617",
+            "brandNo": "20160901173926617"
+          },
+          {
+            "brandName": "櫻桃爺爺",
+            "brandCount": 5,
+            "brandNameStr": "櫻桃爺爺##20160810171913038",
+            "brandNo": "20160810171913038"
+          },
+          {
+            "brandName": "科學麵",
+            "brandCount": 4,
+            "brandNameStr": "科學麵##20200313115152727",
+            "brandNo": "20200313115152727"
+          },
+          {
+            "brandName": "農會",
+            "brandCount": 29,
+            "brandNameStr": "農會##20190613190640040",
+            "brandNo": "20190613190640040"
+          },
+          {
+            "brandName": "好麗友",
+            "brandCount": 16,
+            "brandNameStr": "好麗友##20160808160033662",
+            "brandNo": "20160808160033662"
+          },
+          {
+            "brandName": "山日初",
+            "brandCount": 16,
+            "brandNameStr": "山日初##20231229104045278",
+            "brandNo": "20231229104045278"
+          }
+        ],
+        "brandSeriesList": [],
+        "totCnt": 1970,
+        "categoryList": [
+          {
+            "categoryCode": "2001201551",
+            "categoryName": "洋芋片",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201551#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201551",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001200005",
+            "categoryName": "蘇打餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001200005#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001200005",
+              "extraValue": {
+                "aiYn": "1",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001200012",
+            "categoryName": "夾心餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001200012#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001200012",
+              "extraValue": {
+                "aiYn": "1",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001200019",
+            "categoryName": "蛋捲",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001200019#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001200019",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001200618",
+            "categoryName": "仙貝/米果",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001200618#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001200618",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201550",
+            "categoryName": "點心麵",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201550#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201550",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201529",
+            "categoryName": "煎餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201529#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201529",
+              "extraValue": {
+                "aiYn": "1",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201587",
+            "categoryName": "曲奇餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201587#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201587",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201547",
+            "categoryName": "捲心酥",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201547#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201547",
+              "extraValue": {
+                "aiYn": "1",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201549",
+            "categoryName": "穀物棒",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201549#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201549",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001201615",
+            "categoryName": "蝦餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001201615#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001201615",
+              "extraValue": {
+                "aiYn": "1",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001200010",
+            "categoryName": "奶酥餅",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001200010#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001200010",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          },
+          {
+            "categoryCode": "2001202117",
+            "categoryName": "維格餅家任選2件出貨",
+            "categoryColor": "#484848",
+            "isAdultLimit": false,
+            "action": {
+              "actionType": 10,
+              "actionValue": "2001202117#2#0",
+              "useDefault": false,
+              "mobileUrl": "/cateGoods.momo?cn=2001202117",
+              "extraValue": {
+                "aiYn": "0",
+                "endYn": "1",
+                "cateLevel": "3",
+                "cateName": "",
+                "specialCateType": "",
+                "isMixCategorySet": "0",
+                "isSpecialSortType": true
+              }
+            }
+          }
+        ],
+        "currentPage": 1,
+        "maxPage": 71,
+        "cateLevel": "2",
+        "top123": [],
+        "indexInfoList": [
+          {
+            "indexName": "類型",
+            "indexNameNo": "A0001",
+            "groupId": [
+              "G0248",
+              "G0248",
+              "G0248",
+              "G0099"
+            ],
+            "indexContent": [
+              "黑巧克力",
+              "牛奶巧克力",
+              "包餡巧克力",
+              "蛋奶素"
+            ],
+            "indexContentStr": [
+              "黑巧克力##A0001G0248C0001",
+              "牛奶巧克力##A0001G0248C0002",
+              "包餡巧克力##A0001G0248C0005",
+              "蛋奶素##A0001G0099C0003"
+            ],
+            "indexContentCnt": [
+              2,
+              2,
+              2,
+              1
+            ]
+          },
+          {
+            "indexName": "重量",
+            "indexNameNo": "A0012",
+            "groupId": [
+              "G0002"
+            ],
+            "indexContent": [
+              "201g~400g"
+            ],
+            "indexContentStr": [
+              "201g~400g##A0012G0002C0002"
+            ],
+            "indexContentCnt": [
+              1
+            ]
+          },
+          {
+            "indexName": "保存方式",
+            "indexNameNo": "A0023",
+            "groupId": [
+              "G0001"
+            ],
+            "indexContent": [
+              "常溫"
+            ],
+            "indexContentStr": [
+              "常溫##A0023G0001C0003"
+            ],
+            "indexContentCnt": [
+              1
+            ]
+          },
+          {
+            "indexName": "包裝組合",
+            "indexNameNo": "A0030",
+            "groupId": [
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0006",
+              "G0005"
+            ],
+            "indexContent": [
+              "罐裝",
+              "袋裝",
+              "盒裝",
+              "箱裝",
+              "桶裝",
+              "瓶裝",
+              "甕裝",
+              "禮盒",
+              "隨手包",
+              "6~10入"
+            ],
+            "indexContentStr": [
+              "罐裝##A0030G0006C0001",
+              "袋裝##A0030G0006C0002",
+              "盒裝##A0030G0006C0003",
+              "箱裝##A0030G0006C0004",
+              "桶裝##A0030G0006C0008",
+              "瓶裝##A0030G0006C0009",
+              "甕裝##A0030G0006C0005",
+              "禮盒##A0030G0006C0007",
+              "隨手包##A0030G0006C0006",
+              "6~10入##A0030G0005C0004"
+            ],
+            "indexContentCnt": [
+              74,
+              812,
+              433,
+              85,
+              11,
+              1,
+              2,
+              80,
+              49,
+              1
+            ]
+          }
+        ],
+        "brandFilter": [
+          {
+            "brandTitle": "",
+            "brandName": [
+              "青鳥旅行",
+              "福義軒",
+              "義美",
+              "美式賣場",
+              "新竹福源",
+              "旺旺",
+              "中祥",
+              "Pringles 品客",
+              "Lay’s 樂事",
+              "enaak 小雞麵",
+              "天六",
+              "monkey mars 火星猴子",
+              "一品名",
+              "盛香珍",
+              "黑師傅",
+              "六月初一",
+              "Kid-o",
+              "SOYJOY",
+              "翠果子",
+              "華元",
+              "77",
+              "Kenji 健司",
+              "喜年來",
+              "KOIKEYA 湖池屋",
+              "Bourbon 北日本",
+              "Lotte 樂天",
+              "鴻鼎菓子",
+              "統一",
+              "多力多滋",
+              "Julies 茱蒂絲",
+              "OREO 奧利奧",
+              "新東陽",
+              "昇田食品",
+              "池上鄉農會",
+              "豆之家",
+              "盧琴樹",
+              "小林煎餅",
+              "台灣優格餅乾學院",
+              "foodpro 優群",
+              "野菽家",
+              "Tyrrells",
+              "正哲生技",
+              "CRICH 克里奇",
+              "福伯",
+              "卡迪那",
+              "櫻桃爺爺",
+              "科學麵",
+              "農會",
+              "好麗友",
+              "山日初"
+            ],
+            "brandCount": [
+              8,
+              53,
+              82,
+              49,
+              20,
+              31,
+              6,
+              17,
+              25,
+              3,
+              1,
+              3,
+              14,
+              32,
+              21,
+              5,
+              7,
+              10,
+              4,
+              28,
+              9,
+              18,
+              14,
+              12,
+              65,
+              26,
+              7,
+              3,
+              9,
+              12,
+              29,
+              11,
+              30,
+              9,
+              9,
+              9,
+              8,
+              10,
+              1,
+              7,
+              2,
+              8,
+              8,
+              12,
+              6,
+              5,
+              4,
+              29,
+              16,
+              16
+            ],
+            "brandNameStr": [
+              "青鳥旅行##20210913150725033",
+              "福義軒##20160808160123967",
+              "義美##20160808160120410",
+              "美式賣場##20230703102604000",
+              "新竹福源##20190613190639889",
+              "旺旺##20160808160044833",
+              "中祥##20170523161647164",
+              "Pringles 品客##20160808160051384",
+              "Lay’s 樂事##20160808160127901",
+              "enaak 小雞麵##20180321150250699",
+              "天六##20190613190709648",
+              "monkey mars 火星猴子##20190529133840945",
+              "一品名##20190627154843172",
+              "盛香珍##20160808160107554",
+              "黑師傅##20160808160117415",
+              "六月初一##20211202170849424",
+              "Kid-o##20250409165538667",
+              "SOYJOY##20170523161638441",
+              "翠果子##20190627154901573",
+              "華元##20160808160113856",
+              "77##20160808155606160",
+              "Kenji 健司##20160808155759241",
+              "喜年來##20160808160110424",
+              "KOIKEYA 湖池屋##20171227142037996",
+              "Bourbon 北日本##20160808155635619",
+              "Lotte 樂天##20160808155817417",
+              "鴻鼎菓子##20190227091541683",
+              "統一##20160808160108053",
+              "多力多滋##20170630152446184",
+              "Julies 茱蒂絲##20170523161622260",
+              "OREO 奧利奧##20170523161631884",
+              "新東陽##20160808160119287",
+              "昇田食品##20190627154851061",
+              "池上鄉農會##20240819174033551",
+              "豆之家##20190627154849663",
+              "盧琴樹##20241008094149909",
+              "小林煎餅##20190627154845531",
+              "台灣優格餅乾學院##20210813182959327",
+              "foodpro 優群##20210426174217874",
+              "野菽家##20160819173857067",
+              "Tyrrells##20211208141157024",
+              "正哲生技##20160808160029606",
+              "CRICH 克里奇##20190627113148899",
+              "福伯##20190627113146661",
+              "卡迪那##20160901173926617",
+              "櫻桃爺爺##20160810171913038",
+              "科學麵##20200313115152727",
+              "農會##20190613190640040",
+              "好麗友##20160808160033662",
+              "山日初##20231229104045278"
+            ],
+            "isTracking": [
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {},
+              {}
+            ]
+          }
+        ],
+        "brandTotalCount": 823
+      },
+      "isV2": true,
+      "success": "true",
+      "resultCode": "200",
+      "resultMessage": "",
+      "resultException": "",
+      "MOMOMSGID": "202505252328271857p5rx20g1p"
+    }
+  },
+  "rtnMsg": "success",
+  "rtnCode": 200
+}
