@@ -17,26 +17,23 @@
 <body>
   <div class="mask" style="display: none;"></div>
   <div class="add-product-dialog" style="display: none;">
-    <!-- <div class="add-product-dialog"> -->
+    <div class="close-btn"></div>
     <form action="">
       <h2>建立商品</h2>
       <div class="row">
-        <label for="category">類別</label>
         <input type="text" id="category" name="category" placeholder="輸入商品類別"
           required>
       </div>
       <div class="row">
-        <label for="brand">品牌</label>
         <input type="text" id="brand" name="brand" placeholder="輸入品牌名稱"
           required>
       </div>
       <div class="row">
-        <label for="name">名稱</label>
         <input type="text" id="name" name="name" placeholder="輸入商品名稱" required>
       </div>
       <div class="row">
         <button type="submit">提交</button>
-        <button type="button" class="cancel">取消</button>
+        <!-- <button type="button" class="cancel">取消</button> -->
       </div>
     </form>
   </div>
@@ -44,7 +41,10 @@
   <div class="header">
     <!-- <div class="add-product-btn">+</div> -->
     <form action="#">
-      <input type="text" name="keyword" id="" placeholder="請輸入商品名稱">
+      <div class="search-row">
+        <img src="/static/images/search.png" alt="">
+        <input type="text" name="keyword" id="" placeholder="請輸入商品名稱">
+      </div>
       <button type="submit">搜尋</button>
     </form>
     <div class="row">

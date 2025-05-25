@@ -172,7 +172,7 @@ async function init() {
   }
   function setAddProductBtn() {
     let addProductBtn = document.querySelector("div.add-product-btn");
-    let cancelBtn = document.querySelector(".add-product-dialog .cancel");
+    let cancelBtn = document.querySelector(".add-product-dialog .close-btn");
     let form = document.querySelector(".add-product-dialog form");
     let mask = document.querySelector(".mask");
     addProductBtn.addEventListener("click", function () {
