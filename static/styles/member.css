@@ -1,0 +1,83 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+	font-optical-sizing: inherit;
+	text-decoration: none;
+	/* scrollbar-width: none; */
+}
+
+html {
+	color: #666666;
+	font-size: 16px;
+	font-weight: 500;
+	font-family: "Noto Sans TC", sans-serif;
+	font-optical-sizing: auto;
+	line-height: 1;
+}
+
+body {
+	position: relative;
+	padding: 50px 0;
+	max-width: 400px;
+	margin: auto;
+	box-shadow: 0 0 4px lightgray;
+}
+
+
+
+.main {
+	width: fit-content;
+	margin: 50px auto;
+	font-size: 30px;
+}
+
+
+
+.header {
+	background-color: whitesmoke;
+	height: 50px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	max-width: 400px;
+}
+
+.header .sign-btn {
+	padding: 10px;
+}
+
+
+
+
+
+
+.footer {
+	background-color: whitesmoke;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 400px;
+}
+
+.footer a {
+	padding: 10px;
+}
+
+.footer a:nth-child(4) {
+	background-color: lightgray;
+	border-radius: 5px;
+}

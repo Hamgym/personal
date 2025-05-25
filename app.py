@@ -28,7 +28,7 @@ async def index(request: Request, id: int):
   return FileResponse("./static/review.html", media_type="text/html")
 @app.get("/member", include_in_schema=False)
 async def index(request: Request):
-  return FileResponse("./static/list.html", media_type="text/html")
+  return FileResponse("./static/member.html", media_type="text/html")
 
 
 @app.exception_handler(PoolError)
