@@ -9,6 +9,7 @@ async function init() {
   setDropdownSwitch();
   setDropdownContent();
   setAddProductBtn();
+  setSortBtn();
   async function checkSignin() {
     let user = await getUser(token);
     if (user == null) {
@@ -215,6 +216,31 @@ async function init() {
         alert("該商品已經存在！");
         // 代入資料並搜尋
       }
+    });
+  }
+  function setSortBtn() {
+    let btn = document.querySelector(".header .sort");
+    let count = 0;
+    let sortList = ["percent", "review", "id"];
+    let alertList = ["評價排序", "評論數量排序", "新商品排序"];
+    btn.addEventListener("click", function () {
+      let sort = sortList[count];
+      let alert = alertList[count];
+      let keyword = document.querySelector(".search-row input").value;
+      let category = document.querySelector(".category span").textContent;
+      let brand = document.querySelector(".brand span").textContent;
+      let alertBox = document.querySelector(".alert").cloneNode(true);
+      let header = document.querySelector(".header");
+      count += 1;
+      count %= 3;
+      loadProduct(keyword, category, brand, sort);
+      alertBox.textContent = alert;
+      alertBox.style.display = "flex";
+      alertBox.className += " fade";
+      header.appendChild(alertBox);
+      setTimeout(() => {
+        alertBox.remove();
+      }, 3000);
     });
   }
 }
