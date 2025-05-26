@@ -4,7 +4,7 @@ init();
 
 async function init() {
   await checkSignin();
-  // loadProduct();
+  loadProduct();
   setSearchForm();
   setDropdownSwitch();
   setDropdownContent();
@@ -27,29 +27,66 @@ async function init() {
     }
   }
   async function loadProduct(keyword = "", category = "", brand = "") {
-    let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}`;
-    let request = new Request(url, {
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
-      },
-    });
-    let res = await fetch(request);
-    let resData = await res.json();
-    let data = resData.data;
-    let main = document.querySelector(".main");
-    while (main.firstChild) {
-      main.firstChild.remove();
-    }
-    for (let item of data) {
-      let product = document.createElement("div");
-      product.id = item[0];
-      product.className = "product";
-      product.textContent = `【${item[2]}】${item[3]}`;
-      main.appendChild(product);
-      product.addEventListener("click", function () {
-        location.href = `/review/${product.id}`;
+    let dataList = await loadData();
+    renderPage(dataList);
+    // let main = document.querySelector(".main");
+    // while (main.firstChild) {
+    //   main.firstChild.remove();
+    // }
+    // for (let item of data) {
+    //   let product = document.createElement("div");
+    //   product.id = item[0];
+    //   product.className = "product";
+    //   product.textContent = `【${item[2]}】${item[3]}`;
+    //   main.appendChild(product);
+    //   product.addEventListener("click", function () {
+    //     location.href = `/review/${product.id}`;
+    //   });
+    // }
+    async function loadData() {
+      let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}`;
+      let request = new Request(url, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
       });
+      let res = await fetch(request);
+      let resData = await res.json();
+      let dataList = resData.data;
+      return dataList;
+    }
+    function renderPage(dataList) {
+      let main = document.querySelector(".main");
+      while (main.firstChild) {
+        main.firstChild.remove();
+      }
+      for (const data of dataList) {
+        let product = document.querySelector(".copy .product").cloneNode(true);
+        product.id = data[0];
+        product.querySelector("img").src = data[4];
+        product.querySelector("h3").textContent = `【${data[2]}】${data[3]}`;
+        product.querySelector(".value").style.width = `${data[5]}%`;
+        product.querySelector(".caption span").textContent = data[6];
+        product.addEventListener("click", function () {
+          location.href = `/review/${product.id}`;
+        });
+        main.appendChild(product);
+      }
+    }
+    async function loadRating(id) {
+      let url = `/api/review/rating/${id}`;
+      let request = new Request(url, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        },
+      });
+      let res = await fetch(request);
+      let result = await res.json();
+      let row = [];
+      row.push(result[6]);
+      row.push(result[7]);
+      return row;
     }
   }
   function setSearchForm() {

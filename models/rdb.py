@@ -31,6 +31,9 @@ def generate_order_number(payload) -> str:
       order_id += appended
     return order_id
 def get_rating(rows):
+  """
+  [1, 2, 3, 4, 5, avg, percent, count]
+  """
   if not rows:
     return [0,0,0,0,0,0,0,0]
   result = [0,0,0,0,0]
@@ -109,12 +112,12 @@ class CRUD:
         cursor.execute(select, (brand,))
         row = cursor.fetchone()
         return row[0]
-  def create_product(category, brand, name):
+  def create_product(category, brand, name, image=""):
     with cnxpool.get_connection() as cnx:
       try:
         cursor = cnx.cursor()
-        insert = "INSERT INTO product(category, brand, name) VALUES(%s, %s, %s)"
-        cursor.execute(insert, (category,brand,name))
+        insert = "INSERT INTO product(category, brand, name, image) VALUES(%s, %s, %s, %s)"
+        cursor.execute(insert, (category,brand,name,image))
         cnx.commit()
         return True
       except:
@@ -217,7 +220,7 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT product.id, category.name, brand.name, product.name
+        SELECT product.id, category.name, brand.name, product.name, product.image
         FROM product JOIN category JOIN brand
         ON product.category=category.id AND product.brand=brand.id
       """

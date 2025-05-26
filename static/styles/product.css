@@ -281,12 +281,12 @@ body {
 	padding-left: 10px;
 }
 
-[id="0"] .stars .value {
+.product .stars .value {
 	position: absolute;
 	top: 0;
 	left: 0;
 	color: #fbbc04;
-	width: calc(4.6 / 5 * 100%);
+	width: calc(5 / 5 * 100%);
 	overflow: hidden;
 }
 

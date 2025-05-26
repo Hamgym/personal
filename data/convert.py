@@ -1,7 +1,7 @@
 import json
 import csv
 
-FILE_NAME = "coffee"
+FILE_NAME = "cookie"
 
 with open(f"./data/{FILE_NAME}.json", encoding="utf-8") as file:
   data = json.load(file)
@@ -24,7 +24,7 @@ for good in goodsInfoList:
   # goodsName = goodsName.split()[0]
   categoryName = good["categoryName"]
   categoryName = categoryName.split("#")[0]
-  row = [categoryName, brandName, goodsName]
+  row = [categoryName, brandName, goodsName, imgUrl]
   rows.append(row)
 
 with open(f"./data/{FILE_NAME}.csv", mode="w", newline="", encoding="utf-8") as file:
