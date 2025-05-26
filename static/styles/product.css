@@ -218,8 +218,7 @@ body {
 	/* height: 2000px; */
 }
 
-.main .product {
-	/* background-color: aqua; */
+/* .main .product {
 	height: 60px;
 	border-radius: 5px;
 	box-shadow: 0 1px 5px lightgray;
@@ -229,6 +228,66 @@ body {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	margin-bottom: 15px;
+} */
+
+.main .product {
+	height: 150px;
+	border-radius: 5px;
+	box-shadow: 0 1px 5px lightgray;
+	padding: 10px;
+	font-size: 16px;
+	margin-bottom: 15px;
+	display: flex;
+}
+
+.product img {
+	height: 100%;
+	aspect-ratio: 1;
+	object-fit: cover;
+}
+
+.product .describes {
+	/* background-color: #AAAAAA; */
+	flex-grow: 1;
+	position: relative;
+	padding: 5px;
+	padding-bottom: 30px;
+}
+
+.product .describes .title {
+	font-size: 20px;
+	line-height: 1.5;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	line-clamp: 3;
+	overflow: hidden;
+}
+
+.product .describes .rating {
+	position: absolute;
+	bottom: 5px;
+	display: flex;
+}
+
+.product .stars {
+	width: fit-content;
+	/* margin: 5px auto; */
+	color: rgb(240, 240, 240);
+	position: relative;
+}
+
+.product .caption {
+	padding-left: 10px;
+}
+
+[id="0"] .stars .value {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fbbc04;
+	width: calc(4.6 / 5 * 100%);
+	overflow: hidden;
 }
 
 

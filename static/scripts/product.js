@@ -4,7 +4,7 @@ init();
 
 async function init() {
   await checkSignin();
-  loadProduct();
+  // loadProduct();
   setSearchForm();
   setDropdownSwitch();
   setDropdownContent();
