@@ -180,9 +180,9 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT product.id, brand.name, product.name, product.image, product.percent, product.review
-        FROM product JOIN brand
-        ON product.brand=brand.id
+        SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
+        FROM product JOIN category JOIN brand
+        ON product.category=category.id AND product.brand=brand.id
       """
       where = " WHERE TRUE"
       value = []

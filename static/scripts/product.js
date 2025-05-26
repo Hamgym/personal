@@ -50,10 +50,10 @@ async function init() {
       for (const data of dataList) {
         let product = document.querySelector(".copy .product").cloneNode(true);
         product.id = data[0];
-        product.querySelector("img").src = data[3];
-        product.querySelector("h3").textContent = `【${data[1]}】${data[2]}`;
-        product.querySelector(".value").style.width = `${data[4]}%`;
-        product.querySelector(".caption span").textContent = data[5];
+        product.querySelector("img").src = data[4];
+        product.querySelector("h3").textContent = `【${data[2]}】${data[3]}`;
+        product.querySelector(".value").style.width = `${data[5]}%`;
+        product.querySelector(".caption span").textContent = data[6];
         product.addEventListener("click", function () {
           location.href = `/review/${product.id}`;
         });
