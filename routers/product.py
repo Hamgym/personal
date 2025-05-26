@@ -17,19 +17,9 @@ async def post_prod(payload=Depends(jwt_auth), form:ProductForm=Form()):
   }
 
 @router.get("/api/product")
-async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query("")):
-  rows = CRUD.read_products(keyword, category, brand)
-  rows = list(rows)
-  result = []
-  for row in rows:
-    tmp = []
-    tmp = list(row)
-    pid = row[0]
-    row = CRUD.read_rating(pid)
-    tmp.append(row[-2])
-    tmp.append(row[-1])
-    result.append(tmp)
-  return {"data": result}
+async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query("")):
+  rows = CRUD.read_products(keyword, category, brand, sort)
+  return {"data": rows}
 
 @router.get("/api/products/{id}")
 async def get_product(id: int):

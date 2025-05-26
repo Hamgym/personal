@@ -140,7 +140,7 @@ async function init() {
         item.appendChild(content);
         main.appendChild(item);
         likeBtn.addEventListener("click", async function () {
-          // let reviewID = this.parentElement.parentElement.parentElement.id;
+          let likeDIV = this.parentElement;
           let reviewID = data[0];
           let url = "/api/review/like";
           let init = {
@@ -155,9 +155,9 @@ async function init() {
           let res = await fetch(request);
           let resData = await res.json();
           if (resData) {
-            let span = document.querySelector(".like span");
+            let span = likeDIV.querySelector("span");
             let count = span.textContent;
-            let icon = document.querySelector(".like-btn img");
+            let icon = likeDIV.querySelector("img");
             count = Number(count);
             count += 1;
             span.textContent = count;

@@ -1,7 +1,6 @@
 import os, json
 from mysql.connector.errors import PoolError
 from mysql.connector.pooling import MySQLConnectionPool
-from datetime import datetime, timezone, timedelta
 from passlib.context import CryptContext
 dbconfig = {
   "user": os.getenv("DB_USER"),
@@ -13,26 +12,9 @@ cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
 
 
-def get_next_page(page, rows):
-  if len(rows) < 12:
-    return None
-  return page + 1
-def generate_serial_number() -> str:
-  return datetime.now(timezone(timedelta(hours=8))).strftime("%Y%m%d%H%M%S")
-def generate_order_number(payload) -> str:
-  with cnxpool.get_connection() as cnx:
-    cursor = cnx.cursor()
-    order_id = generate_serial_number()
-    select = "SELECT * FROM orders WHERE id=%s"
-    cursor.execute(select, (order_id,))
-    row = cursor.fetchone()
-    if row!=None:
-      appended = f"-{payload["id"]%1000:03}"
-      order_id += appended
-    return order_id
 def get_rating(rows):
   """
-  [1, 2, 3, 4, 5, avg, percent, count]
+  [1, 2, 3, 4, 5, avg, percent, review]
   """
   if not rows:
     return [0,0,0,0,0,0,0,0]
@@ -54,7 +36,7 @@ def get_rating(rows):
       result[4] += 1
       continue
   total = 0
-  count = 0
+  count = 0 # review count
   for i in range(5):
     total += result[i]*(i+1)
     count += result[i]
@@ -70,6 +52,7 @@ def get_rating(rows):
   result.append(percent)
   result.append(count)
   return result
+
 
 class CRUD:
   def create_user(user):
@@ -154,29 +137,6 @@ class CRUD:
         return True
       except:
         return False
-  def read_attractions(page, keyword):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      limit = 12
-      offset = page * limit
-      select_all = "SELECT attraction.id, attraction.name, category, description, address, transport, mrt.name, lat, lng, images FROM attraction LEFT JOIN mrt ON attraction.mrt=mrt.id "
-      if keyword==None:
-        select = select_all+"LIMIT %s OFFSET %s"
-        cursor.execute(select, (limit, offset))
-      else:
-        name = "%"+keyword+"%"
-        select = select_all+"WHERE attraction.name LIKE %s OR mrt.name=%s LIMIT %s OFFSET %s"
-        cursor.execute(select, (name, keyword, limit, offset))
-      rows = cursor.fetchall()
-      return rows
-  def read_attraction(attractionId):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      select_all = "SELECT attraction.id, attraction.name, category, description, address, transport, mrt.name, lat, lng, images FROM attraction LEFT JOIN mrt ON attraction.mrt=mrt.id "
-      select = select_all+"WHERE attraction.id=%s"
-      cursor.execute(select, (attractionId,))
-      row = cursor.fetchone()
-      return row
   def read_user(user):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -216,13 +176,13 @@ class CRUD:
       cursor.execute(select+where, value)
       row = cursor.fetchone()
       return row
-  def read_products(keyword, category, brand):
+  def read_products(keyword, category, brand, sort):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT product.id, category.name, brand.name, product.name, product.image
-        FROM product JOIN category JOIN brand
-        ON product.category=category.id AND product.brand=brand.id
+        SELECT product.id, brand.name, product.name, product.image, product.percent, product.review
+        FROM product JOIN brand
+        ON product.brand=brand.id
       """
       where = " WHERE TRUE"
       value = []
@@ -235,7 +195,9 @@ class CRUD:
       if brand!="" and brand!="品牌":
         where += " AND brand.name=%s"
         value.append(brand)
-      order = " ORDER BY product.id DESC"
+      if sort!="percent" and sort!="review":
+        sort = "id"
+      order = f" ORDER BY product.{sort} DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
@@ -339,6 +301,7 @@ class CRUD:
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
       result = get_rating(rows)
+      CRUD.update_product_percent(product_id, result[-2], result[-1])
       return result
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
@@ -357,6 +320,17 @@ class CRUD:
       row = CRUD.read_like(review_id)
       likes = row[0]
       values = [likes, review_id]
+      cursor.execute(update, values)
+      cnx.commit()
+  def update_product_percent(product_id, percent, review):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      update = """
+        UPDATE product
+        SET percent=%s, review=%s
+        WHERE id=%s;
+      """
+      values = [percent, review, product_id]
       cursor.execute(update, values)
       cnx.commit()
   def delete_list_item(payload, item_id):

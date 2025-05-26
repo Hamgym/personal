@@ -26,25 +26,11 @@ async function init() {
       return user;
     }
   }
-  async function loadProduct(keyword = "", category = "", brand = "") {
+  async function loadProduct(keyword = "", category = "", brand = "", sort = "id") {
     let dataList = await loadData();
     renderPage(dataList);
-    // let main = document.querySelector(".main");
-    // while (main.firstChild) {
-    //   main.firstChild.remove();
-    // }
-    // for (let item of data) {
-    //   let product = document.createElement("div");
-    //   product.id = item[0];
-    //   product.className = "product";
-    //   product.textContent = `【${item[2]}】${item[3]}`;
-    //   main.appendChild(product);
-    //   product.addEventListener("click", function () {
-    //     location.href = `/review/${product.id}`;
-    //   });
-    // }
     async function loadData() {
-      let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}`;
+      let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}&sort=${sort}`;
       let request = new Request(url, {
         headers: {
           "Content-Type": "application/json",
@@ -64,29 +50,15 @@ async function init() {
       for (const data of dataList) {
         let product = document.querySelector(".copy .product").cloneNode(true);
         product.id = data[0];
-        product.querySelector("img").src = data[4];
-        product.querySelector("h3").textContent = `【${data[2]}】${data[3]}`;
-        product.querySelector(".value").style.width = `${data[5]}%`;
-        product.querySelector(".caption span").textContent = data[6];
+        product.querySelector("img").src = data[3];
+        product.querySelector("h3").textContent = `【${data[1]}】${data[2]}`;
+        product.querySelector(".value").style.width = `${data[4]}%`;
+        product.querySelector(".caption span").textContent = data[5];
         product.addEventListener("click", function () {
           location.href = `/review/${product.id}`;
         });
         main.appendChild(product);
       }
-    }
-    async function loadRating(id) {
-      let url = `/api/review/rating/${id}`;
-      let request = new Request(url, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        },
-      });
-      let res = await fetch(request);
-      let result = await res.json();
-      let row = [];
-      row.push(result[6]);
-      row.push(result[7]);
-      return row;
     }
   }
   function setSearchForm() {
