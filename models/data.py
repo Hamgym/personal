@@ -31,10 +31,6 @@ class Order(BaseModel):
   price: Literal[2000, 2500]
   trip: Trip
   contact: Contact
-class ProductForm(BaseModel):
-  category: str
-  brand: str
-  name: str
 class ReviewCreate(BaseModel):
   product_id: int
   rating: int = Field(ge=1, le=5)

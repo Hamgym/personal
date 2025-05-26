@@ -80,7 +80,7 @@ body {
 .add-product-dialog .row {
 	width: 280px;
 	margin: 15px auto;
-
+	position: relative;
 }
 
 .add-product-dialog input {
@@ -94,6 +94,23 @@ body {
 
 .add-product-dialog input:focus {
 	outline: none;
+}
+
+.add-product-dialog #photo {
+	opacity: 1;
+}
+
+.add-product-dialog label[for="photo"] {
+	display: none;
+	/* position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 48px;
+	border-radius: 2px;
+	border: none;
+	background-color: hsl(0, 0%, 95%);
+	padding: 16px 20px; */
 }
 
 .add-product-dialog button {

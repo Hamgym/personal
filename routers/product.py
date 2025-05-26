@@ -4,16 +4,19 @@ from utils.pay import *
 from utils.auth import *
 from models.rdb import *
 from models.data import *
+from models.bucket import upload
 router = APIRouter()
 
 @router.post("/api/product")
-async def post_prod(payload=Depends(jwt_auth), form:ProductForm=Form()):
-  category_id = CRUD.create_category(form.category)
-  brand_id = CRUD.create_brand(form.brand)
-  new_product = CRUD.create_product(category_id, brand_id, form.name)
+async def post_prod(
+  payload=Depends(jwt_auth), category:str=Form(), brand:str=Form(), name:str=Form(), photo:UploadFile=Form()):
+  image_url = upload(photo)
+  category_id = CRUD.create_category(category)
+  brand_id = CRUD.create_brand(brand)
+  new_product = CRUD.create_product(category_id, brand_id, name, image_url)
   return {
     "newProduct": new_product,
-    "product": form
+    "product": "OK"
   }
 
 @router.get("/api/product")

@@ -72,7 +72,7 @@
     </div>
   </div>
   <div class="mask" style="display: none;"></div>
-  <div class="add-product-dialog" style="display: none;">
+  <div class="add-product-dialog" style="display: block;">
     <div class="close-btn"></div>
     <form action="">
       <h2>建立商品</h2>
@@ -88,8 +88,11 @@
         <input type="text" id="name" name="name" placeholder="輸入商品名稱" required>
       </div>
       <div class="row">
+        <label for="photo">上傳商品照片</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+      </div>
+      <div class="row">
         <button type="submit">提交</button>
-        <!-- <button type="button" class="cancel">取消</button> -->
       </div>
     </form>
   </div>

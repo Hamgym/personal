@@ -200,8 +200,8 @@ async function init() {
       let formData = new FormData(this, submitter);
       let url = "/api/product";
       let init = {
-        headers: { "Authorization": `Bearer ${token}` },
         method: "POST",
+        headers: { "Authorization": `Bearer ${token}` },
         body: formData,
       };
       let request = new Request(url, init);
