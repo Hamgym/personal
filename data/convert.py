@@ -1,7 +1,9 @@
 import json
 import csv
 
-with open("./data/cookie.json", encoding="utf-8") as file:
+FILE_NAME = "coffee"
+
+with open(f"./data/{FILE_NAME}.json", encoding="utf-8") as file:
   data = json.load(file)
 rtnData = data["rtnData"]
 searchResult = rtnData["searchResult"]
@@ -25,6 +27,6 @@ for good in goodsInfoList:
   row = [categoryName, brandName, goodsName]
   rows.append(row)
 
-with open("./data/cookie.csv", mode="w", newline="", encoding="utf-8") as file:
+with open(f"./data/{FILE_NAME}.csv", mode="w", newline="", encoding="utf-8") as file:
   writer = csv.writer(file)
   writer.writerows(rows)

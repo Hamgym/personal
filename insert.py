@@ -16,7 +16,10 @@ def post_prod(category, brand, name):
     print("失敗")
 
 
-with open("./data/cookie.csv", mode="r", newline="", encoding="utf-8") as file:
+FILE_NAME = "coffee"
+
+
+with open(f"./data/{FILE_NAME}.csv", mode="r", newline="", encoding="utf-8") as file:
   reader = csv.reader(file)
   for row in reader:
     post_prod(*row)
