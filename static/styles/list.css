@@ -137,6 +137,13 @@ body {
 	padding: 10px;
 }
 
+.header .add-item-btn:hover {
+	cursor: pointer;
+	background-color: lightgray;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
 
 
 .list {

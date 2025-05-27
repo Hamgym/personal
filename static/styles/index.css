@@ -286,6 +286,13 @@ body {
 	padding: 10px;
 }
 
+.header .sign-btn:hover {
+	cursor: pointer;
+	background-color: lightgray;
+	border-radius: 5px;
+	transition: all 0.5s;
+}
+
 
 
 .main {

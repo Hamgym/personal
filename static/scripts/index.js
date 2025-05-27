@@ -108,7 +108,7 @@ async function frontInit() {
 			p.setAttribute("style", "display:block");
 		} else {
 			localStorage.setItem("token", resData.token);
-			location.href = "/list";
+			location.href = "/member";
 		}
 	});
 }
