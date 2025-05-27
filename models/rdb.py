@@ -179,8 +179,6 @@ class CRUD:
   def read_products(keyword, category, brand, sort):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      category_list = CRUD.read_category_list()
-      brand_list = CRUD.read_brand_list()
       select = """
         SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
         FROM product JOIN category JOIN brand
@@ -189,15 +187,10 @@ class CRUD:
       where = " WHERE TRUE"
       value = []
       if keyword!="":
-        if keyword in category_list:
-          where += " AND category.name=%s"
-          value.append(keyword)
-        elif keyword in brand_list:
-          where += " AND brand.name=%s"
-          value.append(keyword)
-        else:
-          where += " AND product.name LIKE %s"
-          value.append(f"%{keyword}%")
+        where += " AND (product.name LIKE %s OR category.name LIKE %s OR brand.name LIKE %s)"
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
       if category!="" and category!="類別":
         where += " AND category.name=%s"
         value.append(category)
@@ -213,8 +206,6 @@ class CRUD:
   def read_category(keyword, brand):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      category_list = CRUD.read_category_list()
-      brand_list = CRUD.read_brand_list()
       select = """
         SELECT category.name as category, COUNT(product.id) as count
         FROM product JOIN category JOIN brand
@@ -223,15 +214,10 @@ class CRUD:
       where = " WHERE TRUE"
       value = []
       if keyword!="":
-        if keyword in category_list:
-          where += " AND category.name=%s"
-          value.append(keyword)
-        elif keyword in brand_list:
-          where += " AND brand.name=%s"
-          value.append(keyword)
-        else:
-          where += " AND product.name LIKE %s"
-          value.append(f"%{keyword}%")
+        where += " AND (product.name LIKE %s OR category.name LIKE %s OR brand.name LIKE %s)"
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
       if brand!="" and brand!="品牌" and False: # banned
         where += " AND brand.name=%s"
         value.append(brand)
@@ -256,8 +242,6 @@ class CRUD:
   def read_brand(keyword, category):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      category_list = CRUD.read_category_list()
-      brand_list = CRUD.read_brand_list()
       select = """
         SELECT brand.name, COUNT(product.id) as count
         FROM product JOIN category JOIN brand
@@ -266,15 +250,10 @@ class CRUD:
       where = " WHERE TRUE"
       value = []
       if keyword!="":
-        if keyword in category_list:
-          where += " AND category.name=%s"
-          value.append(keyword)
-        elif keyword in brand_list:
-          where += " AND brand.name=%s"
-          value.append(keyword)
-        else:
-          where += " AND product.name LIKE %s"
-          value.append(f"%{keyword}%")
+        where += " AND (product.name LIKE %s OR category.name LIKE %s OR brand.name LIKE %s)"
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
+        value.append(f"%{keyword}%")
       if category!="" and category!="類別":
         where += " AND category.name=%s"
         value.append(category)
