@@ -1,8 +1,6 @@
-const token = localStorage.getItem("token");
-
 init();
-
 async function init() {
+  const token = localStorage.getItem("token");
   await checkSignin();
   loadProduct();
   setSearchForm();
@@ -224,10 +222,28 @@ async function init() {
     let checkBox = document.querySelector("#personal");
     checkBox.addEventListener("change", function () {
       let icon = document.querySelector("img.personal");
+      let searchBtn = document.querySelector(".header button");
       if (this.checked) {
         icon.src = "/static/images/user-checked.png";
+        searchBtn.click();
+        showAlertBox("個人模式");
       } else {
         icon.src = "/static/images/user-unchecked.png";
+        searchBtn.click();
+        showAlertBox("一般模式");
+      }
+      function showAlertBox(text = "") {
+        let header = document.querySelector(".header");
+        let alertBox = document.querySelector(".alert").cloneNode(true);
+        alertBox.textContent = text;
+        alertBox.style.display = "flex";
+        alertBox.style.right = "80px";
+        alertBox.style.width = "120px";
+        alertBox.className += " fade";
+        header.appendChild(alertBox);
+        setTimeout(() => {
+          alertBox.remove();
+        }, 3000);
       }
     });
   }

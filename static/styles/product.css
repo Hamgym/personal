@@ -157,6 +157,10 @@ body {
 	bottom: 10px;
 }
 
+.header [for="personal"] img:hover {
+	cursor: pointer;
+}
+
 .header .sort {
 	width: 30px;
 	position: absolute;
