@@ -84,6 +84,10 @@ body {
 	padding-left: 8px;
 }
 
+.header form [type="submit"]:hover {
+	cursor: pointer;
+}
+
 .header .row {
 	margin-top: 10px;
 	padding: 0 20px;
@@ -105,11 +109,19 @@ body {
 	align-items: center;
 }
 
+.dropdown .dropdown-btn:hover {
+	cursor: pointer;
+}
+
 .dropdown .dropdown-btn .title {
 	width: 100%;
 	overflow: hidden;
 	text-wrap-mode: nowrap;
 	text-overflow: ellipsis;
+}
+
+.dropdown .dropdown-btn .icon {
+	padding-left: 3px;
 }
 
 .dropdown .dropdown-content {
@@ -133,11 +145,27 @@ body {
 	margin: 10px;
 }
 
+.dropdown .item:hover {
+	cursor: pointer;
+}
+
+.header [for="personal"] img {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: 45px;
+	bottom: 10px;
+}
+
 .header .sort {
 	width: 30px;
 	position: absolute;
 	right: 10px;
 	bottom: 10px;
+}
+
+.header .sort:hover {
+	cursor: pointer;
 }
 
 
@@ -167,6 +195,10 @@ body {
 	font-size: 16px;
 	margin-bottom: 15px;
 	display: flex;
+}
+
+.main .product:hover {
+	cursor: pointer;
 }
 
 .product img {

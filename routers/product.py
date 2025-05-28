@@ -20,8 +20,12 @@ async def post_prod(
   }
 
 @router.get("/api/product")
-async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query("")):
-  rows = CRUD.read_products(keyword, category, brand, sort)
+async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query(""), personal:bool=Query(False)):
+  if personal:
+    user_id = payload["id"]
+  else:
+    user_id = 0
+  rows = CRUD.read_products(keyword, category, brand, sort, user_id)
   return {"data": rows}
 
 @router.get("/api/products/{id}")

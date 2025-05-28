@@ -9,6 +9,7 @@ async function init() {
   setDropdownSwitch();
   setDropdownContent();
   setAddProductBtn();
+  setPersonalBtn();
   setSortBtn();
   async function checkSignin() {
     let user = await getUser(token);
@@ -31,7 +32,8 @@ async function init() {
     let dataList = await loadData();
     renderPage(dataList);
     async function loadData() {
-      let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}&sort=${sort}`;
+      let personal = document.querySelector("#personal").checked;
+      let url = `/api/product?keyword=${keyword}&category=${category}&brand=${brand}&sort=${sort}&personal=${personal}`;
       let request = new Request(url, {
         headers: {
           "Content-Type": "application/json",
@@ -215,6 +217,17 @@ async function init() {
       } else {
         alert("該商品已經存在！");
         // 代入資料並搜尋
+      }
+    });
+  }
+  function setPersonalBtn() {
+    let checkBox = document.querySelector("#personal");
+    checkBox.addEventListener("change", function () {
+      let icon = document.querySelector("img.personal");
+      if (this.checked) {
+        icon.src = "/static/images/user-checked.png";
+      } else {
+        icon.src = "/static/images/user-unchecked.png";
       }
     });
   }
