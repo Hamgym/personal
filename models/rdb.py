@@ -182,7 +182,7 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
+        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
