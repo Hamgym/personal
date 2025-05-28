@@ -1,7 +1,9 @@
-import os, json
-from mysql.connector.errors import PoolError
 from mysql.connector.pooling import MySQLConnectionPool
+from mysql.connector.errors import PoolError
 from passlib.context import CryptContext
+from dotenv import load_dotenv
+import os
+load_dotenv()
 dbconfig = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),
@@ -226,19 +228,6 @@ class CRUD:
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_category_list():
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      select = """
-        SELECT name
-        FROM category
-      """
-      cursor.execute(select)
-      rows = cursor.fetchall()
-      result = []
-      for item in rows:
-        result.append(item[0])
-      return result
   def read_brand(keyword, category):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -262,19 +251,6 @@ class CRUD:
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_brand_list():
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      select = """
-        SELECT name
-        FROM brand
-      """
-      cursor.execute(select)
-      rows = cursor.fetchall()
-      result = []
-      for item in rows:
-        result.append(item[0])
-      return result
   def read_review(product_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
