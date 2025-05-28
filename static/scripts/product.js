@@ -147,7 +147,8 @@ async function init() {
     async function brandFilter() {
       let keyword = document.querySelector(".header input").value;
       let category = document.querySelector(".category span").textContent;
-      let url = `/api/product/brand?keyword=${keyword}&category=${category}`;
+      let personal = document.querySelector("#personal").checked;
+      let url = `/api/product/brand?keyword=${keyword}&category=${category}&personal=${personal}`;
       let request = new Request(url, {
         headers: {
           "Authorization": `Bearer ${token}`
