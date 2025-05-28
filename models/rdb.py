@@ -210,9 +210,31 @@ class CRUD:
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_category(keyword, brand):
+  def read_category(keyword, brand, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
+      if user_id:
+        select = """
+          SELECT category.name, COUNT(product.id) as count
+          FROM product
+          JOIN category ON product.category=category.id
+          JOIN brand ON product.brand=brand.id
+          JOIN review ON product.id=review.product_id
+        """
+        where = " WHERE TRUE"
+        value = []
+        where += " AND review.user_id=%s"
+        value.append(user_id)
+        if keyword!="":
+          where += " AND (product.name LIKE %s OR category.name LIKE %s OR brand.name LIKE %s)"
+          value.append(f"%{keyword}%")
+          value.append(f"%{keyword}%")
+          value.append(f"%{keyword}%")
+        group = " GROUP BY category.name"
+        order = " ORDER BY count DESC"
+        cursor.execute(select+where+group+order, value)
+        rows = cursor.fetchall()
+        return rows
       select = """
         SELECT category.name as category, COUNT(product.id) as count
         FROM product JOIN category JOIN brand

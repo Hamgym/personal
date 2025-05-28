@@ -34,8 +34,12 @@ async def get_product(id: int):
   return {"data": row}
 
 @router.get("/api/product/category")
-async def get_category(payload=Depends(jwt_auth), keyword:str=Query(""), brand:str=Query("")):
-  rows = CRUD.read_category(keyword, brand)
+async def get_category(payload=Depends(jwt_auth), keyword:str=Query(""), brand:str=Query(""), personal:bool=Query(False)):
+  if personal:
+    user_id = payload["id"]
+  else:
+    user_id = 0
+  rows = CRUD.read_category(keyword, brand, user_id)
   return {"data": rows}
 
 @router.get("/api/product/brand")
