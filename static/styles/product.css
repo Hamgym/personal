@@ -275,6 +275,10 @@ body {
 	top: -10px;
 }
 
+.add-product-btn:hover {
+	cursor: pointer;
+}
+
 
 
 

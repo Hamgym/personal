@@ -50,6 +50,10 @@ body {
 	padding: 10px;
 }
 
+.header .back-arrow:hover {
+	cursor: pointer;
+}
+
 .header .back-arrow img {
 	width: 100%;
 }
@@ -207,6 +211,10 @@ div[id="2"] .stars .value {
 	flex-shrink: 0;
 }
 
+.user .like-btn:hover {
+	cursor: pointer;
+}
+
 .user .like-btn img {
 	width: 100%;
 }
@@ -247,6 +255,10 @@ div[id="2"] .stars .value {
 	margin-bottom: 150px;
 	font-size: 20px;
 	text-align: center;
+}
+
+.post-btn:hover {
+	cursor: pointer;
 }
 
 
@@ -292,6 +304,10 @@ div[id="2"] .stars .value {
 	right: 10px;
 	width: 20px;
 	height: 20px;
+}
+
+.post-dialog .close-btn:hover {
+	cursor: pointer;
 }
 
 .close-btn img {
@@ -342,4 +358,8 @@ button[type="submit"] {
 	box-shadow: 0 1px 5px lightgray;
 	margin: 20px auto;
 	text-align: center;
+}
+
+button[type="submit"]:hover {
+	cursor: pointer;
 }
