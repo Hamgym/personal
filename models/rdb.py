@@ -1,5 +1,4 @@
 from mysql.connector.pooling import MySQLConnectionPool
-from mysql.connector.errors import PoolError
 from passlib.context import CryptContext
 from dotenv import load_dotenv
 import os

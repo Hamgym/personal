@@ -1,6 +1,8 @@
-import jwt, os
+from dotenv import load_dotenv
 from datetime import datetime, timezone, timedelta
 from fastapi import Header
+import jwt, os
+load_dotenv()
 
 
 class AuthError(Exception):

@@ -1,14 +1,13 @@
 from dotenv import load_dotenv
+import boto3, os, uuid
 load_dotenv()
 
-import boto3, os, uuid
 s3 = boto3.client(
   "s3",
   aws_access_key_id = os.getenv("AWS_ID"),
   aws_secret_access_key = os.getenv("AWS_KEY"),
   region_name = os.getenv("AWS_REGION")
 )
-
 BUCKET_NAME = "hamgym"
 
 def upload(image):

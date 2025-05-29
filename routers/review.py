@@ -1,6 +1,5 @@
 from fastapi import *
 from fastapi.responses import JSONResponse
-from utils.pay import *
 from utils.auth import *
 from models.rdb import *
 from models.data import *
