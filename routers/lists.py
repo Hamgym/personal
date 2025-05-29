@@ -19,6 +19,7 @@ async def post_lists(payload=Depends(jwt_auth), body:ShopList=Body()):
       "error": True,
       "message": "建立失敗，輸入不正確或其他原因"
     }, 400)
+
 @router.get("/api/lists")
 async def get_list(payload=Depends(jwt_auth)):
   rows = CRUD.read_list(payload)
@@ -26,6 +27,7 @@ async def get_list(payload=Depends(jwt_auth)):
     return {"data": None}
   data = get_list_data(rows)
   return {"data": data}
+
 @router.get("/api/lists/{itemId}")
 async def get_list(itemId:int, payload=Depends(jwt_auth)):
   row = CRUD.read_list_item(payload, itemId)
@@ -34,10 +36,12 @@ async def get_list(itemId:int, payload=Depends(jwt_auth)):
   row = list(row)
   row.pop(1)
   return {"data": row}
+
 @router.delete("/api/lists/{itemId}")
 async def delete_list(itemId:int, payload=Depends(jwt_auth)):
   CRUD.delete_list_item(payload, itemId)
   return JSONResponse({"ok": True})
+
 @router.patch("/api/lists/{itemId}")
 async def patch_list(itemId:int, body=Body(), payload=Depends(jwt_auth)):
   CRUD.update_list_item(itemId, body["bought"])

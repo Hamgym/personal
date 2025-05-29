@@ -12,6 +12,7 @@ async def post_user(user:SignUp):
     return {"ok": True}
   except:
     return JSONResponse({"error":True, "message":"註冊失敗，重複的 Email"}, 400)
+
 @router.put("/api/user/auth")
 async def put_auth(user:SignIn):
   row = CRUD.read_user(user)
@@ -19,6 +20,7 @@ async def put_auth(user:SignIn):
     return JSONResponse({"error":True, "message":"登入失敗，帳號或密碼錯誤"}, 400)
   token = generate_token(row)
   return {"token": token}
+
 @router.get("/api/user/auth")
 async def get_auth(payload=Depends(jwt_payload)):
   return {"data": payload}

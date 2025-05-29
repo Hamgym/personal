@@ -6,8 +6,9 @@ load_dotenv()
 dbconfig = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),
-  "host": "localhost",
-  "database": "mygo"
+  "host": os.getenv("DB_HOST"),
+  "database": "mygo",
+  "pool_name": "mypool"
 }
 cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
