@@ -96,15 +96,29 @@ async function init() {
       if (suggestionsDiv.firstChild) {
         suggestionsDiv.innerHTML = "";
       }
+      // console.log(suggestions);
       for (const item of suggestions) {
         let div = document.createElement('div');
-        div.textContent = item[0];
+        // div.textContent = item[0];
+        div.textContent = item;
         div.onclick = () => {
-          this.value = item[0];
+          let searchBtn = document.querySelector('.header [type="submit"]');
+          // this.value = item[0];
+          this.value = item;
           suggestionsDiv.innerHTML = '';
+          searchBtn.click();
         };
         suggestionsDiv.appendChild(div);
+        if (suggestionsDiv.children.length > 5) {
+          break;
+        }
       }
+    });
+    window.addEventListener("click", function (event) {
+      if (event.target.id == "suggestions" || event.target.id == "keyword") {
+        return;
+      }
+      document.querySelector("#suggestions").innerHTML = "";
     });
   }
   function setDropdownSwitch() {

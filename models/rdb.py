@@ -363,7 +363,7 @@ class CRUD:
       where = " WHERE name LIKE %s;"
       value = [f"{keyword}%"]
       if need_more:
-        value = [f"_{keyword}%"]
+        value = [f"%_{keyword}%"]
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
       return rows

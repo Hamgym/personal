@@ -4,6 +4,7 @@ from utils.auth import *
 from models.rdb import *
 from models.data import *
 from models.bucket import upload
+import re
 router = APIRouter()
 
 @router.post("/api/product")
@@ -56,4 +57,11 @@ async def get_brand(q:str=Query(..., min_length=1)):
   if len(rows)<5:
     more_rows = CRUD.read_suggest(q, need_more=True)
     rows += more_rows
-  return rows
+  result = []
+  for row in rows:
+    tmp = row[0]
+    tmp = tmp.split()[0]
+    tmp = tmp.split("(")[0]
+    tmp = re.split(r"\d", tmp)[0]
+    result.append(tmp)
+  return result

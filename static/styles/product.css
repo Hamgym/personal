@@ -73,6 +73,9 @@ body {
 	flex-grow: 1;
 	padding-left: 10px;
 	border-radius: 17px;
+	overflow: hidden;
+	text-wrap-mode: nowrap;
+	text-overflow: ellipsis;
 	z-index: 3;
 }
 
@@ -89,7 +92,7 @@ body {
 	left: 0;
 	border-radius: 0 0 17px 17px;
 	padding-top: 17px;
-	padding-left: 49px;
+	padding-left: 39px;
 	box-shadow: 0 2px 2px lightgray;
 
 }
@@ -97,10 +100,14 @@ body {
 .header #suggestions div {
 	background-color: inherit;
 	line-height: 34px;
-	text-wrap-mode: nowrap;
 	overflow: hidden;
+	text-wrap-mode: nowrap;
 	text-overflow: ellipsis;
-	width: calc(100% - 17px);
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 50px;
+	border-radius: 17px;
+
 }
 
 .header #suggestions div:hover {
@@ -440,11 +447,13 @@ body {
 
 .alert {
 	position: absolute;
-	right: 45px;
+	/* right: 45px; */
+	right: 80px;
 	bottom: 10px;
 	background-color: #f45e60;
 	color: white;
-	width: 150px;
+	/* width: 150px; */
+	width: 120px;
 	height: 30px;
 	display: flex;
 	justify-content: center;
