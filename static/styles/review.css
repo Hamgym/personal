@@ -152,6 +152,10 @@ body {
 
 
 
+.main {
+	padding-bottom: 300px;
+}
+
 .main .item {
 	background-color: white;
 	border-bottom: 1px solid hsl(0, 0%, 90%);
@@ -258,6 +262,10 @@ div[id="2"] .stars .value {
 	margin-bottom: 150px;
 	font-size: 20px;
 	text-align: center;
+	/* display: none; */
+	position: absolute;
+	bottom: 100px;
+	left: calc(50% - 150px / 2);
 }
 
 .post-btn:hover {

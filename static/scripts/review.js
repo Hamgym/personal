@@ -207,7 +207,7 @@ async function init() {
       }
     }
     async function postProduction() {
-      // 使用者名稱及按讚高亮
+      // 使用者名稱及按讚高亮外加按鈕隱藏控制
       let items = document.querySelectorAll(".item");
       for (const item of items) {
         let reviewID = item.id;
@@ -217,7 +217,7 @@ async function init() {
           let name = item.querySelector(".name");
           let postBtn = document.querySelector(".post-btn");
           name.style.backgroundColor = "#fbbc04";
-          // postBtn.style.display = "none";
+          postBtn.style.display = "none";
         }
         if (isMyLike) {
           let like = item.querySelector(".like-btn img");
