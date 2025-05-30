@@ -82,6 +82,30 @@ async function init() {
         brandTitle.textContent = "品牌";
       }
     });
+    let input = document.querySelector("#keyword");
+    input.addEventListener("input", async function () {
+      let query = this.value;
+      let suggestionsDiv = document.querySelector("#suggestions");
+      if (query.length < 1) {
+        suggestionsDiv.innerHTML = "";
+        return;
+      }
+      // suggestionsDiv.textContent = query;
+      let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
+      let suggestions = await res.json();
+      if (suggestionsDiv.firstChild) {
+        suggestionsDiv.innerHTML = "";
+      }
+      for (const item of suggestions) {
+        let div = document.createElement('div');
+        div.textContent = item[0];
+        div.onclick = () => {
+          this.value = item[0];
+          suggestionsDiv.innerHTML = '';
+        };
+        suggestionsDiv.appendChild(div);
+      }
+    });
   }
   function setDropdownSwitch() {
     let categoryDropdown = document.querySelector("div.category");

@@ -49,3 +49,11 @@ async def get_brand(payload=Depends(jwt_auth), keyword:str=Query(""), category:s
     user_id = 0
   rows = CRUD.read_brand(keyword, category, user_id)
   return {"data": rows}
+
+@router.get("/api/product/suggest")
+async def get_brand(q:str=Query(..., min_length=1)):
+  rows = CRUD.read_suggest(q)
+  if len(rows)<5:
+    more_rows = CRUD.read_suggest(q, need_more=True)
+    rows += more_rows
+  return rows

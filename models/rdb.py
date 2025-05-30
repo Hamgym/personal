@@ -353,6 +353,20 @@ class CRUD:
       result = get_rating(rows)
       CRUD.update_product_percent(product_id, result[-2], result[-1])
       return result
+  def read_suggest(keyword, need_more=False):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT name
+        FROM product
+      """
+      where = " WHERE name LIKE %s;"
+      value = [f"{keyword}%"]
+      if need_more:
+        value = [f"_{keyword}%"]
+      cursor.execute(select+where, value)
+      rows = cursor.fetchall()
+      return rows
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

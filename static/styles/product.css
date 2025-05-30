@@ -50,10 +50,15 @@ body {
 .header form .search-row {
 	background-color: white;
 	height: 34px;
-	width: 300px;
+	width: 290px;
 	display: flex;
 	border-radius: 17px;
 	padding-left: 5px;
+	position: relative;
+}
+
+.header form .search-row label {
+	z-index: 3;
 }
 
 .header form .search-row img {
@@ -68,20 +73,46 @@ body {
 	flex-grow: 1;
 	padding-left: 10px;
 	border-radius: 17px;
+	z-index: 3;
 }
 
 .header form input:focus {
 	outline: 0;
 }
 
+.header #suggestions {
+	background-color: inherit;
+	width: 100%;
+	/* height: 100px; */
+	position: absolute;
+	top: 17px;
+	left: 0;
+	border-radius: 0 0 17px 17px;
+	padding-top: 17px;
+	padding-left: 49px;
+	box-shadow: 0 2px 2px lightgray;
+
+}
+
+.header #suggestions div {
+	background-color: inherit;
+	line-height: 34px;
+	text-wrap-mode: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: calc(100% - 17px);
+}
+
+.header #suggestions div:hover {
+	background-color: lightgray;
+	cursor: pointer;
+}
+
 .header form [type="submit"] {
-	/* position: absolute; */
-	height: 30px;
-	top: 10px;
-	right: 12px;
 	border: none;
 	background-color: inherit;
 	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .header form [type="submit"]:hover {
