@@ -326,6 +326,18 @@ class CRUD:
       cursor.execute(select+where, value)
       row = cursor.fetchone()
       return row
+  def read_mypost(review_id, user_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT *
+        FROM review
+      """
+      where = " WHERE id=%s AND user_id=%s;"
+      value = [review_id, user_id]
+      cursor.execute(select+where, value)
+      row = cursor.fetchone()
+      return row
   def read_rating(product_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

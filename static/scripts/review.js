@@ -86,6 +86,7 @@ async function init() {
       }
       async function appendReview(data) {
         let isMyLike = await checkMyLike();
+        let isMyPost = await checkMyPost();
         let main = document.querySelector("div.main");
         let item = document.createElement("div");
         let user = document.createElement("div");
@@ -105,6 +106,9 @@ async function init() {
         user.className = "user";
         name.className = "name";
         name.textContent = data[1];
+        if (isMyPost) {
+          name.style.backgroundColor = "#fbbc04";
+        }
         user.appendChild(name);
         stars.className = "stars";
         stars.textContent = "★★★★★";
@@ -167,6 +171,23 @@ async function init() {
         async function checkMyLike() {
           let reviewID = data[0];
           let url = `/api/review/mylike/${reviewID}`;
+          let init = {
+            headers: {
+              "Authorization": `Bearer ${token}`,
+            },
+          };
+          let request = new Request(url, init);
+          let res = await fetch(request);
+          let resData = await res.json();
+          if (resData !== null) {
+            return true;
+          } else {
+            return false
+          }
+        }
+        async function checkMyPost() {
+          let reviewID = data[0];
+          let url = `/api/review/mypost/${reviewID}`;
           let init = {
             headers: {
               "Authorization": `Bearer ${token}`,

@@ -169,6 +169,9 @@ body {
 	text-align: center;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	/* background-color: #fbbc04; */
+	line-height: 1.5;
+	border-radius: 12px;
 }
 
 .user .stars {
