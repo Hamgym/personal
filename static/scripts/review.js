@@ -65,9 +65,10 @@ async function init() {
     document.querySelector(".caption span").textContent = result[7];
   }
   async function loadReview() {
-    let data = await loadData();
-    renderPage(data);
-    async function loadData() {
+    let data = await getData();
+    await renderPage(data);
+    postProduction();
+    async function getData() {
       let id = location.pathname.split("/")[2];
       let url = `/api/review/${id}`;
       let request = new Request(url, {
@@ -80,13 +81,13 @@ async function init() {
       let data = resData.data;
       return data
     }
-    function renderPage(data) {
+    async function renderPage(data) {
       for (const item of data) {
         appendReview(item);
       }
       async function appendReview(data) {
-        let isMyLike = await checkMyLike();
-        let isMyPost = await checkMyPost();
+        // let isMyLike = await checkMyLike();
+        // let isMyPost = await checkMyPost();
         let main = document.querySelector("div.main");
         let item = document.createElement("div");
         let user = document.createElement("div");
@@ -106,9 +107,9 @@ async function init() {
         user.className = "user";
         name.className = "name";
         name.textContent = data[1];
-        if (isMyPost) {
-          name.style.backgroundColor = "#fbbc04";
-        }
+        // if (isMyPost) {
+        //   name.style.backgroundColor = "#fbbc04";
+        // }
         user.appendChild(name);
         stars.className = "stars";
         stars.textContent = "★★★★★";
@@ -122,11 +123,12 @@ async function init() {
         user.appendChild(date);
         like.className = "like";
         likeBtn.className = "like-btn";
-        if (isMyLike) {
-          img.setAttribute("src", "/static/images/like-filled.png");
-        } else {
-          img.setAttribute("src", "/static/images/like-unfilled.png");
-        }
+        // if (isMyLike) {
+        //   img.setAttribute("src", "/static/images/like-filled.png");
+        // } else {
+        //   img.setAttribute("src", "/static/images/like-unfilled.png");
+        // }
+        img.setAttribute("src", "/static/images/like-unfilled.png");
         likeBtn.appendChild(img);
         like.appendChild(likeBtn);
         span.textContent = data[4];
@@ -168,39 +170,90 @@ async function init() {
             icon.setAttribute("src", "/static/images/like-filled.png");
           }
         })
-        async function checkMyLike() {
-          let reviewID = data[0];
-          let url = `/api/review/mylike/${reviewID}`;
-          let init = {
-            headers: {
-              "Authorization": `Bearer ${token}`,
-            },
-          };
-          let request = new Request(url, init);
-          let res = await fetch(request);
-          let resData = await res.json();
-          if (resData !== null) {
-            return true;
-          } else {
-            return false
-          }
+        // async function checkMyLike() {
+        //   let reviewID = data[0];
+        //   let url = `/api/review/mylike/${reviewID}`;
+        //   let init = {
+        //     headers: {
+        //       "Authorization": `Bearer ${token}`,
+        //     },
+        //   };
+        //   let request = new Request(url, init);
+        //   let res = await fetch(request);
+        //   let resData = await res.json();
+        //   if (resData !== null) {
+        //     return true;
+        //   } else {
+        //     return false
+        //   }
+        // }
+        // async function checkMyPost() {
+        //   let reviewID = data[0];
+        //   let url = `/api/review/mypost/${reviewID}`;
+        //   let init = {
+        //     headers: {
+        //       "Authorization": `Bearer ${token}`,
+        //     },
+        //   };
+        //   let request = new Request(url, init);
+        //   let res = await fetch(request);
+        //   let resData = await res.json();
+        //   if (resData !== null) {
+        //     return true;
+        //   } else {
+        //     return false
+        //   }
+        // }
+      }
+    }
+    async function postProduction() {
+      // 使用者名稱及按讚高亮
+      let items = document.querySelectorAll(".item");
+      for (const item of items) {
+        let reviewID = item.id;
+        let isMyPost = await checkMyPost(reviewID);
+        let isMyLike = await checkMyLike(reviewID);
+        if (isMyPost) {
+          let name = item.querySelector(".name");
+          let postBtn = document.querySelector(".post-btn");
+          name.style.backgroundColor = "#fbbc04";
+          // postBtn.style.display = "none";
         }
-        async function checkMyPost() {
-          let reviewID = data[0];
-          let url = `/api/review/mypost/${reviewID}`;
-          let init = {
-            headers: {
-              "Authorization": `Bearer ${token}`,
-            },
-          };
-          let request = new Request(url, init);
-          let res = await fetch(request);
-          let resData = await res.json();
-          if (resData !== null) {
-            return true;
-          } else {
-            return false
-          }
+        if (isMyLike) {
+          let like = item.querySelector(".like-btn img");
+          like.setAttribute("src", "/static/images/like-filled.png");
+        }
+      }
+      async function checkMyLike(reviewID) {
+        let url = `/api/review/mylike/${reviewID}`;
+        let init = {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        };
+        let request = new Request(url, init);
+        let res = await fetch(request);
+        let resData = await res.json();
+        if (resData !== null) {
+          return true;
+        } else {
+          return false
+        }
+      }
+      async function checkMyPost(reviewID) {
+        let url = `/api/review/mypost/${reviewID}`;
+        let init = {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        };
+        let request = new Request(url, init);
+        let res = await fetch(request);
+        let resData = await res.json();
+        if (resData !== null) {
+          return true;
+        } else {
+          return false
         }
       }
     }

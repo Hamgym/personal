@@ -290,7 +290,8 @@ class CRUD:
       """
       where = " WHERE review.product_id=%s"
       value = [product_id]
-      cursor.execute(select+where, value)
+      order = " ORDER BY review.likes DESC;"
+      cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       # 匿名處理
       result = []

@@ -205,6 +205,10 @@ body {
 	color: white;
 }
 
+.rmv-bought:hover {
+	cursor: pointer;
+}
+
 
 
 .footer {
