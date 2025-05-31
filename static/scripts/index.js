@@ -10,7 +10,7 @@ async function init() {
 			let signBtn = document.querySelector(".sign-btn");
 			signBtn.innerText = "登出系統";
 			signBtn.addEventListener("click", function () {
-				localStorage.clear();
+				localStorage.setItem("token", "");
 				location.href = "/";
 			});
 		} else {
