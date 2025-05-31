@@ -69,17 +69,31 @@ async function init() {
   function setSearchForm() {
     let searchForm = document.querySelector(".header form");
     let input = document.querySelector("#keyword");
+    let clearBtn = document.querySelector("img.clear-search");
     searchForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       let keyword = document.querySelector(".header input").value;
       loadProduct(keyword);
       resetDropdownBtns();
       setDropdownContent();
+      setClearBtn();
       function resetDropdownBtns() {
         let categoryTitle = document.querySelector(".category span");
         let brandTitle = document.querySelector(".brand span");
         categoryTitle.textContent = "類別";
         brandTitle.textContent = "品牌";
+      }
+      function setClearBtn() {
+        if (keyword.length > 0) {
+          clearBtn.style.display = "block";
+        } else {
+          clearBtn.style.display = "none";
+        }
+        clearBtn.addEventListener("click", function () {
+          clearBtn.style.display = "none";
+          document.querySelector(".header input").value = "";
+          loadProduct();
+        });
       }
     });
     input.addEventListener("input", async function () {
@@ -87,6 +101,7 @@ async function init() {
       let suggestionsDiv = document.querySelector("#suggestions");
       if (query.length < 1) {
         suggestionsDiv.innerHTML = "";
+        document.querySelector("img.clear-search").style.display = "none";
         return;
       }
       let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
@@ -120,6 +135,27 @@ async function init() {
     });
     input.addEventListener("click", async function () {
       if (this.value) {
+        let query = document.querySelector("#keyword").value;
+        let suggestionsDiv = document.querySelector("#suggestions");
+        let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
+        let suggestions = await res.json();
+        if (suggestionsDiv.firstChild) {
+          suggestionsDiv.innerHTML = "";
+        }
+        for (const item of suggestions) {
+          if (suggestionsDiv.children.length >= 6) {
+            break;
+          }
+          let div = document.createElement('div');
+          div.textContent = item;
+          div.onclick = () => {
+            let searchBtn = document.querySelector('.header [type="submit"]');
+            this.value = item;
+            suggestionsDiv.innerHTML = "";
+            searchBtn.click();
+          };
+          suggestionsDiv.appendChild(div);
+        }
         return;
       }
       let suggestionsDiv = document.querySelector("#suggestions");

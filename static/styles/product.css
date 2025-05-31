@@ -84,6 +84,19 @@ body {
 	outline: 0;
 }
 
+.header form img.clear-search {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 10px;
+	top: 7px;
+	z-index: 3;
+}
+
+.header form img.clear-search:hover {
+	cursor: pointer;
+}
+
 .header #suggestions {
 	background-color: inherit;
 	width: 100%;
