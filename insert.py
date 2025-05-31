@@ -29,10 +29,10 @@ for good in goodsInfoList:
   shortName = tmp
   if len(shortName)<2:
     continue
-  print(shortName)
+  # print(shortName)
   categoryName = good["categoryName"]
   categoryName = categoryName.split("#")[0]
-  row = [categoryName, brandName, goodsName, imgUrl]
+  row = [categoryName, brandName, shortName, imgUrl]
   rows.append(row)
 
 def insert_product(category, brand, name, image):
@@ -44,5 +44,5 @@ def insert_product(category, brand, name, image):
   else:
     print("失敗")
 
-# for row in rows:
-  # insert_product(*row)
+for row in rows:
+  insert_product(*row)
