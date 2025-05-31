@@ -112,11 +112,11 @@ body {
 }
 
 .bar-area .five {
-	width: 80%;
+	width: 0%;
 }
 
 .bar-area .four {
-	width: 20%;
+	width: 0%;
 }
 
 .summary .avg {
@@ -141,7 +141,7 @@ body {
 	top: 0;
 	left: 0;
 	color: #fbbc04;
-	width: calc(4.6 / 5 * 100%);
+	width: calc(0 / 5 * 100%);
 	overflow: hidden;
 }
 
