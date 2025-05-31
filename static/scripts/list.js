@@ -31,6 +31,10 @@ async function init() {
     for (let item of items) {
       addItem(item);
     }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
     async function getListItems() {
       let url = "/api/lists";
       let request = new Request(url, {

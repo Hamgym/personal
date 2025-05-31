@@ -22,7 +22,8 @@ html {
 
 body {
 	position: relative;
-	padding: 50px 0;
+	padding-top: 50px;
+	padding-bottom: calc(100vh - 50px - 146px - 120px);
 	max-width: 400px;
 	margin: auto;
 	box-shadow: 0 0 4px lightgray;
@@ -153,7 +154,7 @@ body {
 
 
 .main {
-	padding-bottom: 300px;
+	padding-bottom: 0;
 }
 
 .main .item {
@@ -259,12 +260,12 @@ div[id="2"] .stars .value {
 	border-radius: 20px;
 	box-shadow: 0 1px 5px lightgray;
 	margin: 40px auto;
-	margin-bottom: 150px;
+	/* margin-bottom: 150px; */
 	font-size: 20px;
 	text-align: center;
 	/* display: none; */
-	position: absolute;
-	bottom: 100px;
+	/* position: absolute; */
+	/* bottom: 100px; */
 	left: calc(50% - 150px / 2);
 }
 
