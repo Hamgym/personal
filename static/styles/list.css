@@ -165,15 +165,21 @@ body {
 }
 
 .row .description {
-	flex-grow: 1;
+	/* flex-grow: 1; */
 	text-align: center;
 	text-wrap-mode: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	font-size: 20px;
 	/* padding-right: 1px; */
-	margin-right: 5px;
+	/* margin-right: 5px; */
+	width: fit-content;
+	margin: auto;
 	line-height: 35px;
+}
+
+.row .description:hover {
+	cursor: pointer;
 }
 
 .row input[type="checkbox"] {
@@ -181,9 +187,13 @@ body {
 	background-color: white;
 	width: 35px;
 	height: 35px;
-	/* margin-left: 5px; */
+	margin-left: 5px;
 	border-radius: 25%;
 	flex-shrink: 0;
+}
+
+.row input[type="checkbox"]:hover {
+	cursor: pointer;
 }
 
 .row input[type="checkbox"]:checked {
