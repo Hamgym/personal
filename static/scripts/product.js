@@ -68,21 +68,20 @@ async function init() {
   }
   function setSearchForm() {
     let searchForm = document.querySelector(".header form");
+    let input = document.querySelector("#keyword");
     searchForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      let input = document.querySelector(".header input");
-      let keyword = input.value;
+      let keyword = document.querySelector(".header input").value;
       loadProduct(keyword);
-      resetBtns()
+      resetDropdownBtns();
       setDropdownContent();
-      function resetBtns() {
+      function resetDropdownBtns() {
         let categoryTitle = document.querySelector(".category span");
         let brandTitle = document.querySelector(".brand span");
         categoryTitle.textContent = "類別";
         brandTitle.textContent = "品牌";
       }
     });
-    let input = document.querySelector("#keyword");
     input.addEventListener("input", async function () {
       let query = this.value;
       let suggestionsDiv = document.querySelector("#suggestions");
@@ -90,21 +89,49 @@ async function init() {
         suggestionsDiv.innerHTML = "";
         return;
       }
-      // suggestionsDiv.textContent = query;
       let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
       let suggestions = await res.json();
       if (suggestionsDiv.firstChild) {
         suggestionsDiv.innerHTML = "";
       }
-      // console.log(suggestions);
       for (const item of suggestions) {
+        if (suggestionsDiv.children.length >= 6) {
+          break;
+        }
         let div = document.createElement('div');
-        // div.textContent = item[0];
         div.textContent = item;
         div.onclick = () => {
           let searchBtn = document.querySelector('.header [type="submit"]');
-          // this.value = item[0];
           this.value = item;
+          suggestionsDiv.innerHTML = "";
+          searchBtn.click();
+        };
+        suggestionsDiv.appendChild(div);
+      }
+    });
+    input.addEventListener("change", () => {
+      let val = input.value.trim();
+      let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+      if (val && !history.includes(val)) {
+        history.unshift(val);
+        if (history.length > 6) history.pop(); // 限制最多 6 筆
+        localStorage.setItem("searchHistory", JSON.stringify(history));
+      }
+    });
+    input.addEventListener("click", async function () {
+      if (this.value) {
+        return;
+      }
+      let suggestionsDiv = document.querySelector("#suggestions");
+      let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
+      let suggestions = history;
+      suggestionsDiv.innerHTML = "";
+      for (const item of suggestions) {
+        let div = document.createElement('div');
+        div.textContent = item;
+        div.onclick = () => {
+          this.value = item;
+          let searchBtn = document.querySelector('.header [type="submit"]');
           suggestionsDiv.innerHTML = '';
           searchBtn.click();
         };
