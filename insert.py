@@ -1,7 +1,7 @@
 from models.rdb import CRUD
-import json
+import json, re
 
-FILE_NAME = "snack"
+FILE_NAME = "drink"
 
 with open(f"./data/{FILE_NAME}.json", encoding="utf-8") as file:
   data = json.load(file)
@@ -21,7 +21,15 @@ for good in goodsInfoList:
   goodsName = goodsName.split("】")
   brandName = goodsName[0]
   goodsName = goodsName[1]
-  # goodsName = goodsName.split()[0] # 讓商品名稱更簡短
+  # 讓商品名稱更簡短
+  tmp = goodsName
+  tmp = tmp.split()[0]
+  tmp = tmp.split("(")[0]
+  tmp = re.split(r"\d", tmp)[0]
+  shortName = tmp
+  if len(shortName)<2:
+    continue
+  print(shortName)
   categoryName = good["categoryName"]
   categoryName = categoryName.split("#")[0]
   row = [categoryName, brandName, goodsName, imgUrl]
@@ -36,5 +44,5 @@ def insert_product(category, brand, name, image):
   else:
     print("失敗")
 
-for row in rows:
-  insert_product(*row)
+# for row in rows:
+  # insert_product(*row)
