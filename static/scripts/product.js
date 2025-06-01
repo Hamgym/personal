@@ -91,7 +91,7 @@ async function init() {
       }
     });
     input.addEventListener("input", async function () {
-      let query = this.value;
+      let query = input.value;
       let suggestionsDiv = document.querySelector("#suggestions");
       if (query.length < 1) {
         suggestionsDiv.innerHTML = "";
@@ -111,21 +111,21 @@ async function init() {
         }
         let div = document.createElement('div');
         div.textContent = item;
-        div.onclick = () => {
+        div.addEventListener("click", function () {
           let searchBtn = document.querySelector('.header [type="submit"]');
-          this.value = item;
           suggestionsDiv.innerHTML = "";
+          input.value = item;
           searchBtn.click();
-        };
+        });
         suggestionsDiv.appendChild(div);
       }
     });
-    input.addEventListener("change", () => {
-      let val = input.value.trim();
+    input.addEventListener("change", function () {
+      let value = input.value.trim();
       let history = JSON.parse(localStorage.getItem("searchHistory")) || [];
-      if (val && !history.includes(val)) {
-        history.unshift(val);
-        if (history.length > 6) history.pop(); // 限制最多 6 筆
+      if (value && !history.includes(value)) {
+        history.unshift(value);
+        if (history.length > 6) history.pop(); // 限制最多6筆
         localStorage.setItem("searchHistory", JSON.stringify(history));
       }
     });
@@ -174,9 +174,8 @@ async function init() {
       }
     });
     window.addEventListener("click", function (event) {
-      if (event.target.id == "suggestions" || event.target.id == "keyword") {
-        return;
-      }
+      let list = ["suggestions", "keyword"];
+      if (list.includes(event.target.id)) return;
       document.querySelector("#suggestions").innerHTML = "";
     });
     function resetDropdownBtns() {
