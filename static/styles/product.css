@@ -400,6 +400,10 @@ body {
 	z-index: 40;
 }
 
+.add-product-dialog .close-btn:hover {
+	cursor: pointer;
+}
+
 .add-product-dialog h2 {
 	font-size: 24px;
 	font-weight: 700;
@@ -455,6 +459,10 @@ body {
 	padding: 12px 20px;
 	background-color: #f45e60;
 	color: white;
+}
+
+.add-product-dialog button:hover {
+	cursor: pointer;
 }
 
 

@@ -75,14 +75,7 @@ async function init() {
       let keyword = document.querySelector(".header input").value;
       loadProduct(keyword);
       resetDropdownBtns();
-      setDropdownContent();
       setClearBtn();
-      function resetDropdownBtns() {
-        let categoryTitle = document.querySelector(".category span");
-        let brandTitle = document.querySelector(".brand span");
-        categoryTitle.textContent = "類別";
-        brandTitle.textContent = "品牌";
-      }
       function setClearBtn() {
         if (keyword.length > 0) {
           clearBtn.style.display = "block";
@@ -93,6 +86,7 @@ async function init() {
           clearBtn.style.display = "none";
           document.querySelector(".header input").value = "";
           loadProduct();
+          resetDropdownBtns();
         });
       }
     });
@@ -102,6 +96,8 @@ async function init() {
       if (query.length < 1) {
         suggestionsDiv.innerHTML = "";
         document.querySelector("img.clear-search").style.display = "none";
+        loadProduct();
+        resetDropdownBtns();
         return;
       }
       let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
@@ -183,6 +179,13 @@ async function init() {
       }
       document.querySelector("#suggestions").innerHTML = "";
     });
+    function resetDropdownBtns() {
+      let categoryTitle = document.querySelector(".category span");
+      let brandTitle = document.querySelector(".brand span");
+      categoryTitle.textContent = "類別";
+      brandTitle.textContent = "品牌";
+      setDropdownContent();
+    }
   }
   function setDropdownSwitch() {
     let categoryDropdown = document.querySelector("div.category");
@@ -204,6 +207,15 @@ async function init() {
       } else {
         brandContent.style.display = "none";
       }
+    });
+    window.addEventListener("click", function (event) {
+      let className = event.target.className;
+      let list = ["title", "icon"];
+      if (list.includes(className)) {
+        return;
+      }
+      categoryContent.style.display = "none";
+      brandContent.style.display = "none";
     });
   }
   function setDropdownContent() {
