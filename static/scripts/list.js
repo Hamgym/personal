@@ -140,10 +140,11 @@ async function init() {
       for (let box of boxes) {
         if (box.checked) {
           let itemId = box.parentElement.id;
-          delItem(itemId);
+          await delItem(itemId);
         }
       }
-      location.reload();
+      // location.reload();
+      loadList();
     }
   }
   function addItem(item) {
