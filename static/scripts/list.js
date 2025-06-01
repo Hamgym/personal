@@ -82,12 +82,12 @@ async function init() {
         p.setAttribute("style", "display:block");
       }
       if (resData.ok) {
-        let id = resData.id;
-        let item = await getListItem(id);
+        // let id = resData.id;
+        // let item = await getListItem(id);
+        // addItem(item);
         let title = document.querySelector(".dialog-main h3");
-        addItem(item);
         if (title.id) {
-          delItem(title.id);
+          await delItem(title.id);
         }
         dialog("none");
         loadList();
