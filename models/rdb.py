@@ -44,7 +44,7 @@ def get_rating(rows):
     count += result[i]
   avg_rating = total/count
   percent = avg_rating/5*100
-  avg_rating = f"{avg_rating:.2}"
+  # avg_rating = f"{avg_rating:.2}" # 讓前端決定小數位數
   for i in range(5):
     result[i] = result[i]/count*100
   max_value = max(result)
