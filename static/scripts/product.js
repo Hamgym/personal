@@ -164,11 +164,23 @@ async function init() {
         div.onclick = () => {
           this.value = item;
           let searchBtn = document.querySelector('.header [type="submit"]');
-          suggestionsDiv.innerHTML = '';
+          suggestionsDiv.innerHTML = "";
           searchBtn.click();
         };
+        let img = document.createElement("img");
+        img.src = "/static/images/close-bord.png";
+        img.addEventListener("click", (event) => {
+          event.stopPropagation();
+          let row = event.target.parentElement;
+          let word = row.textContent;
+          let history = JSON.parse(localStorage.getItem("searchHistory"));
+          history = history.filter((item) => item != word);
+          localStorage.setItem("searchHistory", JSON.stringify(history));
+          row.remove();
+        });
+        div.appendChild(img);
         suggestionsDiv.appendChild(div);
-        if (suggestionsDiv.children.length > 5) {
+        if (suggestionsDiv.children.length >= 6) {
           break;
         }
       }

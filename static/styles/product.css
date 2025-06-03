@@ -121,12 +121,20 @@ body {
 	padding-left: 10px;
 	padding-right: 50px;
 	border-radius: 17px;
-
+	position: relative;
 }
 
 .header #suggestions div:hover {
 	background-color: lightgray;
 	cursor: pointer;
+}
+
+.header #suggestions img {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 9px;
 }
 
 .header form [type="submit"] {
