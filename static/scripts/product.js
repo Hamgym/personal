@@ -224,7 +224,7 @@ async function init() {
       let keyword = document.querySelector(".header input").value;
       let brand = document.querySelector(".brand span").textContent;
       let personal = document.querySelector("#personal").checked;
-      let url = `/api/product/category?keyword=${keyword}&brand=${brand}&personal=${personal}`;
+      let url = `/api/product/category?keyword=${keyword}&personal=${personal}`;
       let request = new Request(url, {
         headers: {
           "Authorization": `Bearer ${token}`

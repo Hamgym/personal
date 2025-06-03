@@ -210,7 +210,7 @@ class CRUD:
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
-  def read_category(keyword, brand, user_id):
+  def read_category(keyword, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       where = " WHERE TRUE"
@@ -237,9 +237,6 @@ class CRUD:
         value.append(f"%{keyword}%")
         value.append(f"%{keyword}%")
         value.append(f"%{keyword}%")
-      if brand!="" and brand!="品牌" and False: # 不實用
-        where += " AND brand.name=%s"
-        value.append(brand)
       group = " GROUP BY category.name"
       order = " ORDER BY count DESC;"
       cursor.execute(select+where+group+order, value)
@@ -363,7 +360,7 @@ class CRUD:
       where = " WHERE name LIKE %s;"
       value = [f"{keyword}%"]
       if need_more:
-        value = [f"%_{keyword}%"]
+        value = [f"_%{keyword}%"]
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
       return rows
