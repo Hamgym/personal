@@ -4,8 +4,8 @@ async function init() {
   await checkSignin();
   loadProduct();
   setSearchForm();
-  setDropdownSwitch();
-  setDropdownContent();
+  setDropdown();
+  resetDropdownContent();
   setAddProductBtn();
   setPersonalBtn();
   setSortBtn();
@@ -68,27 +68,27 @@ async function init() {
   }
   function setSearchForm() {
     let searchForm = document.querySelector(".header form");
-    let input = document.querySelector("#keyword");
     let clearBtn = document.querySelector("img.clear-search");
+    let input = document.querySelector("#keyword");
     searchForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       let keyword = document.querySelector(".header input").value;
       loadProduct(keyword);
       resetDropdownBtns();
-      setClearBtn();
-      function setClearBtn() {
+      resetClearBtn();
+      function resetClearBtn() {
         if (keyword.length > 0) {
           clearBtn.style.display = "block";
         } else {
           clearBtn.style.display = "none";
         }
-        clearBtn.addEventListener("click", function () {
-          clearBtn.style.display = "none";
-          document.querySelector(".header input").value = "";
-          loadProduct();
-          resetDropdownBtns();
-        });
       }
+    });
+    clearBtn.addEventListener("click", function () {
+      clearBtn.style.display = "none";
+      input.value = "";
+      loadProduct();
+      resetDropdownBtns();
     });
     input.addEventListener("input", async function () {
       let query = input.value;
@@ -183,10 +183,10 @@ async function init() {
       let brandTitle = document.querySelector(".brand span");
       categoryTitle.textContent = "類別";
       brandTitle.textContent = "品牌";
-      setDropdownContent();
+      resetDropdownContent();
     }
   }
-  function setDropdownSwitch() {
+  function setDropdown() {
     let categoryDropdown = document.querySelector("div.category");
     let categoryContent = categoryDropdown.querySelector("div.category");
     let brandDropdown = document.querySelector("div.brand");
@@ -209,30 +209,17 @@ async function init() {
     });
     window.addEventListener("click", function (event) {
       let className = event.target.className;
-      let list = ["title", "icon"];
-      if (list.includes(className)) {
-        return;
-      }
+      let list = ["title", "icon", "dropdown-btn category", "dropdown-btn brand"];
+      if (list.includes(className)) return;
       categoryContent.style.display = "none";
       brandContent.style.display = "none";
     });
   }
-  function setDropdownContent() {
+  function resetDropdownContent() {
     categoryFilter();
     brandFilter();
     async function categoryFilter() {
-      let keyword = document.querySelector(".header input").value;
-      let brand = document.querySelector(".brand span").textContent;
-      let personal = document.querySelector("#personal").checked;
-      let url = `/api/product/category?keyword=${keyword}&personal=${personal}`;
-      let request = new Request(url, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        },
-      });
-      let res = await fetch(request);
-      let resData = await res.json();
-      let data = resData.data;
+      let data = await getCategoryData();
       let categoryList = document.querySelector(".dropdown-content.category");
       while (categoryList.firstChild) {
         categoryList.firstChild.remove();
@@ -245,34 +232,37 @@ async function init() {
         span.textContent = category[0];
         item.appendChild(span);
         item.appendChild(text);
-        categoryList.appendChild(item);
         item.addEventListener("click", function () {
           let category = item.querySelector("span").textContent;
           let keyword = document.querySelector(".header input").value;
           let title = document.querySelector(".category span");
           title.textContent = category;
           loadProduct(keyword, category);
-          setDropdownContent();
+          resetDropdownContent();
           resetBrandTitle();
           function resetBrandTitle() {
             document.querySelector(".brand span").textContent = "品牌";
           }
         });
+        categoryList.appendChild(item);
+      }
+      async function getCategoryData() {
+        let keyword = document.querySelector(".header input").value;
+        let personal = document.querySelector("#personal").checked;
+        let url = `/api/product/category?keyword=${keyword}&personal=${personal}`;
+        let request = new Request(url, {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          },
+        });
+        let res = await fetch(request);
+        let resData = await res.json();
+        let data = resData.data;
+        return data
       }
     }
     async function brandFilter() {
-      let keyword = document.querySelector(".header input").value;
-      let category = document.querySelector(".category span").textContent;
-      let personal = document.querySelector("#personal").checked;
-      let url = `/api/product/brand?keyword=${keyword}&category=${category}&personal=${personal}`;
-      let request = new Request(url, {
-        headers: {
-          "Authorization": `Bearer ${token}`
-        },
-      });
-      let res = await fetch(request);
-      let resData = await res.json();
-      let data = resData.data;
+      let data = await getBrandData();
       let brandList = document.querySelector(".dropdown-content.brand");
       while (brandList.firstChild) {
         brandList.firstChild.remove();
@@ -293,8 +283,23 @@ async function init() {
           let title = document.querySelector(".brand span");
           title.textContent = brand;
           loadProduct(keyword, category, brand);
-          setDropdownContent();
+          resetDropdownContent();
         });
+      }
+      async function getBrandData() {
+        let keyword = document.querySelector(".header input").value;
+        let category = document.querySelector(".category span").textContent;
+        let personal = document.querySelector("#personal").checked;
+        let url = `/api/product/brand?keyword=${keyword}&category=${category}&personal=${personal}`;
+        let request = new Request(url, {
+          headers: {
+            "Authorization": `Bearer ${token}`
+          },
+        });
+        let res = await fetch(request);
+        let resData = await res.json();
+        let data = resData.data;
+        return data;
       }
     }
   }
