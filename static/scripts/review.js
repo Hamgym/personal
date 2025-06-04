@@ -61,7 +61,7 @@ async function init() {
     document.querySelector(".value.four").style.width = `${result[3]}%`;
     document.querySelector(".value.five").style.width = `${result[4]}%`;
     document.querySelector(".avg .score").textContent = result[5].toFixed(1);
-    console.log(result[5].toFixed(1));
+    // console.log(result[5].toFixed(1));
     document.querySelector(".stars .value").style.width = `calc(${result[6]}%)`;
     document.querySelector(".caption span").textContent = result[7];
   }

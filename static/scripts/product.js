@@ -370,16 +370,19 @@ async function init() {
       let icon = document.querySelector("img.personal");
       let searchBtn = document.querySelector(".header button");
       let keyword = document.querySelector("#keyword");
+      let addProductBtn = document.querySelector("div.add-product-btn");
       if (this.checked) {
         icon.src = "/static/images/user-checked.png";
         keyword.value = "";
         searchBtn.click();
         showAlertBox("個人模式");
+        addProductBtn.style.display = "none";
       } else {
         icon.src = "/static/images/user-unchecked.png";
         keyword.value = "";
         searchBtn.click();
         showAlertBox("一般模式");
+        addProductBtn.style.display = "block";
       }
       function showAlertBox(text = "") {
         let header = document.querySelector(".header");
