@@ -324,9 +324,12 @@ async function init() {
       let mask = document.querySelector(".mask");
       dialog.style.display = "block";
       mask.style.display = "block";
-      form.querySelector("#category").value = document.querySelector(".category span.title").textContent;
-      form.querySelector("#brand").value = document.querySelector(".brand span.title").textContent;
-      form.querySelector("#name").value = document.querySelector("input#keyword").value;
+      let category = document.querySelector(".category span.title").textContent;
+      if (category == "類別") category = "";
+      let brand = document.querySelector(".brand span.title").textContent;
+      if (brand == "品牌") brand = "";
+      form.querySelector("#category").value = category;
+      form.querySelector("#brand").value = brand;
     });
     cancelBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
@@ -346,7 +349,7 @@ async function init() {
       }
       async function postNewProduct() {
         let submitter = form.querySelector('button[type="submit"]');
-        let formData = new FormData(this, submitter);
+        let formData = new FormData(form, submitter);
         let url = "/api/product";
         let init = {
           method: "POST",
@@ -356,8 +359,8 @@ async function init() {
         let request = new Request(url, init);
         let res = await fetch(request);
         let resData = await res.json();
-        let newProduct = resData.newProduct;
-        return newProduct;
+        let created = resData.created;
+        return created;
       }
     });
   }

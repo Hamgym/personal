@@ -178,7 +178,7 @@ class CRUD:
       cursor.execute(select+where, value)
       row = cursor.fetchone()
       return row
-  def read_products(keyword, category, brand, sort, user_id):
+  def read_products(keyword, category, brand, sort="id", user_id=0):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """

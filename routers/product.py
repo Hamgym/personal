@@ -7,16 +7,15 @@ from models.bucket import upload
 router = APIRouter()
 
 @router.post("/api/product")
-async def post_prod(
-  payload=Depends(jwt_auth), category:str=Form(), brand:str=Form(), name:str=Form(), photo:UploadFile=Form()):
+async def post_prod(payload=Depends(jwt_auth), category:str=Form(), brand:str=Form(), name:str=Form(), photo:UploadFile=Form()):
+  rows = CRUD.read_products(name, category, brand)
+  if len(rows)>0:
+    return {"created": False}
   image_url = upload(photo)
   category_id = CRUD.create_category(category)
   brand_id = CRUD.create_brand(brand)
-  new_product = CRUD.create_product(category_id, brand_id, name, image_url)
-  return {
-    "newProduct": new_product,
-    "product": "OK"
-  }
+  created = CRUD.create_product(category_id, brand_id, name, image_url)
+  return {"created": created}
 
 @router.get("/api/product")
 async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query(""), personal:bool=Query(False)):
