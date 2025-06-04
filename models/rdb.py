@@ -364,6 +364,20 @@ class CRUD:
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
       return rows
+  def read_posted(product_id, user_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT *
+        FROM review
+      """
+      where = " WHERE product_id=%s"
+      value = [product_id]
+      where += " AND user_id=%s;"
+      value += [user_id]
+      cursor.execute(select+where, value)
+      row = cursor.fetchone()
+      return row
   def update_list_item(id, bought):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

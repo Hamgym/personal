@@ -61,7 +61,6 @@ async function init() {
     document.querySelector(".value.four").style.width = `${result[3]}%`;
     document.querySelector(".value.five").style.width = `${result[4]}%`;
     document.querySelector(".avg .score").textContent = result[5].toFixed(1);
-    // console.log(result[5].toFixed(1));
     document.querySelector(".stars .value").style.width = `calc(${result[6]}%)`;
     document.querySelector(".caption span").textContent = result[7];
   }
@@ -164,16 +163,14 @@ async function init() {
       }
     }
     function postProduction() {
-      // 使用者名稱及按讚高亮外加按鈕隱藏控制
+      // 使用者名稱及按讚高亮
       let items = document.querySelectorAll(".item");
       for (const item of items) {
         let reviewID = item.id;
         checkMyPost(reviewID).then((isMyPost) => {
           if (isMyPost) {
             let name = item.querySelector(".name");
-            let postBtn = document.querySelector(".post-btn");
             name.style.backgroundColor = "#fbbc04";
-            postBtn.style.display = "none";
           }
         });
         checkMyLike(reviewID).then((isMyLike) => {
@@ -223,6 +220,31 @@ async function init() {
       let dialog = document.querySelector(".post-dialog");
       dialog.style.display = "block";
     });
+    postBtnDisplay();
+    function postBtnDisplay() {
+      let productID = location.pathname.split("/")[2];
+      checkPosted(productID).then((posted) => {
+        if (!posted) {
+          document.querySelector(".post-btn").style.display = "block";
+        }
+      });
+      async function checkPosted(productID) {
+        let url = `/api/review/posted/${productID}`;
+        let init = {
+          headers: {
+            "Authorization": `Bearer ${token}`,
+          },
+        };
+        let request = new Request(url, init);
+        let res = await fetch(request);
+        let resData = await res.json();
+        if (resData !== null) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
   }
   function setPostDialog() {
     let closeBtn = document.querySelector(".close-btn");
