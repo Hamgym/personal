@@ -4,7 +4,7 @@ async function init() {
   await checkSignin();
   loadProduct();
   setSearchForm();
-  setDropdown();
+  setDropdownSwitch();
   resetDropdownContent();
   setAddProductBtn();
   setPersonalBtn();
@@ -198,7 +198,7 @@ async function init() {
       resetDropdownContent();
     }
   }
-  function setDropdown() {
+  function setDropdownSwitch() {
     let categoryDropdown = document.querySelector("div.category");
     let categoryContent = categoryDropdown.querySelector("div.category");
     let brandDropdown = document.querySelector("div.brand");
@@ -319,37 +319,45 @@ async function init() {
     let addProductBtn = document.querySelector("div.add-product-btn");
     let cancelBtn = document.querySelector(".add-product-dialog .close-btn");
     let form = document.querySelector(".add-product-dialog form");
-    let mask = document.querySelector(".mask");
     addProductBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
+      let mask = document.querySelector(".mask");
       dialog.style.display = "block";
       mask.style.display = "block";
+      form.querySelector("#category").value = document.querySelector(".category span.title").textContent;
+      form.querySelector("#brand").value = document.querySelector(".brand span.title").textContent;
+      form.querySelector("#name").value = document.querySelector("input#keyword").value;
     });
     cancelBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
+      let mask = document.querySelector(".mask");
       dialog.style.display = "none";
       mask.style.display = "none";
     });
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
-      let submitter = form.querySelector('button[type="submit"]');
-      let formData = new FormData(this, submitter);
-      let url = "/api/product";
-      let init = {
-        method: "POST",
-        headers: { "Authorization": `Bearer ${token}` },
-        body: formData,
-      };
-      let request = new Request(url, init);
-      let res = await fetch(request);
-      let resData = await res.json();
-      let newProduct = resData.newProduct;
-      if (newProduct) {
-        alert("成功建立新產品！");
+      let created = await postNewProduct();
+      if (created) {
+        alert("成功建立新商品！");
         location.href = "/product";
       } else {
         alert("該商品已經存在！");
         // 代入資料並搜尋
+      }
+      async function postNewProduct() {
+        let submitter = form.querySelector('button[type="submit"]');
+        let formData = new FormData(this, submitter);
+        let url = "/api/product";
+        let init = {
+          method: "POST",
+          headers: { "Authorization": `Bearer ${token}` },
+          body: formData,
+        };
+        let request = new Request(url, init);
+        let res = await fetch(request);
+        let resData = await res.json();
+        let newProduct = resData.newProduct;
+        return newProduct;
       }
     });
   }

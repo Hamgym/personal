@@ -16,7 +16,6 @@
 
 <body>
   <div class="header">
-    <!-- <div class="add-product-btn">+</div> -->
     <form action="#">
       <div class="search-row">
         <label for="keyword">
@@ -27,9 +26,7 @@
         <img src="/static/images/close-bord.png" alt="" class="clear-search"
           style="display: none;">
         <div id="suggestions">
-          <!-- <div>日式無糖綠茶<img src="/static/images/close-bord.png" alt=""></div>
-          <div>日式無糖綠茶</div>
-          <div>日式無糖綠茶</div> -->
+          <!-- <div>日式無糖綠茶<img src="/static/images/close-bord.png" alt=""></div> -->
         </div>
       </div>
       <button type="submit">搜尋</button>
@@ -101,14 +98,15 @@
       <h2>建立商品</h2>
       <div class="row">
         <input type="text" id="category" name="category" placeholder="輸入商品類別"
-          required>
+          required autocomplete="off">
       </div>
       <div class="row">
-        <input type="text" id="brand" name="brand" placeholder="輸入品牌名稱"
-          required>
+        <input type="text" id="brand" name="brand" placeholder="輸入品牌名稱" required
+          autocomplete="off">
       </div>
       <div class="row">
-        <input type="text" id="name" name="name" placeholder="輸入商品名稱" required>
+        <input type="text" id="name" name="name" placeholder="輸入商品名稱" required
+          autocomplete="off">
       </div>
       <div class="row">
         <label for="photo">上傳商品照片</label>
