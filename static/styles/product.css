@@ -239,18 +239,6 @@ body {
 	/* height: 2000px; */
 }
 
-/* .main .product {
-	height: 60px;
-	border-radius: 5px;
-	box-shadow: 0 1px 5px lightgray;
-	padding: 20px 10px;
-	font-size: 16px;
-	text-wrap: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	margin-bottom: 15px;
-} */
-
 .main .product {
 	height: 150px;
 	border-radius: 5px;
@@ -259,13 +247,14 @@ body {
 	font-size: 16px;
 	margin-bottom: 15px;
 	display: flex;
+	position: relative;
 }
 
 .main .product:hover {
 	cursor: pointer;
 }
 
-.product img {
+.product>img {
 	height: 100%;
 	aspect-ratio: 1;
 	object-fit: cover;
@@ -313,6 +302,18 @@ body {
 	color: #fbbc04;
 	width: calc(5 / 5 * 100%);
 	overflow: hidden;
+}
+
+.product .add-list-btn {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+.product .add-list-btn img {
+	display: block;
+	width: 24px;
+	height: 24px;
 }
 
 

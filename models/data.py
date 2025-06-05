@@ -10,7 +10,7 @@ class SignUp(SignIn):
   name: str = Field(min_length=1)
 class ShopList(BaseModel):
   item: str
-  specs: str
+  specs: str = ""
 class ReviewCreate(BaseModel):
   product_id: int
   rating: int = Field(ge=1, le=5)

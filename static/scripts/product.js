@@ -50,6 +50,7 @@ async function init() {
       }
       for (const data of dataList) {
         let product = document.querySelector(".copy .product").cloneNode(true);
+        let addListBtn = product.querySelector(".add-list-btn");
         product.id = data[0];
         product.querySelector("img").src = data[4];
         product.querySelector("h3").textContent = `【${data[2]}】${data[3]}`;
@@ -57,6 +58,30 @@ async function init() {
         product.querySelector(".caption span").textContent = data[6];
         product.addEventListener("click", function () {
           location.href = `/review/${product.id}`;
+        });
+        addListBtn.addEventListener("click", async function (event) {
+          event.stopPropagation();
+          if (event.target.className == "added") {
+            return;
+          }
+          event.target.className = "added";
+          event.target.src = "/static/images/add-new-filled-icon.png";
+          let productName = product.querySelector("h3").textContent;
+          let url = "/api/lists";
+          let body = { item: productName };
+          let request = new Request(url, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify(body),
+          });
+          let res = await fetch(request);
+          let resData = await res.json();
+          if (resData.ok) {
+
+          }
         });
         main.appendChild(product);
       }
