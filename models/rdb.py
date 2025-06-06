@@ -154,7 +154,12 @@ class CRUD:
   def read_list(payload):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      select = "SELECT * FROM lists WHERE user_id=%s"
+      select = """
+        SELECT *
+        FROM lists
+        WHERE user_id=%s
+        ORDER BY id DESC
+      """
       cursor.execute(select, (payload["id"],))
       rows = cursor.fetchall()
       return rows
