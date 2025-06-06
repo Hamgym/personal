@@ -59,6 +59,11 @@ async function init() {
         product.addEventListener("click", function () {
           location.href = `/review/${product.id}`;
         });
+        if (data[7] != null) {
+          let addListIcon = addListBtn.querySelector("img");
+          addListIcon.className = "added";
+          addListIcon.src = "/static/images/add-new-filled-icon.png";
+        }
         addListBtn.addEventListener("click", async function (event) {
           event.stopPropagation();
           if (event.target.className == "added") {
@@ -66,22 +71,19 @@ async function init() {
           }
           event.target.className = "added";
           event.target.src = "/static/images/add-new-filled-icon.png";
+          let productID = product.id;
           let productName = product.querySelector("h3").textContent;
           let url = "/api/lists";
-          let body = { item: productName };
+          let body = { item: productName, productID: productID };
           let request = new Request(url, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${token}`
+              "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify(body),
           });
           let res = await fetch(request);
-          let resData = await res.json();
-          if (resData.ok) {
-
-          }
         });
         main.appendChild(product);
       }
