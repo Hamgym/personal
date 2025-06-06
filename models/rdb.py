@@ -182,7 +182,7 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.product_id
+        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.bought
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
@@ -207,9 +207,8 @@ class CRUD:
         value.append(user_id)
       if sort!="percent" and sort!="review":
         sort = "id"
-      group = f" GROUP BY product.id"
       order = f" ORDER BY product.{sort} DESC"
-      cursor.execute(select+where+group+order, value)
+      cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
       return rows
   def read_category(keyword, user_id):
