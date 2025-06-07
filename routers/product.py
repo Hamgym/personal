@@ -11,6 +11,8 @@ async def post_prod(payload=Depends(jwt_auth), category:str=Form(), brand:str=Fo
   rows = CRUD.read_products(name, category, brand)
   if len(rows)>0:
     return {"created": False}
+  if photo.size>1*1024*1024:
+    return {"created": False}
   image_url = upload(photo)
   category_id = CRUD.create_category(category)
   brand_id = CRUD.create_brand(brand)
