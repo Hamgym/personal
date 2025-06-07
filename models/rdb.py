@@ -151,7 +151,7 @@ class CRUD:
       if not verified:
         return None
       return row
-  def read_list(payload):
+  def read_list(user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
@@ -160,7 +160,7 @@ class CRUD:
         WHERE user_id=%s
         ORDER BY id DESC
       """
-      cursor.execute(select, (payload["id"],))
+      cursor.execute(select, (user_id,))
       rows = cursor.fetchall()
       return rows
   def read_list_item(payload, item_id):
@@ -170,6 +170,17 @@ class CRUD:
       cursor.execute(select, (payload["id"],item_id))
       row = cursor.fetchone()
       return row
+  def read_list_product(user_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT product_id
+        FROM lists
+        WHERE user_id=%s AND product_id IS NOT NULL;
+      """
+      cursor.execute(select, (user_id,))
+      rows = cursor.fetchall()
+      return rows
   def read_product(id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -187,12 +198,11 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = """
-        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.bought
+        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
         LEFT JOIN review ON product.id=review.product_id
-        LEFT JOIN lists ON product.id=lists.product_id
       """
       where = " WHERE TRUE"
       value = []
@@ -215,7 +225,21 @@ class CRUD:
       order = f" ORDER BY product.{sort} DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
-      return rows
+      # 檢查是否已加入清單
+      mylist = CRUD.read_list_product(user_id)
+      added_product_list = []
+      for item in mylist:
+        added_product_list.append(item[0])
+      result = []
+      for row in rows:
+        tmp = list(row)
+        product_id = row[0]
+        if product_id in added_product_list:
+          tmp.append(1)
+        else:
+          tmp.append(0)
+        result.append(tmp)
+      return result
   def read_category(keyword, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

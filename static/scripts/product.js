@@ -61,7 +61,7 @@ async function init() {
             location.href = `/review/${product.id}`;
           }
         });
-        if (data[7] != null) {
+        if (data[7]) {
           let addListIcon = addListBtn.querySelector("img");
           addListIcon.className = "added";
           addListIcon.src = "/static/images/add-new-filled-icon.png";
