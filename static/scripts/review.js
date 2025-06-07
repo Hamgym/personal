@@ -248,21 +248,31 @@ async function init() {
   }
   function setPostDialog() {
     let closeBtn = document.querySelector(".close-btn");
+    let fileInput = document.querySelector("#photo");
     let form = document.querySelector(".post-dialog form");
     closeBtn.addEventListener("click", function () {
       let dialog = document.querySelector(".post-dialog");
       dialog.style.display = "none";
+    });
+    fileInput.addEventListener("change", function () {
+      if (fileInput.value == "") {
+        return;
+      }
+      let filename = fileInput.value.split("\\")[2];
+      let filesize = fileInput.files[0].size;
+      if (filesize > 1 * 1024 * 1024) {
+        alert("檔案太大，請選擇小於 1MB 的檔案。");
+        fileInput.value = "";
+        return;
+      }
     });
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
       let submitter = this.querySelector("button");
       let formData = new FormData(this, submitter);
       let id = location.pathname.split("/")[2];
-      id = id.toString()
+      id = id.toString();
       formData.append("product_id", id);
-      // for (let [key, value] of formData) {
-      //   console.log(`${key}: ${value}`);
-      // }
       let url = "/api/review";
       let init = {
         method: "POST",
