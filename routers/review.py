@@ -51,3 +51,11 @@ async def get_posted(payload=Depends(jwt_auth), product_id:int=Path()):
   user_id = payload["id"]
   row = CRUD.read_posted(product_id, user_id)
   return row
+
+@router.delete("/api/review/{product_id}")
+async def delete_review(payload=Depends(jwt_auth), product_id:int=Path()):
+  user_id = payload["id"]
+  row = CRUD.read_posted(product_id, user_id)
+  review_id = row[0]
+  deleted = CRUD.delete_review(review_id, user_id)
+  return deleted

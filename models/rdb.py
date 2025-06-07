@@ -420,3 +420,16 @@ class CRUD:
       delete = "DELETE FROM lists WHERE user_id=%s AND id=%s"
       cursor.execute(delete, (payload["id"],item_id))
       cnx.commit()
+  def delete_review(review_id, user_id):
+    with cnxpool.get_connection() as cnx:
+      try:
+        cursor = cnx.cursor()
+        delete = "DELETE FROM review_likes WHERE review_id=%s;"
+        cursor.execute(delete, (review_id,))
+        cnx.commit()
+        delete = "DELETE FROM review WHERE id=%s AND user_id=%s;"
+        cursor.execute(delete, (review_id, user_id))
+        cnx.commit()
+        return True
+      except:
+        return False
