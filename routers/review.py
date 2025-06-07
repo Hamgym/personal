@@ -7,9 +7,12 @@ from models.bucket import upload
 router = APIRouter()
 
 @router.post("/api/review")
-async def post_review(payload=Depends(jwt_auth),form:ReviewCreate=Form()):
-  image_url = upload(form.photo)
-  new_review = CRUD.create_review(payload, form, image_url)
+async def post_review(payload=Depends(jwt_auth), product_id:int=Form(), rating:int=Form(ge=1, le=5), comment:str=Form(), is_anonymous:str=Form("off"), photo:UploadFile=Form()):
+  user_id = payload["id"]
+  if photo.size>1*1024*1024:
+    return False
+  image_url = upload(photo)
+  new_review = CRUD.create_review(user_id, product_id, rating, comment, is_anonymous, image_url)
   return new_review
 
 @router.get("/api/review/{product_id}")

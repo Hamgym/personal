@@ -12,12 +12,12 @@ class ShopList(BaseModel):
   item: str
   specs: str = ""
   productID: int|None = None
-class ReviewCreate(BaseModel):
-  product_id: int
-  rating: int = Field(ge=1, le=5)
-  comment: str
-  photo: UploadFile
-  is_anonymous: str = "off"
+# class ReviewCreate(BaseModel):
+#   product_id: int
+#   rating: int = Field(ge=1, le=5)
+#   comment: str
+#   photo: UploadFile
+#   is_anonymous: str = "off"
 
 
 def get_list_data(rows):

@@ -107,7 +107,7 @@ class CRUD:
         return True
       except:
         return False
-  def create_review(payload, form, image_url):
+  def create_review(user_id, product_id, rating, comment, is_anonymous, image_url):
     with cnxpool.get_connection() as cnx:
       try:
         cursor = cnx.cursor()
@@ -115,11 +115,11 @@ class CRUD:
           INSERT INTO review(product_id, user_id, rating, comment, image_url, is_anonymous)
           VALUES(%s, %s, %s, %s, %s, %s);
         """
-        if form.is_anonymous=="on":
-          form.is_anonymous = True
+        if is_anonymous=="on":
+          is_anonymous = True
         else:
-          form.is_anonymous = False
-        values = [form.product_id, payload["id"], form.rating, form.comment, image_url, form.is_anonymous]
+          is_anonymous = False
+        values = [product_id, user_id, rating, comment, image_url, is_anonymous]
         cursor.execute(insert, values)
         cnx.commit()
         return True
