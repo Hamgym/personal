@@ -347,6 +347,7 @@ async function init() {
   function setAddProductBtn() {
     let addProductBtn = document.querySelector("div.add-product-btn");
     let cancelBtn = document.querySelector(".add-product-dialog .close-btn");
+    let fileInput = document.querySelector("#photo");
     let form = document.querySelector(".add-product-dialog form");
     addProductBtn.addEventListener("click", function () {
       let dialog = document.querySelector("div.add-product-dialog");
@@ -365,6 +366,22 @@ async function init() {
       let mask = document.querySelector(".mask");
       dialog.style.display = "none";
       mask.style.display = "none";
+    });
+    fileInput.addEventListener("change", function () {
+      let label = document.querySelector('[for="photo"]');
+      if (fileInput.value == "") {
+        label.textContent = "上傳商品照片";
+        return;
+      }
+      let filename = fileInput.value.split("\\")[2];
+      let filesize = fileInput.files[0].size;
+      if (filesize > 1 * 1024 * 1024) {
+        alert("檔案太大，請選擇小於 1MB 的檔案。");
+        fileInput.value = "";
+        label.textContent = "上傳商品照片";
+        return;
+      }
+      label.textContent = filename;
     });
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
