@@ -197,12 +197,13 @@ class CRUD:
   def read_products(keyword, category, brand, sort="id", personal=False, user_id=0):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      select = """
-        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review
+      select = f"""
+        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.product_id
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
         LEFT JOIN review ON product.id=review.product_id
+        LEFT JOIN (SELECT product_id FROM lists WHERE user_id={user_id} AND product_id IS NOT NULL) AS lists ON product.id=lists.product_id
       """
       where = " WHERE TRUE"
       value = []
@@ -225,21 +226,7 @@ class CRUD:
       order = f" ORDER BY product.{sort} DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
-      # 檢查是否已加入清單
-      mylist = CRUD.read_list_product(user_id)
-      added_product_list = []
-      for item in mylist:
-        added_product_list.append(item[0])
-      result = []
-      for row in rows:
-        tmp = list(row)
-        product_id = row[0]
-        if product_id in added_product_list:
-          tmp.append(1)
-        else:
-          tmp.append(0)
-        result.append(tmp)
-      return result
+      return rows
   def read_category(keyword, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
