@@ -43,19 +43,22 @@ body {
 }
 
 .header form {
-	width: fit-content;
-	margin: auto;
+	width: 100%;
+	padding: 0 2px;
 	display: flex;
+	position: relative;
+	z-index: 3;
 }
 
 .header form .search-row {
 	background-color: white;
 	height: 34px;
-	width: 290px;
+	min-width: 300px;
 	display: flex;
 	border-radius: 17px;
 	padding-left: 5px;
 	position: relative;
+	flex-grow: 1;
 }
 
 .header form .search-row label {
@@ -141,16 +144,13 @@ body {
 	border: none;
 	background-color: inherit;
 	padding-left: 8px;
-	padding-right: 8px;
-}
-
-.header form [type="submit"]:hover {
+	padding-right: 0px;
 	cursor: pointer;
 }
 
 .header .row {
 	margin-top: 10px;
-	padding: 0 20px;
+	padding: 0 40px;
 	display: flex;
 }
 
@@ -210,22 +210,19 @@ body {
 }
 
 .header [for="personal"] img {
-	width: 30px;
-	height: 30px;
+	width: 34px;
+	height: 34px;
 	position: absolute;
-	right: 45px;
-	bottom: 10px;
-}
-
-.header [for="personal"] img:hover {
+	left: 8px;
+	bottom: 8px;
 	cursor: pointer;
 }
 
 .header .sort {
-	width: 30px;
+	width: 34px;
 	position: absolute;
-	right: 10px;
-	bottom: 10px;
+	right: 8px;
+	bottom: 8px;
 }
 
 .header .sort:hover {
@@ -482,7 +479,7 @@ body {
 .alert {
 	position: absolute;
 	/* right: 45px; */
-	right: 80px;
+	right: 55px;
 	bottom: 10px;
 	background-color: #f45e60;
 	color: white;

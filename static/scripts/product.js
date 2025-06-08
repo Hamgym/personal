@@ -436,7 +436,7 @@ async function init() {
         let alertBox = document.querySelector(".alert").cloneNode(true);
         alertBox.textContent = text;
         alertBox.style.display = "flex";
-        alertBox.style.right = "80px";
+        alertBox.style.right = "55px";
         alertBox.style.width = "120px";
         alertBox.className += " fade";
         header.appendChild(alertBox);
