@@ -177,6 +177,7 @@ async function init() {
           if (isMyLike) {
             let like = item.querySelector(".like-btn img");
             like.setAttribute("src", "/static/images/like-filled.png");
+            like.style.cursor = "default";
           }
         });
       }
