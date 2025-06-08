@@ -316,6 +316,19 @@ class CRUD:
         tmp.pop()
         result.append(tmp)
       return result
+  def read_review_count(user_id):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = """
+        SELECT COUNT(id)
+        FROM review
+      """
+      where = " WHERE user_id=%s"
+      value = [user_id]
+      cursor.execute(select+where, value)
+      row = cursor.fetchone()
+      review_count = row[0]
+      return {"reviewCount": review_count}
   def read_like(review_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

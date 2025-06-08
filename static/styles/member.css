@@ -31,10 +31,18 @@ body {
 
 
 
-.main {
+.welcome {
 	width: fit-content;
 	margin: 50px auto;
 	font-size: 30px;
+}
+
+
+
+.review-count {
+	width: fit-content;
+	margin: 50px auto;
+	font-size: 20px;
 }
 
 

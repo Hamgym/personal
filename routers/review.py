@@ -15,6 +15,12 @@ async def post_review(payload=Depends(jwt_auth), product_id:int=Form(), rating:i
   new_review = CRUD.create_review(user_id, product_id, rating, comment, is_anonymous, image_url)
   return new_review
 
+@router.get("/api/review/count")
+async def get_review_count(payload=Depends(jwt_auth)):
+  user_id = payload["id"]
+  review_count = CRUD.read_review_count(user_id)
+  return review_count
+
 @router.get("/api/review/{product_id}")
 async def get_review(product_id: int):
   rows = CRUD.read_review(product_id)
@@ -36,7 +42,7 @@ async def get_mylike(payload=Depends(jwt_auth), reviewID:int=Path()):
   return row
 
 @router.get("/api/review/mypost/{reviewID}")
-async def get_mylike(payload=Depends(jwt_auth), reviewID:int=Path()):
+async def get_mypost(payload=Depends(jwt_auth), reviewID:int=Path()):
   user_id = payload["id"]
   row = CRUD.read_mypost(reviewID, user_id)
   return row
