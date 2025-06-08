@@ -198,12 +198,12 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = f"""
-        SELECT DISTINCT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.product_id
+        SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.user_id
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
-        LEFT JOIN review ON product.id=review.product_id
-        LEFT JOIN (SELECT product_id FROM lists WHERE user_id={user_id} AND product_id IS NOT NULL) AS lists ON product.id=lists.product_id
+        LEFT JOIN (SELECT product_id, user_id FROM lists WHERE user_id={user_id}) AS lists ON product.id=lists.product_id
+        LEFT JOIN (SELECT product_id, user_id FROM review WHERE user_id={user_id}) AS review ON product.id=review.product_id
       """
       where = " WHERE TRUE"
       value = []
