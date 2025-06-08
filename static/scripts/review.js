@@ -158,6 +158,7 @@ async function init() {
             count += 1;
             span.textContent = count;
             icon.setAttribute("src", "/static/images/like-filled.png");
+            icon.style.cursor = "default";
           }
         })
       }

@@ -32,7 +32,7 @@ async function init() {
     let res = await fetch(request);
     let resData = await res.json();
     let count = resData.reviewCount;
-    reviewCountDiv.textContent = `您目前已留下 ${count} 則評論`;
+    reviewCountDiv.textContent = `您已留下 ${count} 則評論`;
   }
   async function showLikeCount() {
     let likeCountDiv = document.querySelector(".like-count");
