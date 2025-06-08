@@ -57,9 +57,10 @@ async function init() {
         product.querySelector(".value").style.width = `${data[5]}%`;
         product.querySelector(".caption span").textContent = data[6];
         product.addEventListener("click", function (event) {
-          if (!["describes"].includes(event.target.className)) {
-            location.href = `/review/${product.id}`;
-          }
+          // if (!["describes"].includes(event.target.className)) {
+          //   location.href = `/review/${product.id}`;
+          // }
+          location.href = `/review/${product.id}`;
         });
         if (data[7]) {
           let addListIcon = addListBtn.querySelector("img");
