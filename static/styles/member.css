@@ -46,6 +46,13 @@ body {
 }
 
 
+.like-count {
+	width: fit-content;
+	margin: 50px auto;
+	font-size: 20px;
+}
+
+
 
 .header {
 	background-color: whitesmoke;
