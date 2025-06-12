@@ -5,11 +5,16 @@ from models.data import *
 from utils.auth import *
 router = APIRouter()
 
-@router.post("/api/user")
+@router.post("/api/user",
+  response_model=OK,
+  responses={
+    400: {"model": Error },
+    422: {"model": CustomValidationError }
+  })
 async def post_user(user:SignUp):
   try:
     CRUD.create_user(user)
-    return {"ok": True}
+    return {"ok": True, "message":"恭喜您，註冊成功！"}
   except:
     return JSONResponse({"error":True, "message":"註冊失敗，重複的 Email"}, 400)
 

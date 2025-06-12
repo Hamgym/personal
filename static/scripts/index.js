@@ -112,16 +112,9 @@ async function init() {
 			});
 			let res = await fetch(request);
 			let resData = await res.json();
-			if (resData.error) {
-				let p = signupForm.querySelector("p.message");
-				p.setAttribute("style", "display: block");
-				p.innerText = resData.message;
-			}
-			if (resData.ok) {
-				let p = signupForm.querySelector("p.message");
-				p.setAttribute("style", "display: block");
-				p.innerText = "恭喜您，註冊成功！";
-			}
+			let p = signupForm.querySelector("p.message");
+			p.setAttribute("style", "display: block");
+			p.innerText = resData.message;
 		});
 	}
 }

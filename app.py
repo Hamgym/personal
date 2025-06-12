@@ -11,19 +11,19 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Static Pages
 @app.get("/", include_in_schema=False)
-async def index(request: Request):
+async def home_page(request: Request):
   return FileResponse("./static/index.html", media_type="text/html")
 @app.get("/list", include_in_schema=False)
-async def index(request: Request):
+async def list_page(request: Request):
   return FileResponse("./static/list.html", media_type="text/html")
 @app.get("/product", include_in_schema=False)
-async def index(request: Request):
+async def product_page(request: Request):
   return FileResponse("./static/product.html", media_type="text/html")
 @app.get("/review/{id}", include_in_schema=False)
-async def index(request: Request, id: int):
+async def review_page(request: Request, id: int):
   return FileResponse("./static/review.html", media_type="text/html")
 @app.get("/member", include_in_schema=False)
-async def index(request: Request):
+async def member_page(request: Request):
   return FileResponse("./static/member.html", media_type="text/html")
 
 
@@ -32,7 +32,7 @@ async def pool_error(request:Request, exc:PoolError):
   return JSONResponse({"error":True, "message":"資料庫忙線中"}, 500)
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request, exc):
-  return JSONResponse({"error":True, "message":"資料格式不符，請重新輸入"}, 400)
+  return JSONResponse({"error":True, "message":"資料格式不符，請重新輸入"}, 422)
 @app.exception_handler(AuthError)
 async def auth_error(request, exc):
   return JSONResponse({"error":True, "message":"未登入系統，拒絕存取"}, 403)
