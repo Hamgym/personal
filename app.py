@@ -5,6 +5,7 @@ from fastapi.exceptions import RequestValidationError
 from mysql.connector.errors import PoolError
 from utils.auth import AuthError
 from routers import users, lists, product, review
+from models.data import *
 app=FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
@@ -35,10 +36,17 @@ async def validation_exception_handler(request, exc):
   return JSONResponse({"error":True, "message":"資料格式不符，請重新輸入"}, 422)
 @app.exception_handler(AuthError)
 async def auth_error(request, exc):
-  return JSONResponse({"error":True, "message":"未登入系統，拒絕存取"}, 403)
+  return JSONResponse({"error":True, "message":"未登入系統，拒絕存取"}, 400)
 
 
-app.include_router(users.router)
+app.include_router(
+  users.router,
+  tags=["user"],
+  responses={
+    400: {"model": ErrorMessage },
+    422: {"model": CustomValidationError},
+  }
+)
 app.include_router(lists.router)
 app.include_router(product.router)
 app.include_router(review.router)

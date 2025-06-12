@@ -13,13 +13,13 @@ async function init() {
     }
     welcome.textContent = `【${user.name}】歡迎回來！`;
     async function getUser(token) {
-      let url = "/api/user/auth";
+      let url = "/api/user";
       let request = new Request(url, {
         headers: { "Authorization": `Bearer ${token}` },
       });
       let res = await fetch(request);
       let resData = await res.json();
-      let user = resData.data;
+      let user = resData.user;
       return user;
     }
   }
