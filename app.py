@@ -47,6 +47,14 @@ app.include_router(
     422: {"model": CustomValidationError},
   }
 )
-app.include_router(lists.router)
+app.include_router(
+  lists.router,
+  tags=["lists"],
+  responses={
+    200: {"model": OkMessage},
+    400: {"model": ErrorMessage },
+    422: {"model": CustomValidationError},
+  }
+)
 app.include_router(product.router)
 app.include_router(review.router)

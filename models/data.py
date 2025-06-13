@@ -29,22 +29,16 @@ class User(BaseModel):
 
 
 class ShopList(BaseModel):
-  item: str
-  specs: str = ""
-  productID: int|None = None
-# class ReviewCreate(BaseModel):
-#   product_id: int
-#   rating: int = Field(ge=1, le=5)
-#   comment: str
-#   photo: UploadFile
-#   is_anonymous: str = "off"
+  item: str = Field(examples=["商品名稱"])
+  specs: str = Field("", examples=["備註欄位"])
+  productID: int|None = Field(None)
 
 
-def get_list_data(rows):
-  data = []
-  for row in rows:
-    tmp = list(row)
-    tmp.pop(1)
-    tmp.pop(1)
-    data.append(tmp)
-  return data
+# def get_list_data(rows):
+#   data = []
+#   for row in rows:
+#     tmp = list(row)
+#     tmp.pop(1)
+#     tmp.pop(1)
+#     data.append(tmp)
+#   return data

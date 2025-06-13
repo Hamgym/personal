@@ -74,24 +74,21 @@ async function init() {
     }
     async function submitItemForm(event) {
       event.preventDefault();
+      let title = document.querySelector(".dialog-main h3");
       let body = formToBody(this);
       let resData = await postList(body);
       if (resData.error) {
         let p = this.querySelector("p.message");
         p.innerText = resData.message;
         p.setAttribute("style", "display:block");
+        return;
       }
-      if (resData.ok) {
-        // let id = resData.id;
-        // let item = await getListItem(id);
-        // addItem(item);
-        let title = document.querySelector(".dialog-main h3");
-        if (title.id) {
-          await delItem(title.id);
-        }
-        dialog("none");
-        loadList();
+      // 刪除編輯前的項目
+      if (title.id) {
+        await delItem(title.id);
       }
+      dialog("none");
+      loadList();
       function formToBody(form) {
         let submitter = form.querySelector("[type='submit']");
         let formData = new FormData(form, submitter);
@@ -114,18 +111,6 @@ async function init() {
         let res = await fetch(request);
         let resData = await res.json();
         return resData;
-      }
-      async function getListItem(itemId) {
-        let url = `/api/lists/${itemId}`;
-        let request = new Request(url, {
-          headers: {
-            "Content-Type": "application/json", "Authorization": `Bearer ${token}`
-          },
-        });
-        let res = await fetch(request);
-        let resData = await res.json();
-        let item = resData.data;
-        return item;
       }
     }
   }

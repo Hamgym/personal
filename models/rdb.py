@@ -14,6 +14,15 @@ cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
 
 
+def get_list_data(rows):
+  data = []
+  # 只需要，項目編號、商品名稱、備註說明、已買狀態
+  for row in rows:
+    tmp = list(row)
+    tmp.pop(1)
+    tmp.pop(1)
+    data.append(tmp)
+  return data
 def get_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
@@ -160,9 +169,13 @@ class CRUD:
         WHERE user_id=%s
         ORDER BY id DESC
       """
-      cursor.execute(select, (user_id,))
+      cursor.execute(select, [user_id])
       rows = cursor.fetchall()
-      return rows
+      # if rows==None:
+      #   return
+      # data = get_list_data(rows)
+      shopping_list = get_list_data(rows)
+      return shopping_list
   def read_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

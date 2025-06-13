@@ -11,8 +11,7 @@ async def post_lists(payload=Depends(jwt_auth), body:ShopList=Body()):
     id = CRUD.create_lists(payload, body)
     return {
       "ok": True,
-      "message": body,
-      "id": id
+      "message": "成功建立新項目"
     }
   except:
     return JSONResponse({
@@ -23,11 +22,8 @@ async def post_lists(payload=Depends(jwt_auth), body:ShopList=Body()):
 @router.get("/api/lists")
 async def get_list(payload=Depends(jwt_auth)):
   user_id = payload["id"]
-  rows = CRUD.read_list(user_id)
-  if rows==None:
-    return {"data": None}
-  data = get_list_data(rows)
-  return {"data": data}
+  shopping_list = CRUD.read_list(user_id)
+  return {"data": shopping_list}
 
 @router.get("/api/lists/{itemId}")
 async def get_list(itemId:int, payload=Depends(jwt_auth)):
