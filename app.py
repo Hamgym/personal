@@ -52,7 +52,6 @@ app.include_router(
   tags=["lists"],
   responses={
     200: {"model": OkMessage},
-    400: {"model": ErrorMessage },
     422: {"model": CustomValidationError},
   }
 )

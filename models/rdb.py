@@ -15,14 +15,16 @@ pwd_context = CryptContext(schemes=["bcrypt"])
 
 
 def get_list_data(rows):
-  data = []
+  shopping_list = []
   # 只需要，項目編號、商品名稱、備註說明、已買狀態
   for row in rows:
-    tmp = list(row)
-    tmp.pop(1)
-    tmp.pop(1)
-    data.append(tmp)
-  return data
+    item = {}
+    item["id"] = row[0]
+    item["name"] = row[3]
+    item["note"] = row[4]
+    item["checked"] = row[5]
+    shopping_list.append(item)
+  return shopping_list
 def get_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
@@ -171,9 +173,6 @@ class CRUD:
       """
       cursor.execute(select, [user_id])
       rows = cursor.fetchall()
-      # if rows==None:
-      #   return
-      # data = get_list_data(rows)
       shopping_list = get_list_data(rows)
       return shopping_list
   def read_list_item(payload, item_id):

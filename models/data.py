@@ -28,11 +28,18 @@ class User(BaseModel):
   user: Payload
 
 
-class ShopList(BaseModel):
+class PostList(BaseModel):
   item: str = Field(examples=["商品名稱"])
-  specs: str = Field("", examples=["備註欄位"])
+  specs: str = Field("", examples=["備註說明"])
   productID: int|None = Field(None)
-
+class GetList(BaseModel):
+  id: int = Field(examples=[12])
+  name: str = Field(examples=["商品名稱"])
+  note: str = Field(examples=["備註說明"])
+  checked: int = Field(examples=[0])
+class UpdateList(BaseModel):
+  itemId: int = Field(examples=[12])
+  bought: int = Field(examples=[1])
 
 # def get_list_data(rows):
 #   data = []

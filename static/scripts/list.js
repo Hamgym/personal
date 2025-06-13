@@ -44,7 +44,16 @@ async function init() {
       });
       let res = await fetch(request);
       let resData = await res.json();
-      let items = resData.data;
+      let list = resData.list;
+      let items = [];
+      for (const elem of list) {
+        let item = [];
+        item.push(elem.id);
+        item.push(elem.name);
+        item.push(elem.note);
+        item.push(elem.checked);
+        items.push(item);
+      }
       return items;
     }
   }
@@ -198,8 +207,11 @@ async function init() {
       }
     }
     async function updateItemStatus(itemId, bought) {
-      let url = `/api/lists/${itemId}`;
-      let body = { "bought": bought };
+      let url = `/api/lists`;
+      let body = {
+        "itemId": itemId,
+        "bought": bought
+      };
       let request = new Request(url, {
         method: "PATCH",
         headers: {
