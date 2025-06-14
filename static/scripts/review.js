@@ -41,7 +41,11 @@ async function init() {
     });
     let res = await fetch(request);
     let resData = await res.json();
-    let data = resData.data;
+    let product = resData.product;
+    let data = [];
+    data.push(product.id);
+    data.push(product.brand);
+    data.push(product.productName);
     let title = document.querySelector(".header .title");
     title.textContent = `【${data[1]}】${data[2]}`;
   }

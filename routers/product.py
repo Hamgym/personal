@@ -90,10 +90,14 @@ async def get_brand(
   brands = CRUD.read_brand(keyword, category, user_id)
   return {"brands": brands}
 
-@router.get("/api/product/{id}")
+@router.get("/api/product/{id}",
+  responses={
+    200: {"model": OneProductRes }
+  },
+)
 async def get_product(id: int):
-  row = CRUD.read_product(id)
-  return {"data": row}
+  product = CRUD.read_product(id)
+  return {"product": product}
 
 @router.get("/api/product/suggest")
 async def get_suggest(q:str=Query(..., min_length=1)):

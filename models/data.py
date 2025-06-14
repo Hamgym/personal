@@ -63,3 +63,7 @@ class Brand(BaseModel):
   productCount: int = Field(examples=[6])
 class BrandRes(BaseModel):
   brands: list[Brand]
+class OneProductRes(BaseModel):
+  id: int = Field(examples=[85])
+  brand: str = Field(examples=["麥香"])
+  productName: str = Field(examples=["麥香綠茶"])
