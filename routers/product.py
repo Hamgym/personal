@@ -90,6 +90,21 @@ async def get_brand(
   brands = CRUD.read_brand(keyword, category, user_id)
   return {"brands": brands}
 
+@router.get("/api/product/suggest",
+  responses={
+    200: {"model": SuggestionsRes }
+  },
+)
+async def get_suggest(q:str=Query(min_length=1, example="無糖")):
+  rows = CRUD.read_suggest(q)
+  if len(rows)<6:
+    more_rows = CRUD.read_suggest(q, need_more=True)
+    rows += more_rows
+  suggestions = []
+  for row in rows:
+    suggestions.append(row[0])
+  return {"suggestions": suggestions}
+
 @router.get("/api/product/{id}",
   responses={
     200: {"model": OneProductRes }
@@ -98,15 +113,3 @@ async def get_brand(
 async def get_product(id: int):
   product = CRUD.read_product(id)
   return {"product": product}
-
-@router.get("/api/product/suggest")
-async def get_suggest(q:str=Query(..., min_length=1)):
-  rows = CRUD.read_suggest(q)
-  if len(rows)<6:
-    more_rows = CRUD.read_suggest(q, need_more=True)
-    rows += more_rows
-  result = []
-  for row in rows:
-    tmp = row[0]
-    result.append(tmp)
-  return result

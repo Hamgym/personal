@@ -144,7 +144,8 @@ async function init() {
         return;
       }
       let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
-      let suggestions = await res.json();
+      let resData = await res.json();
+      let suggestions = resData.suggestions;
       if (suggestionsDiv.firstChild) {
         suggestionsDiv.innerHTML = "";
       }
@@ -177,7 +178,8 @@ async function init() {
         let query = document.querySelector("#keyword").value;
         let suggestionsDiv = document.querySelector("#suggestions");
         let res = await fetch(`/api/product/suggest?q=${encodeURIComponent(query)}`);
-        let suggestions = await res.json();
+        let resData = await res.json();
+        let suggestions = resData.suggestions;
         if (suggestionsDiv.firstChild) {
           suggestionsDiv.innerHTML = "";
         }
