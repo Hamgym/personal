@@ -360,8 +360,15 @@ async function init() {
         });
         let res = await fetch(request);
         let resData = await res.json();
-        let data = resData.data;
-        return data;
+        let brands = resData.brands;
+        let brandList = [];
+        for (const brand of brands) {
+          let item = [];
+          item.push(brand.brand);
+          item.push(brand.productCount);
+          brandList.push(item);
+        }
+        return brandList;
       }
     }
   }

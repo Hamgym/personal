@@ -58,3 +58,8 @@ class Category(BaseModel):
   productCount: int = Field(examples=[28])
 class CategoryRes(BaseModel):
   categories: list[Category]
+class Brand(BaseModel):
+  brand: str = Field(examples=["麥香"])
+  productCount: int = Field(examples=[6])
+class BrandRes(BaseModel):
+  brands: list[Brand]

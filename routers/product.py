@@ -72,14 +72,23 @@ async def get_category(
   category_list = CRUD.read_category(keyword, user_id)
   return {"categories": category_list}
 
-@router.get("/api/product/brand")
-async def get_brand(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), personal:bool=Query(False)):
+@router.get("/api/product/brand",
+  responses={
+    200: {"model": BrandRes }
+  },
+)
+async def get_brand(
+  payload=Depends(jwt_auth),
+  keyword:str=Query(""),
+  category:str=Query(""),
+  personal:bool=Query(False)
+):
   if personal:
     user_id = payload["id"]
   else:
     user_id = 0
-  rows = CRUD.read_brand(keyword, category, user_id)
-  return {"data": rows}
+  brands = CRUD.read_brand(keyword, category, user_id)
+  return {"brands": brands}
 
 @router.get("/api/product/{id}")
 async def get_product(id: int):
