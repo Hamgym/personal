@@ -53,3 +53,8 @@ class Product(BaseModel):
   isListed: bool = Field(examples=[False])
 class ProductRes(BaseModel):
   products: list[Product]
+class Category(BaseModel):
+  category: str = Field(examples=["餅乾"])
+  productCount: int = Field(examples=[28])
+class CategoryRes(BaseModel):
+  categories: list[Category]

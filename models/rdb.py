@@ -42,6 +42,14 @@ def rows_to_products(rows):
       product["isListed"] = False
     products.append(product)
   return products
+def rows_to_categories(rows):
+  category_list = []
+  for row in rows:
+    category = {}
+    category["category"] = row[0]
+    category["productCount"] = row[1]
+    category_list.append(category)
+  return category_list
 def get_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
@@ -288,7 +296,8 @@ class CRUD:
       order = " ORDER BY count DESC;"
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
-      return rows
+      categories = rows_to_categories(rows)
+      return categories
   def read_brand(keyword, category, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

@@ -312,8 +312,15 @@ async function init() {
         });
         let res = await fetch(request);
         let resData = await res.json();
-        let data = resData.data;
-        return data
+        let categories = resData.categories;
+        let categoryList = [];
+        for (const category of categories) {
+          let item = [];
+          item.push(category.category);
+          item.push(category.productCount);
+          categoryList.push(item);
+        }
+        return categoryList;
       }
     }
     async function brandFilter() {
