@@ -33,7 +33,7 @@ async function init() {
   }
   async function setTitle() {
     let id = location.pathname.split("/")[2];
-    let url = `/api/products/${id}`;
+    let url = `/api/product/${id}`;
     let request = new Request(url, {
       headers: {
         "Authorization": `Bearer ${token}`

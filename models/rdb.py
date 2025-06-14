@@ -14,7 +14,7 @@ cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
 
 
-def get_list_data(rows):
+def rows_to_list(rows):
   shopping_list = []
   # 只需要，項目編號、商品名稱、備註說明、已買狀態
   for row in rows:
@@ -25,6 +25,23 @@ def get_list_data(rows):
     item["checked"] = row[5]
     shopping_list.append(item)
   return shopping_list
+def rows_to_products(rows):
+  products = []
+  for row in rows:
+    product = {}
+    product["productID"] = row[0]
+    product["category"] = row[1]
+    product["brand"] = row[2]
+    product["productName"] = row[3]
+    product["imgaeURL"] = row[4]
+    product["ratingPercent"] = row[5]
+    product["reviewCount"] = row[6]
+    if (row[7]!=None):
+      product["isListed"] = True
+    else:
+      product["isListed"] = False
+    products.append(product)
+  return products
 def get_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
@@ -173,7 +190,7 @@ class CRUD:
       """
       cursor.execute(select, [user_id])
       rows = cursor.fetchall()
-      shopping_list = get_list_data(rows)
+      shopping_list = rows_to_list(rows)
       return shopping_list
   def read_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:
@@ -238,7 +255,8 @@ class CRUD:
       order = f" ORDER BY product.{sort} DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()
-      return rows
+      products = rows_to_products(rows)
+      return products
   def read_category(keyword, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

@@ -41,11 +41,15 @@ class UpdateList(BaseModel):
   itemId: int = Field(examples=[12])
   bought: int = Field(examples=[1])
 
-# def get_list_data(rows):
-#   data = []
-#   for row in rows:
-#     tmp = list(row)
-#     tmp.pop(1)
-#     tmp.pop(1)
-#     data.append(tmp)
-#   return data
+
+class Product(BaseModel):
+  productID: int = Field(examples=[21])
+  category: str = Field(examples=["飲料"])
+  brand: str = Field(examples=["麥香"])
+  productName: str = Field(examples=["麥香綠茶"])
+  imgaeURL: str = Field(examples=["https://qbdhu.cloudfront.net/5dfd"])
+  ratingPercent: int = Field(examples=[85])
+  reviewCount: int = Field(examples=[4])
+  isListed: bool = Field(examples=[False])
+class ProductRes(BaseModel):
+  products: list[Product]

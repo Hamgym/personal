@@ -40,7 +40,20 @@ async function init() {
       });
       let res = await fetch(request);
       let resData = await res.json();
-      let dataList = resData.data;
+      let products = resData.products;
+      let dataList = [];
+      for (const product of products) {
+        let row = [];
+        row.push(product.productID);
+        row.push(product.category);
+        row.push(product.brand);
+        row.push(product.productName);
+        row.push(product.imgaeURL);
+        row.push(product.ratingPercent);
+        row.push(product.reviewCount);
+        row.push(product.isListed);
+        dataList.push(row);
+      }
       return dataList;
     }
     function renderPage(dataList) {

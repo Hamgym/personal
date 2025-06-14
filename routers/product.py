@@ -6,13 +6,12 @@ from models.data import *
 from models.bucket import upload
 router = APIRouter()
 
-@router.post(
-  "/api/product",
+@router.post("/api/product",
   responses={
     400: {"model": ErrorMessage }
   },
 )
-async def post_prod(
+async def post_product(
   payload=Depends(jwt_auth),
   category:str=Form(description="商品類別"),
   brand:str=Form(description="商品品牌"),
@@ -39,16 +38,24 @@ async def post_prod(
     "message": "成功建立新商品！",
   }
 
-@router.get("/api/product")
-async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query(""), personal:bool=Query(False)):
+@router.get("/api/product",
+  responses={
+    200: {"model": ProductRes }
+  },
+)
+async def get_products(
+  payload=Depends(jwt_auth),
+  keyword:str=Query("", example="紅茶"),
+  category:str=Query("", example="飲料"),
+  brand:str=Query("", example="麥香"),
+  sort:str=Query("", example="percent", description='可接受：percent、review、id'),
+  personal:bool=Query(False, description="個人模式")
+):
   user_id = payload["id"]
-  rows = CRUD.read_products(keyword, category, brand, sort, personal, user_id)
-  return {"data": rows}
+  products = CRUD.read_products(keyword, category, brand, sort, personal, user_id)
+  return {"products": products}
 
-@router.get("/api/products/{id}")
-async def get_product(id: int):
-  row = CRUD.read_product(id)
-  return {"data": row}
+
 
 @router.get("/api/product/category")
 async def get_category(payload=Depends(jwt_auth), keyword:str=Query(""), personal:bool=Query(False)):
@@ -67,6 +74,11 @@ async def get_brand(payload=Depends(jwt_auth), keyword:str=Query(""), category:s
     user_id = 0
   rows = CRUD.read_brand(keyword, category, user_id)
   return {"data": rows}
+
+@router.get("/api/product/{id}")
+async def get_product(id: int):
+  row = CRUD.read_product(id)
+  return {"data": row}
 
 @router.get("/api/product/suggest")
 async def get_suggest(q:str=Query(..., min_length=1)):
