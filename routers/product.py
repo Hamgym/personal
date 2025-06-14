@@ -6,18 +6,38 @@ from models.data import *
 from models.bucket import upload
 router = APIRouter()
 
-@router.post("/api/product")
-async def post_prod(payload=Depends(jwt_auth), category:str=Form(), brand:str=Form(), name:str=Form(), photo:UploadFile=Form()):
+@router.post(
+  "/api/product",
+  responses={
+    400: {"model": ErrorMessage }
+  },
+)
+async def post_prod(
+  payload=Depends(jwt_auth),
+  category:str=Form(description="商品類別"),
+  brand:str=Form(description="商品品牌"),
+  name:str=Form(description="商品名稱"),
+  photo:UploadFile=Form(description="圖片檔案")
+):
   rows = CRUD.read_products(name, category, brand)
   if len(rows)>0:
-    return {"created": False}
+    return {
+      "error": True,
+      "message": "該商品已經存在！",
+    }
   if photo.size>1*1024*1024:
-    return {"created": False}
+    return {
+      "error": True,
+      "message": "檔案太大，請選擇小於 1MB 的檔案。",
+    }
   image_url = upload(photo)
   category_id = CRUD.create_category(category)
   brand_id = CRUD.create_brand(brand)
   created = CRUD.create_product(category_id, brand_id, name, image_url)
-  return {"created": created}
+  return {
+    "ok": True,
+    "message": "成功建立新商品！",
+  }
 
 @router.get("/api/product")
 async def get_products(payload=Depends(jwt_auth), keyword:str=Query(""), category:str=Query(""), brand:str=Query(""), sort:str=Query(""), personal:bool=Query(False)):

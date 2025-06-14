@@ -386,13 +386,13 @@ async function init() {
     });
     form.addEventListener("submit", async function (event) {
       event.preventDefault();
-      let created = await postNewProduct();
-      if (created) {
-        alert("成功建立新商品！");
+      let resData = await postNewProduct();
+      if (resData.ok) {
+        alert(`${resData.message}`);
         location.href = "/product";
       } else {
-        alert("該商品已經存在！");
-        // 代入資料並搜尋
+        alert(`${resData.message}`);
+        // 可進一步代入資料並搜尋
       }
       async function postNewProduct() {
         let submitter = form.querySelector('button[type="submit"]');
@@ -406,8 +406,7 @@ async function init() {
         let request = new Request(url, init);
         let res = await fetch(request);
         let resData = await res.json();
-        let created = resData.created;
-        return created;
+        return resData;
       }
     });
   }
