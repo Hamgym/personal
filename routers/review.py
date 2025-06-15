@@ -21,11 +21,6 @@ async def get_review_count(payload=Depends(jwt_auth)):
   review_count = CRUD.read_review_count(user_id)
   return {"reviewCount": review_count}
 
-@router.get("/api/review/{product_id}")
-async def get_review(product_id: int):
-  rows = CRUD.read_review(product_id)
-  return {"data": rows}
-
 @router.post("/api/review/like")
 async def post_like(payload=Depends(jwt_auth), body=Body()):
   user_id = payload["id"]
@@ -34,6 +29,11 @@ async def post_like(payload=Depends(jwt_auth), body=Body()):
   if isLiked:
     CRUD.update_review_like(review_id)
   return isLiked
+
+@router.get("/api/review/{product_id}")
+async def get_review(product_id: int):
+  rows = CRUD.read_review(product_id)
+  return {"data": rows}
 
 @router.get("/api/review/like/count")
 async def get_like_count(payload=Depends(jwt_auth)):

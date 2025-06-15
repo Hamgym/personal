@@ -396,6 +396,9 @@ class CRUD:
       cursor.execute(select+where, value)
       row = cursor.fetchone()
       like_count = row[0]
+      # 可能出現 null 值
+      if like_count == None:
+        like_count = 0
       return like_count
   def read_like(review_id):
     with cnxpool.get_connection() as cnx:
