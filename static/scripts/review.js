@@ -304,7 +304,7 @@ async function init() {
       let request = new Request(url, init);
       let res = await fetch(request);
       let resData = await res.json();
-      if (resData) {
+      if (resData.ok) {
         alert("成功新增評論！");
       } else {
         alert("您已經給過評論了！")

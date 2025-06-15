@@ -6,14 +6,28 @@ from models.data import *
 from models.bucket import upload
 router = APIRouter()
 
-@router.post("/api/review")
-async def post_review(payload=Depends(jwt_auth), product_id:int=Form(), rating:int=Form(ge=1, le=5), comment:str=Form(), is_anonymous:str=Form("off"), photo:UploadFile=Form()):
+@router.post("/api/review",
+  responses={
+    400: {"model": ErrorMessage }
+  },
+)
+async def post_review(
+  payload=Depends(jwt_auth),
+  product_id:int=Form(),
+  rating:int=Form(ge=1, le=5, description="5星制評論"),
+  comment:str=Form(description="文字內容"),
+  is_anonymous:str=Form("off", description="是否匿名發布，使用checkbox的on或off"),
+  photo:UploadFile=Form(description="圖片檔案大小限制1MB")
+):
   user_id = payload["id"]
   if photo.size>1*1024*1024:
     return False
   image_url = upload(photo)
   new_review = CRUD.create_review(user_id, product_id, rating, comment, is_anonymous, image_url)
-  return new_review
+  if new_review:
+    return {"ok": True, "message": "成功發布評論"}
+  else:
+    return {"error": True, "message": "已經發布過評論了"}
 
 @router.get("/api/review/count")
 async def get_review_count(payload=Depends(jwt_auth)):
