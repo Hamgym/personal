@@ -69,3 +69,7 @@ class OneProductRes(BaseModel):
   productName: str = Field(examples=["麥香綠茶"])
 class SuggestionsRes(BaseModel):
   suggestions: list[str] = Field(examples=[['無糖綠茶', '無糖冷萃茶', '無糖茶', '無糖茶寶特瓶系列', '熟藏紅茶-無糖', '日式無糖綠茶', '凍頂烏龍茶-無糖']])
+
+
+class MyReviewCount(BaseModel):
+  myReviewCount: int = Field(examples=[5])

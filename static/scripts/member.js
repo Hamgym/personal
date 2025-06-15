@@ -31,7 +31,7 @@ async function init() {
     });
     let res = await fetch(request);
     let resData = await res.json();
-    let count = resData.reviewCount;
+    let count = resData.myReviewCount;
     reviewCountDiv.textContent = `您已留下 ${count} 則評論`;
   }
   async function showLikeCount() {

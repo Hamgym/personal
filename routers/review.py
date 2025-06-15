@@ -29,11 +29,15 @@ async def post_review(
   else:
     return {"error": True, "message": "已經發布過評論了"}
 
-@router.get("/api/review/count")
-async def get_review_count(payload=Depends(jwt_auth)):
+@router.get("/api/review/count",
+  responses={
+    200: {"model": MyReviewCount }
+  },
+)
+async def get_my_review_count(payload=Depends(jwt_auth)):
   user_id = payload["id"]
   review_count = CRUD.read_review_count(user_id)
-  return {"reviewCount": review_count}
+  return {"myReviewCount": review_count}
 
 @router.post("/api/review/like")
 async def post_like(payload=Depends(jwt_auth), body=Body()):
