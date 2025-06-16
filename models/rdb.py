@@ -64,6 +64,22 @@ def row_to_product(row):
   product["brand"] = row[1]
   product["productName"] = row[2]
   return product
+def rows_to_reviews(rows):
+  reviews = []
+  for row in rows:
+    review = {}
+    review["id"] = row[0]
+    review["userName"] = row[1]
+    review["rating"] = row[2]
+    review["createdAt"] = row[3]
+    review["likeCount"] = row[4]
+    review["comment"] = row[5]
+    review["imgURL"] = row[6]
+    if row[7]:
+      review["userName"] = "匿名"
+    reviews.append(review)
+  return reviews
+
 def get_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
@@ -370,15 +386,16 @@ class CRUD:
       order = " ORDER BY like_count DESC;"
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
+      reviews = rows_to_reviews(rows)
       # 匿名處理
-      result = []
-      for row in rows:
-        tmp = list(row)
-        if tmp[-1]:
-          tmp[1] = "匿名"
-        tmp.pop()
-        result.append(tmp)
-      return result
+      # result = []
+      # for row in rows:
+      #   tmp = list(row)
+      #   if tmp[-1]:
+      #     tmp[1] = "匿名"
+      #   tmp.pop()
+      #   result.append(tmp)
+      return reviews
   def read_review_count(user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

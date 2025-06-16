@@ -75,3 +75,13 @@ class MyReviewCount(BaseModel):
   myReviewCount: int = Field(examples=[5])
 class PostLikeReq(BaseModel):
   reviewID: int = Field(examples=[11])
+class Review(BaseModel):
+  id: int = Field(examples=[1])
+  userName: str = Field(examples=["測試帳號"])
+  rating: int = Field(examples=[5])
+  createdAt: str = Field(examples=["2025-06-15T18:48:43"])
+  likeCount: int = Field(examples=[3])
+  comment: str = Field(examples=["已購買，小孩愛吃"])
+  imgURL: str = Field(examples=["https://d2j1.cloudfront.net/76a9"])
+class GetReviewRes(BaseModel):
+  reviews: list[Review]

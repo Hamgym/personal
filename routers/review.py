@@ -31,7 +31,7 @@ async def post_review(
 
 @router.get("/api/review/count",
   responses={
-    200: {"model": MyReviewCount }
+    200: {"model": MyReviewCount}
   },
 )
 async def get_my_review_count(payload=Depends(jwt_auth)):
@@ -54,10 +54,14 @@ async def post_like(payload=Depends(jwt_auth), body:PostLikeReq=Body()):
   else:
     return JSONResponse({"error": True, "message": "已經按過讚了"}, 400)
 
-@router.get("/api/review/{product_id}")
-async def get_review(product_id: int):
-  rows = CRUD.read_review(product_id)
-  return {"data": rows}
+@router.get("/api/review/{productID}",
+  responses={
+    200: {"model": GetReviewRes}
+  },
+)
+async def get_review(productID: int):
+  reviews = CRUD.read_review(productID)
+  return {"reviews": reviews}
 
 @router.get("/api/review/like/count")
 async def get_like_count(payload=Depends(jwt_auth)):

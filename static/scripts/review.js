@@ -82,8 +82,20 @@ async function init() {
       });
       let res = await fetch(request);
       let resData = await res.json();
-      let data = resData.data;
-      return data
+      let reviews = resData.reviews;
+      let reviewList = [];
+      for (const element of reviews) {
+        let item = [];
+        item.push(element.id);
+        item.push(element.userName);
+        item.push(element.rating);
+        item.push(element.createdAt);
+        item.push(element.likeCount);
+        item.push(element.comment);
+        item.push(element.imgURL);
+        reviewList.push(item);
+      }
+      return reviewList
     }
     function renderPage(data) {
       for (const item of data) {
