@@ -85,8 +85,7 @@ def rows_to_reviews(rows):
       review["isMyLike"] = True
     reviews.append(review)
   return reviews
-
-def get_rating(rows):
+def rows_to_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
   """
@@ -125,7 +124,16 @@ def get_rating(rows):
   result.append(avg_rating)
   result.append(percent)
   result.append(count)
-  return result
+  rating = {}
+  rating["one"] = result[0]
+  rating["two"] = result[1]
+  rating["three"] = result[2]
+  rating["four"] = result[3]
+  rating["five"] = result[4]
+  rating["avg"] = result[5]
+  rating["percent"] = result[6]
+  rating["count"] = result[7]
+  return rating
 
 
 class CRUD:
@@ -491,9 +499,9 @@ class CRUD:
       value = [product_id]
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
-      result = get_rating(rows)
-      CRUD.update_product_percent(product_id, result[-2], result[-1])
-      return result
+      rating = rows_to_rating(rows)
+      CRUD.update_product_percent(product_id, rating["percent"], rating["count"])
+      return rating
   def read_suggest(keyword, need_more=False):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

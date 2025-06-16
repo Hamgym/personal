@@ -86,10 +86,14 @@ async def get_my_like_count(payload=Depends(jwt_auth)):
 #   row = CRUD.read_mypost(reviewID, user_id)
 #   return row
 
-@router.get("/api/review/rating/{product_id}")
+@router.get("/api/review/rating/{product_id}",
+  responses={
+    200: {"model": GetRating}
+  },
+)
 async def get_rating(product_id:int=Path()):
-  result = CRUD.read_rating(product_id)
-  return result
+  rating = CRUD.read_rating(product_id)
+  return {"rating": rating}
 
 @router.get("/api/review/posted/{product_id}")
 async def get_posted(payload=Depends(jwt_auth), product_id:int=Path()):

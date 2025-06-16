@@ -89,3 +89,14 @@ class GetReviewRes(BaseModel):
   reviews: list[Review]
 class MyLikeCount(BaseModel):
   likeCount: int = Field(examples=[12])
+class Rating(BaseModel):
+  one: float = Field(examples=[0])
+  two: float = Field(examples=[0])
+  three: float = Field(examples=[0])
+  four: float = Field(examples=[50])
+  five: float = Field(examples=[100])
+  avg: float = Field(examples=[4.3333])
+  percent: float = Field(examples=[86.6666])
+  count: int = Field(examples=[3])
+class GetRating(BaseModel):
+  rating: Rating

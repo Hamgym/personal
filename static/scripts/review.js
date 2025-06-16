@@ -58,7 +58,17 @@ async function init() {
       },
     });
     let res = await fetch(request);
-    let result = await res.json();
+    let resData = await res.json();
+    let rating = resData.rating;
+    let result = [];
+    result.push(rating.one);
+    result.push(rating.two);
+    result.push(rating.three);
+    result.push(rating.four);
+    result.push(rating.five);
+    result.push(rating.avg);
+    result.push(rating.percent);
+    result.push(rating.count);
     document.querySelector(".value.one").style.width = `${result[0]}%`;
     document.querySelector(".value.two").style.width = `${result[1]}%`;
     document.querySelector(".value.three").style.width = `${result[2]}%`;
@@ -83,7 +93,6 @@ async function init() {
       let res = await fetch(request);
       let resData = await res.json();
       let reviews = resData.reviews;
-      console.log(reviews);
       let reviewList = [];
       for (const element of reviews) {
         let item = [];
