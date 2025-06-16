@@ -39,14 +39,20 @@ async def get_my_review_count(payload=Depends(jwt_auth)):
   review_count = CRUD.read_review_count(user_id)
   return {"myReviewCount": review_count}
 
-@router.post("/api/review/like")
-async def post_like(payload=Depends(jwt_auth), body=Body()):
+@router.post("/api/review/like",
+  responses={
+    400: {"model": ErrorMessage }
+  },
+)
+async def post_like(payload=Depends(jwt_auth), body:PostLikeReq=Body()):
   user_id = payload["id"]
-  review_id = body["reviewID"]
+  review_id = body.reviewID
   isLiked = CRUD.create_like(user_id, review_id)
   if isLiked:
-    CRUD.update_review_like(review_id)
-  return isLiked
+    # CRUD.update_review_like(review_id)
+    return {"ok": True, "message": "按讚成功"}
+  else:
+    return JSONResponse({"error": True, "message": "已經按過讚了"}, 400)
 
 @router.get("/api/review/{product_id}")
 async def get_review(product_id: int):

@@ -154,7 +154,7 @@ async function init() {
           let request = new Request(url, init);
           let res = await fetch(request);
           let resData = await res.json();
-          if (resData) {
+          if (resData.ok) {
             let span = likeDIV.querySelector("span");
             let count = span.textContent;
             let icon = likeDIV.querySelector("img");
@@ -164,7 +164,7 @@ async function init() {
             icon.setAttribute("src", "/static/images/like-filled.png");
             icon.style.cursor = "default";
           }
-        })
+        });
       }
     }
     function postProduction() {

@@ -73,3 +73,5 @@ class SuggestionsRes(BaseModel):
 
 class MyReviewCount(BaseModel):
   myReviewCount: int = Field(examples=[5])
+class PostLikeReq(BaseModel):
+  reviewID: int = Field(examples=[11])
