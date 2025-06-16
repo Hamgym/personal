@@ -83,5 +83,9 @@ class Review(BaseModel):
   likeCount: int = Field(examples=[3])
   comment: str = Field(examples=["已購買，小孩愛吃"])
   imgURL: str = Field(examples=["https://d2j1.cloudfront.net/76a9"])
+  isMyPost: bool = Field(examples=[False])
+  isMyLike: bool = Field(examples=[True])
 class GetReviewRes(BaseModel):
   reviews: list[Review]
+class MyLikeCount(BaseModel):
+  likeCount: int = Field(examples=[12])

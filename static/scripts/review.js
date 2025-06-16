@@ -71,7 +71,7 @@ async function init() {
   async function loadReview() {
     let data = await getData();
     renderPage(data);
-    postProduction();
+    // postProduction();
     async function getData() {
       let id = location.pathname.split("/")[2];
       let url = `/api/review/${id}`;
@@ -83,6 +83,7 @@ async function init() {
       let res = await fetch(request);
       let resData = await res.json();
       let reviews = resData.reviews;
+      console.log(reviews);
       let reviewList = [];
       for (const element of reviews) {
         let item = [];
@@ -93,6 +94,8 @@ async function init() {
         item.push(element.likeCount);
         item.push(element.comment);
         item.push(element.imgURL);
+        item.push(element.isMyPost);
+        item.push(element.isMyLike);
         reviewList.push(item);
       }
       return reviewList
@@ -177,6 +180,13 @@ async function init() {
             icon.style.cursor = "default";
           }
         });
+        if (data[7]) {
+          name.style.backgroundColor = "#fbbc04";
+        }
+        if (data[8]) {
+          img.setAttribute("src", "/static/images/like-filled.png");
+          img.style.cursor = "default";
+        }
       }
     }
     function postProduction() {

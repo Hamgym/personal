@@ -59,27 +59,32 @@ async def post_like(payload=Depends(jwt_auth), body:PostLikeReq=Body()):
     200: {"model": GetReviewRes}
   },
 )
-async def get_review(productID: int):
-  reviews = CRUD.read_review(productID)
+async def get_review(payload=Depends(jwt_auth), productID:int=Path()):
+  user_id = payload["id"]
+  reviews = CRUD.read_review(productID, user_id)
   return {"reviews": reviews}
 
-@router.get("/api/review/like/count")
-async def get_like_count(payload=Depends(jwt_auth)):
+@router.get("/api/review/like/count",
+  responses={
+    200: {"model": MyLikeCount}
+  },
+)
+async def get_my_like_count(payload=Depends(jwt_auth)):
   user_id = payload["id"]
   like_count = CRUD.read_like_count(user_id)
   return {"likeCount": like_count}
 
-@router.get("/api/review/mylike/{reviewID}")
-async def get_mylike(payload=Depends(jwt_auth), reviewID:int=Path()):
-  user_id = payload["id"]
-  row = CRUD.read_mylike(reviewID, user_id)
-  return row
+# @router.get("/api/review/mylike/{reviewID}")
+# async def check_my_like(payload=Depends(jwt_auth), reviewID:int=Path()):
+#   user_id = payload["id"]
+#   row = CRUD.read_mylike(reviewID, user_id)
+#   return row
 
-@router.get("/api/review/mypost/{reviewID}")
-async def get_mypost(payload=Depends(jwt_auth), reviewID:int=Path()):
-  user_id = payload["id"]
-  row = CRUD.read_mypost(reviewID, user_id)
-  return row
+# @router.get("/api/review/mypost/{reviewID}")
+# async def check_my_post(payload=Depends(jwt_auth), reviewID:int=Path()):
+#   user_id = payload["id"]
+#   row = CRUD.read_mypost(reviewID, user_id)
+#   return row
 
 @router.get("/api/review/rating/{product_id}")
 async def get_rating(product_id:int=Path()):
