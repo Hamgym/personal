@@ -480,30 +480,6 @@ class CRUD:
       cursor.execute(select+where+group, value)
       row = cursor.fetchone()
       return row
-  # def read_mylike(review_id, user_id):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     select = """
-  #       SELECT *
-  #       FROM review_likes
-  #     """
-  #     where = " WHERE review_id=%s AND user_id=%s;"
-  #     value = [review_id, user_id]
-  #     cursor.execute(select+where, value)
-  #     row = cursor.fetchone()
-  #     return row
-  # def read_mypost(review_id, user_id):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     select = """
-  #       SELECT *
-  #       FROM review
-  #     """
-  #     where = " WHERE id=%s AND user_id=%s;"
-  #     value = [review_id, user_id]
-  #     cursor.execute(select+where, value)
-  #     row = cursor.fetchone()
-  #     return row
   def read_rating(product_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -552,19 +528,6 @@ class CRUD:
       update = "UPDATE lists SET bought=%s WHERE id=%s"
       cursor.execute(update, (bought,id))
       cnx.commit()
-  # def update_review_like(review_id):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     update = """
-  #       UPDATE review
-  #       SET likes=%s
-  #       WHERE id=%s
-  #     """
-  #     row = CRUD.read_like(review_id)
-  #     likes = row[0]
-  #     values = [likes, review_id]
-  #     cursor.execute(update, values)
-  #     cnx.commit()
   def update_product_percent(product_id, percent, review):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
