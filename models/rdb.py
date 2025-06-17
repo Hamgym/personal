@@ -447,11 +447,15 @@ class CRUD:
   def read_like_count(user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
+      # select = """
+      #   SELECT SUM(likes)
+      #   FROM review
+      # """
       select = """
-        SELECT SUM(likes)
-        FROM review
+        SELECT COUNT(id) AS my_like_count
+        FROM review_likes
       """
-      where = " WHERE user_id=%s"
+      where = " WHERE review_id IN (SELECT id FROM review WHERE user_id=%s)"
       value = [user_id]
       cursor.execute(select+where, value)
       row = cursor.fetchone()

@@ -38,9 +38,9 @@ async def get_list_items(payload=Depends(jwt_auth)):
 #   row.pop(1)
 #   return {"data": row}
 
-@router.delete("/api/lists/{itemId}")
-async def delete_list_item(itemId:int, payload=Depends(jwt_auth)):
-  CRUD.delete_list_item(payload, itemId)
+@router.delete("/api/lists/{itemID}")
+async def delete_list_item(itemID:int, payload=Depends(jwt_auth)):
+  CRUD.delete_list_item(payload, itemID)
   return JSONResponse({"ok":True, "message": "刪除成功"})
 
 @router.patch("/api/lists")

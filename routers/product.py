@@ -105,11 +105,11 @@ async def get_suggest(q:str=Query(min_length=1, example="無糖")):
     suggestions.append(row[0])
   return {"suggestions": suggestions}
 
-@router.get("/api/product/{id}",
+@router.get("/api/product/{productID}",
   responses={
     200: {"model": OneProductRes }
   },
 )
-async def get_product(id: int):
-  product = CRUD.read_product(id)
+async def get_product(productID: int):
+  product = CRUD.read_product(productID)
   return {"product": product}
