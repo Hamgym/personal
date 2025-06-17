@@ -44,6 +44,6 @@ async def delete_list_item(itemID:int, payload=Depends(jwt_auth)):
   return JSONResponse({"ok":True, "message": "刪除成功"})
 
 @router.patch("/api/lists")
-async def patch_list_item(payload=Depends(jwt_auth), body:UpdateList=Body()):
+async def change_list_item_status(payload=Depends(jwt_auth), body:UpdateList=Body()):
   CRUD.update_list_item(body.itemId, body.bought)
   return JSONResponse({"ok": True, "message": "更新成功"})

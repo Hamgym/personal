@@ -39,7 +39,7 @@ class GetList(BaseModel):
   checked: int = Field(examples=[0])
 class UpdateList(BaseModel):
   itemId: int = Field(examples=[12])
-  bought: int = Field(examples=[1])
+  bought: bool = Field(examples=[True])
 
 
 class Product(BaseModel):

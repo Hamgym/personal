@@ -32,7 +32,8 @@ async function init() {
   }
   async function setTitle() {
     let id = location.pathname.split("/")[2];
-    let url = `/api/product/${id}`;
+    // let url = `/api/product/${id}`;
+    let url = `/api/product?productID=${id}`;
     let request = new Request(url, {
       headers: {
         "Authorization": `Bearer ${token}`
@@ -40,9 +41,9 @@ async function init() {
     });
     let res = await fetch(request);
     let resData = await res.json();
-    let product = resData.product;
+    let product = resData.products[0];
     let data = [];
-    data.push(product.id);
+    data.push(product.productID);
     data.push(product.brand);
     data.push(product.productName);
     let title = document.querySelector(".header .title");

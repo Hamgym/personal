@@ -285,7 +285,7 @@ class CRUD:
       row = cursor.fetchone()
       product = row_to_product(row)
       return product
-  def read_products(keyword, category, brand, sort="id", personal=False, user_id=0):
+  def read_products(keyword, category, brand, sort="id", personal=False, user_id=0, productID=0):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = f"""
@@ -314,6 +314,9 @@ class CRUD:
         value.append(user_id)
       if sort!="percent" and sort!="review":
         sort = "id"
+      if productID:
+        where += " AND product.id=%s"
+        value.append(productID)
       order = f" ORDER BY product.{sort} DESC"
       cursor.execute(select+where+order, value)
       rows = cursor.fetchall()

@@ -49,10 +49,11 @@ async def get_products(
   category:str=Query("", example="飲料"),
   brand:str=Query("", example="麥香"),
   sort:str=Query("", example="percent", description='可接受：percent、review、id'),
-  personal:bool=Query(False, description="個人模式")
+  personal:bool=Query(False, description="個人模式"),
+  productID:int=Query(0, example=19, description="商品ID")
 ):
   user_id = payload["id"]
-  products = CRUD.read_products(keyword, category, brand, sort, personal, user_id)
+  products = CRUD.read_products(keyword, category, brand, sort, personal, user_id, productID)
   return {"products": products}
 
 @router.get("/api/product/category",
@@ -105,11 +106,11 @@ async def get_suggest(q:str=Query(min_length=1, example="無糖")):
     suggestions.append(row[0])
   return {"suggestions": suggestions}
 
-@router.get("/api/product/{productID}",
-  responses={
-    200: {"model": OneProductRes }
-  },
-)
-async def get_product(productID: int):
-  product = CRUD.read_product(productID)
-  return {"product": product}
+# @router.get("/api/product/{productID}",
+#   responses={
+#     200: {"model": OneProductRes }
+#   },
+# )
+# async def get_product(productID: int):
+#   product = CRUD.read_product(productID)
+#   return {"product": product}
