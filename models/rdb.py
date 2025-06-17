@@ -34,7 +34,10 @@ def rows_to_products(rows):
     product["brand"] = row[2]
     product["productName"] = row[3]
     product["imgaeURL"] = row[4]
-    product["ratingPercent"] = row[5]
+    tmp = row[5]
+    if tmp==None:
+      tmp = 0
+    product["ratingPercent"] = tmp*20
     product["reviewCount"] = row[6]
     if (row[7]!=None):
       product["isListed"] = True
@@ -289,12 +292,12 @@ class CRUD:
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
       select = f"""
-        SELECT product.id, category.name, brand.name, product.name, product.image, product.percent, product.review, lists.user_id
+        SELECT product.id, category.name, brand.name, product.name, product.image, AVG(review.rating) AS rating, COUNT(review.id) AS review_count, my_list.user_id AS listed
         FROM product
         JOIN category ON product.category=category.id
         JOIN brand ON product.brand=brand.id
-        LEFT JOIN (SELECT product_id, user_id FROM lists WHERE user_id={user_id}) AS lists ON product.id=lists.product_id
-        LEFT JOIN (SELECT product_id, user_id FROM review WHERE user_id={user_id}) AS review ON product.id=review.product_id
+        LEFT JOIN review ON product.id=review.product_id
+        LEFT JOIN (SELECT product_id, user_id FROM lists WHERE user_id={user_id}) AS my_list ON product.id=my_list.product_id
       """
       where = " WHERE TRUE"
       value = []
@@ -312,13 +315,16 @@ class CRUD:
       if personal:
         where += " AND review.user_id=%s"
         value.append(user_id)
-      if sort!="percent" and sort!="review":
-        sort = "id"
       if productID:
         where += " AND product.id=%s"
         value.append(productID)
-      order = f" ORDER BY product.{sort} DESC"
-      cursor.execute(select+where+order, value)
+      group = " GROUP BY product.id"
+      order = " ORDER BY product.id DESC"
+      if sort=="percent":
+        order = " ORDER BY rating DESC"
+      elif sort=="review":
+        order = " ORDER BY review_count DESC"
+      cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       products = rows_to_products(rows)
       return products
@@ -492,7 +498,7 @@ class CRUD:
       cursor.execute(select+where, value)
       rows = cursor.fetchall()
       rating = rows_to_rating(rows)
-      CRUD.update_product_percent(product_id, rating["percent"], rating["count"])
+      # CRUD.update_product_percent(product_id, rating["percent"], rating["count"])
       return rating
   def read_suggest(keyword, need_more=False):
     with cnxpool.get_connection() as cnx:
@@ -528,17 +534,17 @@ class CRUD:
       update = "UPDATE lists SET bought=%s WHERE id=%s"
       cursor.execute(update, (bought,id))
       cnx.commit()
-  def update_product_percent(product_id, percent, review):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      update = """
-        UPDATE product
-        SET percent=%s, review=%s
-        WHERE id=%s;
-      """
-      values = [percent, review, product_id]
-      cursor.execute(update, values)
-      cnx.commit()
+  # def update_product_percent(product_id, percent, review):
+  #   with cnxpool.get_connection() as cnx:
+  #     cursor = cnx.cursor()
+  #     update = """
+  #       UPDATE product
+  #       SET percent=%s, review=%s
+  #       WHERE id=%s;
+  #     """
+  #     values = [percent, review, product_id]
+  #     cursor.execute(update, values)
+  #     cnx.commit()
   def delete_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
