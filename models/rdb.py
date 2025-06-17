@@ -89,8 +89,17 @@ def rows_to_rating(rows):
   """
   [1, 2, 3, 4, 5, avg, percent, review]
   """
+  rating = {}
+  rating["one"] = 0
+  rating["two"] = 0
+  rating["three"] = 0
+  rating["four"] = 0
+  rating["five"] = 0
+  rating["avg"] = 0
+  rating["percent"] = 0
+  rating["count"] = 0
   if not rows:
-    return [0,0,0,0,0,0,0,0]
+    return rating
   result = [0,0,0,0,0]
   for row in rows:
     if row[0]==1:
@@ -124,7 +133,7 @@ def rows_to_rating(rows):
   result.append(avg_rating)
   result.append(percent)
   result.append(count)
-  rating = {}
+  # rating = {}
   rating["one"] = result[0]
   rating["two"] = result[1]
   rating["three"] = result[2]

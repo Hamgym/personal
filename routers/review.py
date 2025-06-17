@@ -86,25 +86,31 @@ async def get_my_like_count(payload=Depends(jwt_auth)):
 #   row = CRUD.read_mypost(reviewID, user_id)
 #   return row
 
-@router.get("/api/review/rating/{product_id}",
+@router.get("/api/review/rating/{productID}",
   responses={
     200: {"model": GetRating}
   },
 )
-async def get_rating(product_id:int=Path()):
-  rating = CRUD.read_rating(product_id)
+async def get_rating(productID:int=Path()):
+  rating = CRUD.read_rating(productID)
   return {"rating": rating}
 
-@router.get("/api/review/posted/{product_id}")
-async def get_posted(payload=Depends(jwt_auth), product_id:int=Path()):
-  user_id = payload["id"]
-  row = CRUD.read_posted(product_id, user_id)
-  return row
+# @router.get("/api/review/posted/{product_id}")
+# async def get_posted(payload=Depends(jwt_auth), product_id:int=Path()):
+#   user_id = payload["id"]
+#   row = CRUD.read_posted(product_id, user_id)
+#   return row
 
-@router.delete("/api/review/{product_id}")
-async def delete_review(payload=Depends(jwt_auth), product_id:int=Path()):
+@router.delete("/api/review/{productID}",
+  responses={
+    400: {"model": ErrorMessage }
+  },
+)
+async def delete_review(payload=Depends(jwt_auth), productID:int=Path()):
   user_id = payload["id"]
-  row = CRUD.read_posted(product_id, user_id)
+  row = CRUD.read_posted(productID, user_id)
   review_id = row[0]
   deleted = CRUD.delete_review(review_id, user_id)
-  return deleted
+  if deleted:
+    return {"ok":True, "message":"成功刪除評論"}
+  return {"error":True, "message":"刪除評論失敗"}

@@ -6,7 +6,6 @@ async function init() {
   setTitle();
   loadRating();
   loadReview();
-  setPostBtn();
   setPostDialog();
   async function checkSignin() {
     let user = await getUser(token);
@@ -81,7 +80,6 @@ async function init() {
   async function loadReview() {
     let data = await getData();
     renderPage(data);
-    // postProduction();
     async function getData() {
       let id = location.pathname.split("/")[2];
       let url = `/api/review/${id}`;
@@ -110,9 +108,11 @@ async function init() {
       return reviewList
     }
     function renderPage(data) {
+      let posted = false;
       for (const item of data) {
         appendReview(item);
       }
+      setPostBtn(posted);
       function appendReview(data) {
         let main = document.querySelector("div.main");
         let item = document.createElement("div");
@@ -191,10 +191,56 @@ async function init() {
         });
         if (data[7]) {
           name.style.backgroundColor = "#fbbc04";
+          posted = true;
         }
         if (data[8]) {
           img.setAttribute("src", "/static/images/like-filled.png");
           img.style.cursor = "default";
+        }
+      }
+      function setPostBtn(posted = false) {
+        let productID = location.pathname.split("/")[2];
+        let postBtn = document.querySelector(".post-btn");
+        if (posted) {
+          postBtn.textContent = "刪除評論";
+          postBtn.addEventListener("click", async function () {
+            if (!confirm("確定要刪除評論嗎？")) {
+              return;
+            }
+            let url = `/api/review/${productID}`;
+            let init = {
+              method: "DELETE",
+              headers: {
+                "Authorization": `Bearer ${token}`
+              },
+            };
+            let request = new Request(url, init);
+            let res = await fetch(request);
+            // let resData = await res.json();
+            location.reload();
+          });
+        } else {
+          postBtn.addEventListener("click", function () {
+            let dialog = document.querySelector(".post-dialog");
+            dialog.style.display = "block";
+          });
+        }
+        postBtn.style.display = "block";
+        async function checkPosted(productID) {
+          let url = `/api/review/posted/${productID}`;
+          let init = {
+            headers: {
+              "Authorization": `Bearer ${token}`,
+            },
+          };
+          let request = new Request(url, init);
+          let res = await fetch(request);
+          let resData = await res.json();
+          if (resData !== null) {
+            return true;
+          } else {
+            return false;
+          }
         }
       }
     }
@@ -248,52 +294,6 @@ async function init() {
         } else {
           return false
         }
-      }
-    }
-  }
-  async function setPostBtn() {
-    let productID = location.pathname.split("/")[2];
-    let posted = await checkPosted(productID);
-    let postBtn = document.querySelector(".post-btn");
-    if (posted) {
-      postBtn.textContent = "刪除評論";
-      postBtn.addEventListener("click", async function () {
-        if (!confirm("確定要刪除評論嗎？")) {
-          return;
-        }
-        let url = `/api/review/${productID}`;
-        let init = {
-          method: "DELETE",
-          headers: {
-            "Authorization": `Bearer ${token}`
-          },
-        };
-        let request = new Request(url, init);
-        let res = await fetch(request);
-        // let resData = await res.json();
-        location.reload();
-      });
-    } else {
-      postBtn.addEventListener("click", function () {
-        let dialog = document.querySelector(".post-dialog");
-        dialog.style.display = "block";
-      });
-    }
-    postBtn.style.display = "block";
-    async function checkPosted(productID) {
-      let url = `/api/review/posted/${productID}`;
-      let init = {
-        headers: {
-          "Authorization": `Bearer ${token}`,
-        },
-      };
-      let request = new Request(url, init);
-      let res = await fetch(request);
-      let resData = await res.json();
-      if (resData !== null) {
-        return true;
-      } else {
-        return false;
       }
     }
   }
