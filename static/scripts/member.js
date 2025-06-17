@@ -3,7 +3,6 @@ async function init() {
   const token = localStorage.getItem("token");
   await checkSignin();
   showReviewCount();
-  showLikeCount();
   async function checkSignin() {
     let user = await getUser(token);
     let welcome = document.querySelector(".welcome");
@@ -33,16 +32,17 @@ async function init() {
     let resData = await res.json();
     let count = resData.myReviewCount;
     reviewCountDiv.textContent = `您已留下 ${count} 則評論`;
-  }
-  async function showLikeCount() {
-    let likeCountDiv = document.querySelector(".like-count");
-    let url = "/api/review/like/count";
-    let request = new Request(url, {
-      headers: { "Authorization": `Bearer ${token}` },
-    });
-    let res = await fetch(request);
-    let resData = await res.json();
-    let count = resData.likeCount;
-    likeCountDiv.textContent = `並獲得 ${count} 個讚`;
+    showLikeCount(resData.likeCount);
+    async function showLikeCount(count) {
+      let likeCountDiv = document.querySelector(".like-count");
+      // let url = "/api/review/like/count";
+      // let request = new Request(url, {
+      //   headers: { "Authorization": `Bearer ${token}` },
+      // });
+      // let res = await fetch(request);
+      // let resData = await res.json();
+      // let count = resData.likeCount;
+      likeCountDiv.textContent = `並獲得 ${count} 個讚`;
+    }
   }
 }

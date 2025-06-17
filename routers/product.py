@@ -61,7 +61,7 @@ async def get_products(
     200: {"model": CategoryRes }
   },
 )
-async def get_category(
+async def get_categories(
   payload=Depends(jwt_auth),
   keyword:str=Query(""),
   personal:bool=Query(False)
@@ -78,7 +78,7 @@ async def get_category(
     200: {"model": BrandRes }
   },
 )
-async def get_brand(
+async def get_brands(
   payload=Depends(jwt_auth),
   keyword:str=Query(""),
   category:str=Query(""),
@@ -96,7 +96,7 @@ async def get_brand(
     200: {"model": SuggestionsRes }
   },
 )
-async def get_suggest(q:str=Query(min_length=1, example="無糖")):
+async def get_suggests(q:str=Query(min_length=1, example="無糖")):
   rows = CRUD.read_suggest(q)
   if len(rows)<6:
     more_rows = CRUD.read_suggest(q, need_more=True)

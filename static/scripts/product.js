@@ -89,7 +89,7 @@ async function init() {
           event.target.src = "/static/images/add-new-filled-icon.png";
           let productID = product.id;
           let productName = product.querySelector("h3").textContent;
-          let url = "/api/lists";
+          let url = "/api/list";
           let body = { item: productName, productID: productID };
           let request = new Request(url, {
             method: "POST",

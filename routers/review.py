@@ -29,16 +29,6 @@ async def post_review(
   else:
     return {"error": True, "message": "已經發布過評論了"}
 
-@router.get("/api/review/count",
-  responses={
-    200: {"model": MyReviewCount}
-  },
-)
-async def get_my_review_count(payload=Depends(jwt_auth)):
-  user_id = payload["id"]
-  review_count = CRUD.read_review_count(user_id)
-  return {"myReviewCount": review_count}
-
 @router.post("/api/review/like",
   responses={
     400: {"model": ErrorMessage }
@@ -54,52 +44,38 @@ async def post_like(payload=Depends(jwt_auth), body:PostLikeReq=Body()):
   else:
     return JSONResponse({"error": True, "message": "已經按過讚了"}, 400)
 
+@router.get("/api/review/count",
+  responses={
+    200: {"model": MyReviewCount}
+  },
+)
+async def get_my_review_count(payload=Depends(jwt_auth)):
+  user_id = payload["id"]
+  review_count = CRUD.read_review_count(user_id)
+  like_count = CRUD.read_like_count(user_id)
+  return {
+    "myReviewCount": review_count,
+    "likeCount": like_count
+  }
+
 @router.get("/api/review/{productID}",
   responses={
     200: {"model": GetReviewRes}
   },
 )
-async def get_review(payload=Depends(jwt_auth), productID:int=Path()):
+async def get_reviews(payload=Depends(jwt_auth), productID:int=Path()):
   user_id = payload["id"]
   reviews = CRUD.read_review(productID, user_id)
   return {"reviews": reviews}
-
-@router.get("/api/review/like/count",
-  responses={
-    200: {"model": MyLikeCount}
-  },
-)
-async def get_my_like_count(payload=Depends(jwt_auth)):
-  user_id = payload["id"]
-  like_count = CRUD.read_like_count(user_id)
-  return {"likeCount": like_count}
-
-# @router.get("/api/review/mylike/{reviewID}")
-# async def check_my_like(payload=Depends(jwt_auth), reviewID:int=Path()):
-#   user_id = payload["id"]
-#   row = CRUD.read_mylike(reviewID, user_id)
-#   return row
-
-# @router.get("/api/review/mypost/{reviewID}")
-# async def check_my_post(payload=Depends(jwt_auth), reviewID:int=Path()):
-#   user_id = payload["id"]
-#   row = CRUD.read_mypost(reviewID, user_id)
-#   return row
 
 @router.get("/api/review/rating/{productID}",
   responses={
     200: {"model": GetRating}
   },
 )
-async def get_rating(productID:int=Path()):
+async def get_rating_detail(productID:int=Path()):
   rating = CRUD.read_rating(productID)
   return {"rating": rating}
-
-# @router.get("/api/review/posted/{product_id}")
-# async def get_posted(payload=Depends(jwt_auth), product_id:int=Path()):
-#   user_id = payload["id"]
-#   row = CRUD.read_posted(product_id, user_id)
-#   return row
 
 @router.delete("/api/review/{productID}",
   responses={

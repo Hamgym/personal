@@ -5,7 +5,7 @@ from models.rdb import CRUD
 from models.data import *
 router = APIRouter()
 
-@router.post("/api/lists",
+@router.post("/api/list",
   responses = {
     400: {"model": ErrorMessage },
   }
@@ -23,27 +23,18 @@ async def post_list_item(payload=Depends(jwt_auth), body:PostList=Body()):
       "message": "建立失敗，輸入不正確或其他原因"
     }, 400)
 
-@router.get("/api/lists", responses={200: {"model":GetList}})
+@router.get("/api/list", responses={200: {"model":GetList}})
 async def get_list_items(payload=Depends(jwt_auth)):
   user_id = payload["id"]
   shopping_list = CRUD.read_list(user_id)
   return {"list": shopping_list}
 
-# @router.get("/api/lists/{itemId}")
-# async def get_list(itemId:int, payload=Depends(jwt_auth)):
-#   row = CRUD.read_list_item(payload, itemId)
-#   if row==None:
-#     return {"data": None}
-#   row = list(row)
-#   row.pop(1)
-#   return {"data": row}
-
-@router.delete("/api/lists/{itemID}")
+@router.delete("/api/list/{itemID}")
 async def delete_list_item(itemID:int, payload=Depends(jwt_auth)):
   CRUD.delete_list_item(payload, itemID)
   return JSONResponse({"ok":True, "message": "刪除成功"})
 
-@router.patch("/api/lists")
+@router.patch("/api/list")
 async def change_list_item_status(payload=Depends(jwt_auth), body:UpdateList=Body()):
   CRUD.update_list_item(body.itemId, body.bought)
   return JSONResponse({"ok": True, "message": "更新成功"})

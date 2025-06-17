@@ -36,7 +36,7 @@ async function init() {
       behavior: 'smooth'
     });
     async function getListItems() {
-      let url = "/api/lists";
+      let url = "/api/list";
       let request = new Request(url, {
         headers: {
           "Content-Type": "application/json", "Authorization": `Bearer ${token}`
@@ -108,7 +108,7 @@ async function init() {
         return body;
       }
       async function postList(body) {
-        let url = "/api/lists";
+        let url = "/api/list";
         let request = new Request(url, {
           method: "POST",
           headers: {
@@ -207,7 +207,7 @@ async function init() {
       }
     }
     async function updateItemStatus(itemId, bought) {
-      let url = `/api/lists`;
+      let url = `/api/list`;
       let body = {
         "itemId": itemId,
         "bought": bought
@@ -226,7 +226,7 @@ async function init() {
     }
   }
   async function delItem(itemId) {
-    let url = `/api/lists/${itemId}`;
+    let url = `/api/list/${itemId}`;
     let request = new Request(url, {
       method: "DELETE",
       headers: {
