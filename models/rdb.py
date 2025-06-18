@@ -400,17 +400,6 @@ class CRUD:
   def read_review(product_id, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      # select = """
-      #   SELECT review.id, user.name, review.rating, review.created_at, review.likes, review.comment, review.image_url, review.is_anonymous
-      #   FROM review
-      #   JOIN user ON review.user_id=user.id
-      # """
-      # select = """
-      #   SELECT review.id, user.name, review.rating, review.created_at, COUNT(review_likes.id) AS like_count, review.comment, review.image_url, review.is_anonymous
-      #   FROM review
-      #   JOIN user ON review.user_id=user.id
-      #   LEFT JOIN review_likes ON review.id=review_likes.review_id
-      # """
       select = f"""
         SELECT review.id, user.name, review.rating,
         review.created_at, COUNT(review_likes.id) AS like_count,
@@ -431,14 +420,6 @@ class CRUD:
       cursor.execute(select+where+group+order, value)
       rows = cursor.fetchall()
       reviews = rows_to_reviews(rows)
-      # 匿名處理
-      # result = []
-      # for row in rows:
-      #   tmp = list(row)
-      #   if tmp[-1]:
-      #     tmp[1] = "匿名"
-      #   tmp.pop()
-      #   result.append(tmp)
       return reviews
   def read_review_count(user_id):
     with cnxpool.get_connection() as cnx:
