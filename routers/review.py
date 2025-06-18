@@ -39,7 +39,6 @@ async def post_like(payload=Depends(jwt_auth), body:PostLikeReq=Body()):
   review_id = body.reviewID
   isLiked = CRUD.create_like(user_id, review_id)
   if isLiked:
-    # CRUD.update_review_like(review_id)
     return {"ok": True, "message": "按讚成功"}
   else:
     return JSONResponse({"error": True, "message": "已經按過讚了"}, 400)

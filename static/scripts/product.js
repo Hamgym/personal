@@ -476,7 +476,7 @@ async function init() {
   }
   function setSortBtn() {
     let btn = document.querySelector(".header .sort");
-    let count = 0;
+    let count = 2;
     let sortList = ["percent", "review", "id"];
     let alertList = ["評價排序", "評論數量排序", "新商品排序"];
     btn.addEventListener("click", function () {
@@ -487,8 +487,13 @@ async function init() {
       let brand = document.querySelector(".brand span").textContent;
       let alertBox = document.querySelector(".alert").cloneNode(true);
       let header = document.querySelector(".header");
-      count += 1;
-      count %= 3;
+      let personal = document.querySelector("#personal").checked;
+      do {
+        count += 1;
+        count %= 3;
+        sort = sortList[count];
+        alert = alertList[count];
+      } while (personal && count == 1);
       loadProduct(keyword, category, brand, sort);
       alertBox.textContent = alert;
       alertBox.style.display = "flex";

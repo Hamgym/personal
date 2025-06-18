@@ -61,12 +61,12 @@ def rows_to_brands(rows):
     brand["productCount"] = row[1]
     brands.append(brand)
   return brands
-def row_to_product(row):
-  product = {}
-  product["id"] = row[0]
-  product["brand"] = row[1]
-  product["productName"] = row[2]
-  return product
+# def row_to_product(row):
+#   product = {}
+#   product["id"] = row[0]
+#   product["brand"] = row[1]
+#   product["productName"] = row[2]
+#   return product
 def rows_to_reviews(rows):
   reviews = []
   for row in rows:
@@ -274,20 +274,20 @@ class CRUD:
       cursor.execute(select, (user_id,))
       rows = cursor.fetchall()
       return rows
-  def read_product(id):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      select = """
-        SELECT product.id, brand.name, product.name
-        FROM product JOIN brand
-        ON product.brand=brand.id
-      """
-      where = "WHERE product.id=%s"
-      value = [id]
-      cursor.execute(select+where, value)
-      row = cursor.fetchone()
-      product = row_to_product(row)
-      return product
+  # def read_product(id):
+  #   with cnxpool.get_connection() as cnx:
+  #     cursor = cnx.cursor()
+  #     select = """
+  #       SELECT product.id, brand.name, product.name
+  #       FROM product JOIN brand
+  #       ON product.brand=brand.id
+  #     """
+  #     where = "WHERE product.id=%s"
+  #     value = [id]
+  #     cursor.execute(select+where, value)
+  #     row = cursor.fetchone()
+  #     product = row_to_product(row)
+  #     return product
   def read_products(keyword, category, brand, sort="id", personal=False, user_id=0, productID=0):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -456,10 +456,6 @@ class CRUD:
   def read_like_count(user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
-      # select = """
-      #   SELECT SUM(likes)
-      #   FROM review
-      # """
       select = """
         SELECT COUNT(id) AS my_like_count
         FROM review_likes
@@ -473,19 +469,19 @@ class CRUD:
       if like_count == None:
         like_count = 0
       return like_count
-  def read_like(review_id):
-    with cnxpool.get_connection() as cnx:
-      cursor = cnx.cursor()
-      select = """
-        SELECT COUNT(user_id)
-        FROM review_likes
-      """
-      where = " WHERE review_id=%s"
-      group = " GROUP BY review_id"
-      value = [review_id]
-      cursor.execute(select+where+group, value)
-      row = cursor.fetchone()
-      return row
+  # def read_like(review_id):
+  #   with cnxpool.get_connection() as cnx:
+  #     cursor = cnx.cursor()
+  #     select = """
+  #       SELECT COUNT(user_id)
+  #       FROM review_likes
+  #     """
+  #     where = " WHERE review_id=%s"
+  #     group = " GROUP BY review_id"
+  #     value = [review_id]
+  #     cursor.execute(select+where+group, value)
+  #     row = cursor.fetchone()
+  #     return row
   def read_rating(product_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -556,10 +552,10 @@ class CRUD:
       try:
         cursor = cnx.cursor()
         delete = "DELETE FROM review_likes WHERE review_id=%s;"
-        cursor.execute(delete, (review_id,))
+        cursor.execute(delete, [review_id])
         cnx.commit()
         delete = "DELETE FROM review WHERE id=%s AND user_id=%s;"
-        cursor.execute(delete, (review_id, user_id))
+        cursor.execute(delete, [review_id, user_id])
         cnx.commit()
         return True
       except:
