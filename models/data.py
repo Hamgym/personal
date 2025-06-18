@@ -1,7 +1,8 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
+from pydantic import EmailStr # 日後有需要再套用
 from fastapi import UploadFile # 可能不適合用在資料模型中
 
-
+# User
 class SignUp(BaseModel):
   name: str = Field(min_length=1, examples=["John"])
   email: str = Field(pattern=r"^[^\s@]+@[^\s@]+$", examples=["abc@abc"])
@@ -27,7 +28,7 @@ class Payload(BaseModel):
 class User(BaseModel):
   user: Payload
 
-
+# List
 class PostList(BaseModel):
   item: str = Field(examples=["商品名稱"])
   specs: str = Field("", examples=["備註說明"])
@@ -41,7 +42,7 @@ class UpdateList(BaseModel):
   itemId: int = Field(examples=[12])
   bought: bool = Field(examples=[True])
 
-
+# Product
 class Product(BaseModel):
   productID: int = Field(examples=[21])
   category: str = Field(examples=["飲料"])
@@ -70,9 +71,10 @@ class OneProductRes(BaseModel):
 class SuggestionsRes(BaseModel):
   suggestions: list[str] = Field(examples=[['無糖綠茶', '無糖冷萃茶', '無糖茶', '無糖茶寶特瓶系列', '熟藏紅茶-無糖', '日式無糖綠茶', '凍頂烏龍茶-無糖']])
 
-
-class MyReviewCount(BaseModel):
+# Review
+class MyStatistics(BaseModel):
   myReviewCount: int = Field(examples=[5])
+  myLikeCount: int = Field(examples=[12])
 class PostLikeReq(BaseModel):
   reviewID: int = Field(examples=[11])
 class Review(BaseModel):
@@ -87,8 +89,6 @@ class Review(BaseModel):
   isMyLike: bool = Field(examples=[True])
 class GetReviewRes(BaseModel):
   reviews: list[Review]
-class MyLikeCount(BaseModel):
-  likeCount: int = Field(examples=[12])
 class Rating(BaseModel):
   one: float = Field(examples=[0])
   two: float = Field(examples=[0])

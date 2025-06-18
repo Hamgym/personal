@@ -2,7 +2,7 @@ init();
 async function init() {
   const token = localStorage.getItem("token");
   await checkSignin();
-  showReviewCount();
+  showMemberStatistics();
   async function checkSignin() {
     let user = await getUser(token);
     let welcome = document.querySelector(".welcome");
@@ -22,27 +22,22 @@ async function init() {
       return user;
     }
   }
-  async function showReviewCount() {
-    let reviewCountDiv = document.querySelector(".review-count");
-    let url = "/api/review/count";
+  async function showMemberStatistics() {
+    let url = "/api/review/statistic";
     let request = new Request(url, {
       headers: { "Authorization": `Bearer ${token}` },
     });
     let res = await fetch(request);
     let resData = await res.json();
-    let count = resData.myReviewCount;
-    reviewCountDiv.textContent = `您已留下 ${count} 則評論`;
-    showLikeCount(resData.likeCount);
+    showReviewCount(resData.myReviewCount);
+    showLikeCount(resData.myLikeCount);
     async function showLikeCount(count) {
       let likeCountDiv = document.querySelector(".like-count");
-      // let url = "/api/review/like/count";
-      // let request = new Request(url, {
-      //   headers: { "Authorization": `Bearer ${token}` },
-      // });
-      // let res = await fetch(request);
-      // let resData = await res.json();
-      // let count = resData.likeCount;
       likeCountDiv.textContent = `並獲得 ${count} 個讚`;
+    }
+    async function showReviewCount(count) {
+      let reviewCountDiv = document.querySelector(".review-count");
+      reviewCountDiv.textContent = `您已留下 ${count} 則評論`;
     }
   }
 }
