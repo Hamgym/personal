@@ -61,12 +61,6 @@ def rows_to_brands(rows):
     brand["productCount"] = row[1]
     brands.append(brand)
   return brands
-# def row_to_product(row):
-#   product = {}
-#   product["id"] = row[0]
-#   product["brand"] = row[1]
-#   product["productName"] = row[2]
-#   return product
 def rows_to_reviews(rows):
   reviews = []
   for row in rows:
@@ -274,20 +268,6 @@ class CRUD:
       cursor.execute(select, (user_id,))
       rows = cursor.fetchall()
       return rows
-  # def read_product(id):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     select = """
-  #       SELECT product.id, brand.name, product.name
-  #       FROM product JOIN brand
-  #       ON product.brand=brand.id
-  #     """
-  #     where = "WHERE product.id=%s"
-  #     value = [id]
-  #     cursor.execute(select+where, value)
-  #     row = cursor.fetchone()
-  #     product = row_to_product(row)
-  #     return product
   def read_products(keyword, category, brand, sort="id", personal=False, user_id=0, productID=0):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -328,6 +308,20 @@ class CRUD:
       rows = cursor.fetchall()
       products = rows_to_products(rows)
       return products
+  def read_product(category, brand, keyword):
+    with cnxpool.get_connection() as cnx:
+      cursor = cnx.cursor()
+      select = f"""
+        SELECT product.id, category.name, brand.name, product.name
+        FROM product
+        JOIN category ON product.category=category.id
+        JOIN brand ON product.brand=brand.id
+      """
+      where = " WHERE category.name=%s AND brand.name=%s AND product.name=%s"
+      value = [category, brand, keyword]
+      cursor.execute(select+where, value)
+      row = cursor.fetchall()
+      return row
   def read_category(keyword, user_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -450,19 +444,6 @@ class CRUD:
       if like_count == None:
         like_count = 0
       return like_count
-  # def read_like(review_id):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     select = """
-  #       SELECT COUNT(user_id)
-  #       FROM review_likes
-  #     """
-  #     where = " WHERE review_id=%s"
-  #     group = " GROUP BY review_id"
-  #     value = [review_id]
-  #     cursor.execute(select+where+group, value)
-  #     row = cursor.fetchone()
-  #     return row
   def read_rating(product_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()
@@ -511,17 +492,6 @@ class CRUD:
       update = "UPDATE lists SET bought=%s WHERE id=%s"
       cursor.execute(update, (bought,id))
       cnx.commit()
-  # def update_product_percent(product_id, percent, review):
-  #   with cnxpool.get_connection() as cnx:
-  #     cursor = cnx.cursor()
-  #     update = """
-  #       UPDATE product
-  #       SET percent=%s, review=%s
-  #       WHERE id=%s;
-  #     """
-  #     values = [percent, review, product_id]
-  #     cursor.execute(update, values)
-  #     cnx.commit()
   def delete_list_item(payload, item_id):
     with cnxpool.get_connection() as cnx:
       cursor = cnx.cursor()

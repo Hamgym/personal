@@ -18,8 +18,8 @@ async def post_product(
   name:str=Form(description="商品名稱"),
   photo:UploadFile=Form(description="圖片檔案")
 ):
-  rows = CRUD.read_products(name, category, brand)
-  if len(rows)>0:
+  row = CRUD.read_product(category, brand, name)
+  if len(row)>0:
     return {
       "error": True,
       "message": "該商品已經存在！",
@@ -33,9 +33,14 @@ async def post_product(
   category_id = CRUD.create_category(category)
   brand_id = CRUD.create_brand(brand)
   created = CRUD.create_product(category_id, brand_id, name, image_url)
+  if created:
+    return {
+      "ok": True,
+      "message": "成功建立新商品！",
+    }
   return {
-    "ok": True,
-    "message": "成功建立新商品！",
+    "error": True,
+    "message": "該商品已經存在！",
   }
 
 @router.get("/api/product",
@@ -105,12 +110,3 @@ async def get_suggests(q:str=Query(min_length=1, example="無糖")):
   for row in rows:
     suggestions.append(row[0])
   return {"suggestions": suggestions}
-
-# @router.get("/api/product/{productID}",
-#   responses={
-#     200: {"model": OneProductRes }
-#   },
-# )
-# async def get_product(productID: int):
-#   product = CRUD.read_product(productID)
-#   return {"product": product}
