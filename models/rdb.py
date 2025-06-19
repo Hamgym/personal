@@ -10,7 +10,7 @@ dbconfig = {
   "database": "mygo",
   "pool_name": "mypool"
 }
-cnxpool = MySQLConnectionPool(pool_size=5, **dbconfig)
+cnxpool = MySQLConnectionPool(pool_size=10, **dbconfig)
 pwd_context = CryptContext(schemes=["bcrypt"])
 
 
