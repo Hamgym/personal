@@ -131,14 +131,16 @@ async function init() {
         return;
       }
       let boxes = document.querySelectorAll('[type="checkbox"]');
+      let promises = [];
       for (let box of boxes) {
         if (box.checked) {
           let itemId = box.parentElement.id;
-          await delItem(itemId);
+          promises.push(delItem(itemId));
         }
       }
-      // location.reload();
-      loadList();
+      Promise.all(promises).then((values) => {
+        loadList();
+      });
     }
   }
   function addItem(item) {
