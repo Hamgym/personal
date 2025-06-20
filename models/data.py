@@ -48,7 +48,7 @@ class Product(BaseModel):
   category: str = Field(examples=["飲料"])
   brand: str = Field(examples=["麥香"])
   productName: str = Field(examples=["麥香綠茶"])
-  imgaeURL: str = Field(examples=["https://qbdhu.cloudfront.net/5dfd"])
+  imageURL: str = Field(examples=["https://qbdhu.cloudfront.net/5dfd"])
   ratingPercent: int = Field(examples=[85])
   reviewCount: int = Field(examples=[4])
   isListed: bool = Field(examples=[False])

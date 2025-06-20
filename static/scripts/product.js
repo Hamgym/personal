@@ -48,7 +48,7 @@ async function init() {
         row.push(product.category);
         row.push(product.brand);
         row.push(product.productName);
-        row.push(product.imgaeURL);
+        row.push(product.imageURL);
         row.push(product.ratingPercent);
         row.push(product.reviewCount);
         row.push(product.isListed);

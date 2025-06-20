@@ -33,7 +33,7 @@ def rows_to_products(rows):
     product["category"] = row[1]
     product["brand"] = row[2]
     product["productName"] = row[3]
-    product["imgaeURL"] = row[4]
+    product["imageURL"] = row[4]
     tmp = row[5]
     if tmp==None:
       tmp = 0
