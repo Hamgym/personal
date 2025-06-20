@@ -1,11 +1,11 @@
 <br>
 <br>
 <p align="center">
-  <a href="https://api.quantumdork.com/"><img width=700 src="https://d2j1hqbdhu9zhx.cloudfront.net/readme/title-trans.png" alt="MyGo"></a>
+  <a href="https://api.quantumdork.com/" target="_blank"><img width=700 src="https://d2j1hqbdhu9zhx.cloudfront.net/readme/title-trans.png" alt="MyGo"></a>
 </p>
 
 <p align="center">
-  一次買夠是一個結合購物清單及評論留言板的小工具
+  <strong>一次買夠是一個結合購物清單及評論留言板的小工具</strong>
 </p>
 
 ---
@@ -20,5 +20,3 @@
 <p align="center">
   <img width=700 src="https://d2j1hqbdhu9zhx.cloudfront.net/readme/CAD-v2.png" alt="FastAPI">
 </p>
-
----
