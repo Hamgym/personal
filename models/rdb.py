@@ -7,7 +7,7 @@ dbconfig = {
   "user": os.getenv("DB_USER"),
   "password": os.getenv("DB_PASSWORD"),
   "host": os.getenv("DB_HOST"),
-  "database": "mygo",
+  "database": os.getenv("DB_NAME"),
   "pool_name": "mypool"
 }
 cnxpool = MySQLConnectionPool(pool_size=10, **dbconfig)
