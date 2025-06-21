@@ -6,7 +6,7 @@ from mysql.connector.errors import PoolError
 from utils.auth import AuthError
 from routers import users, lists, product, review
 from models.data import *
-app=FastAPI()
+app=FastAPI(title="MyGo", version="1.0")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 
