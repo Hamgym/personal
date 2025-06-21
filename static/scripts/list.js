@@ -158,9 +158,12 @@ async function init() {
       let title = form.querySelector("h3");
       let inputName = form.querySelector('[name="item"]');
       let inputSpec = form.querySelector('[name="specs"]');
-      let preContent = this.textContent.split(" ");
-      let productName = preContent.shift();
-      let productSpec = preContent.join(" ");
+      // let preContent = this.textContent.split(" ");
+      // let productName = preContent.shift();
+      // let productSpec = preContent.join(" ");
+      let preContent = this.textContent;
+      let productName = preContent;
+      let productSpec = "";
       form.style.display = "block";
       title.textContent = "修改項目";
       title.id = item[0];
