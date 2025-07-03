@@ -1,7 +1,7 @@
 <br>
 <br>
 <p align="center">
-  <a href="https://api.quantumdork.com/" target="_blank"><img width=700 src="https://d2j1hqbdhu9zhx.cloudfront.net/readme/title-trans.png" alt="MyGo"></a>
+  <a href="https://api.quantumdork.com/" target="_blank"><img width=700 src="./images/title-trans.png" alt="MyGo"></a>
 </p>
 
 <p align="center">
@@ -18,5 +18,5 @@
 
 **雲端架構**：
 <p align="center">
-  <img width=700 src="https://d2j1hqbdhu9zhx.cloudfront.net/readme/CAD-v2.png" alt="FastAPI">
+  <img width=700 src="./images/CAD-v2.png" alt="FastAPI">
 </p>
